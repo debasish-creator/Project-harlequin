@@ -1,2 +1,2 @@
 # Blog
-blog based on php language
+PHP based Blog
