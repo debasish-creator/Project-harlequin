@@ -1,5 +1,5 @@
-# Project Harlequin
-PHP based Blog
+# Project Harlequin ✨
+This project is a multi-author blog page. It consists of different categories of posts and functionalities of multiple admins with proper credentials login. The frontend will be based on HTML, CSS and JavaScript and the backend is in PHP
 
 # Ways to contribute:
 1. Solve the issues which are listed
