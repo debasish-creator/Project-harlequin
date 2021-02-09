@@ -18,46 +18,42 @@ Confirm_Login();
 </head>
 <body>
 <!--NAVIGATION BAR STARTS-->
-<div style="height: 10px; background: cornflowerblue"></div>
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a href="#" class="navbar-brand">THINK HARD</a>
+        <a href="#" class="navbar-brand " style= "color:aliceblue;">MindSaga</a>
         <button style="background-color: #BEC9F2;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarcollapse">
             <span class="navbar-toggle-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarcollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
-            </li>
-            <li class="nav-item">
-                <a href="Dashboard.php" class="nav-link">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a href="Posts.php" class="nav-link">Posts</a>
-            </li>
-            <li class="nav-item">
-                <a href="Categories.php" class="nav-link">Categories</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="Admins.php" class="nav-link">Manage Admins</a>
-            </li>
-            <li class="nav-item">
-                <a href="Comments.php" class="nav-link">Comments</a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?page=1" class="nav-link">GO Live</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        </ul>
+           <ul class="navbar-nav mr-auto">
+               <li class="nav-item">
+                   <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
+              </li>
+              <li class="nav-item">
+                   <a href="Dashboard.php" class="nav-link">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                   <a href="Posts.php" class="nav-link">Posts</a>
+              </li>
+              <li class="nav-item">
+                   <a href="Categories.php" class="nav-link">Categories</a>
+              </li>
+              <li class="nav-item">
+                   <a href="Admins.php" class="nav-link">Manage Admins</a>
+              </li>
+              <li class="nav-item">
+                   <a href="Comments.php" class="nav-link">Comments</a>
+              </li>
+              <li class="nav-item">
+                   <a href="index.php?page=1" class="nav-link">GO Live</a>
+             </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+               <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          </ul>
         </div>
-
     </div>
 </div>
-<div style="height: 10px; background: cornflowerblue"></div>
 <!--NAVIGATION BAR ENDS-->
 
 <!--HEADER STARTS-->

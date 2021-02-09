@@ -46,20 +46,13 @@ if(isset($_POST["Submit"])){
 </head>
 <body>
 <!--NAVIGATION BAR STARTS-->
-<div style="height: 10px; background: cornflowerblue"></div>
+
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a href="#" class="navbar-brand">THINK HARD</a>
-        <button style="background-color: #BEC9F2;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarcollapse">
-            <span class="navbar-toggle-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarcollapse">
-
-        </div>
-
+        <a href="#" class="navbar-brand " style= "color:aliceblue;">MindSaga</a>
     </div>
 </div>
-<div style="height: 10px; background: cornflowerblue"></div>
+
 <!--NAVIGATION BAR ENDS-->
 
 <!--HEADER STARTS-->

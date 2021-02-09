@@ -17,10 +17,9 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
 </head>
 <body>
 <!--NAVIGATION BAR-->
-<div style="height: 10px; background: cornflowerblue"></div>
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a href="#" class="navbar-brand">THINK HARD</a>
+        <a href="#" class="navbar-brand " style= "color:aliceblue;">MindSaga</a>
         <button style="background-color: #BEC9F2;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#Rcollapse">
             <span class="navbar-toggle-icon"></span>
         </button>
@@ -56,8 +55,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
 
     </div>
 </div>
-<div style="height: 10px; background: cornflowerblue"></div>
-<!--NAVBAR-->
+<!--NAVBAR ENDS-->
 
 <!--HEADER-->
 <header class="bg-dark text-white py-3">
