@@ -157,7 +157,7 @@ Confirm_Login(); ?>
                       </div>
                       <div class="row">
                           <div class="col-lg-6 mb-2">
-                              <a href="#" class="btn btn-warning btn-block"> <i class="fas fa-arrow-left"></i> Back to dashboard</a>
+                              <a href="Dashboard.php" class="btn btn-warning btn-block"> <i class="fas fa-arrow-left"></i> Back to dashboard</a>
                           </div>
                           <div class="col-lg-6 mb-2">
                               <button type="Submit" name="Submit" class="btn btn-success btn-block">

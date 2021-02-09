@@ -27,7 +27,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
         <div class="collapse navbar-collapse" id="Rcollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
+                    <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
                 </li>
                 <li class="nav-item">
                     <a href="Dashboard.php" class="nav-link">Dashboard</a>
