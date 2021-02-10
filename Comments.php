@@ -29,7 +29,7 @@ Confirm_Login();
         <div class="collapse navbar-collapse" id="Rcollapse">
            <ul class="navbar-nav mr-auto">
                <li class="nav-item">
-                   <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
+                   <a href="MyProfile.php" class="nav-link" style= "color:white ; font-weight: bolder;">My Profile</a>
               </li>
               <li class="nav-item">
                    <a href="Dashboard.php" class="nav-link" style= "color:white ; font-weight: bolder;">Dashboard</a>

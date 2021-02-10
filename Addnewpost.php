@@ -82,26 +82,26 @@ if(isset($_POST["Submit"])){
         <div class="collapse navbar-collapse" id="Rcollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="MyProfile.php" class="nav-link" style= "color:white ; font-weight: bolder;>My Profile</a>
+                    <a href="MyProfile.php" class="nav-link" style= "color:white ; font-weight: bolder;">My Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Dashboard.php" class="nav-link" style= "color:white ; font-weight: bolder;>Dashboard</a>
+                    <a href="Dashboard.php" class="nav-link" style= "color:white ; font-weight: bolder;">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Posts.php" class="nav-link" style= "color:white ; font-weight: bolder;>Posts</a>
+                    <a href="Posts.php" class="nav-link" style= "color:white ; font-weight: bolder;">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;>Categories</a>
+                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;">Categories</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;>Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;>Comments</a>
+                    <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link"style= "color:white ; font-weight: bolder;>GO Live</a>
+                    <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">GO Live</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
