@@ -59,7 +59,7 @@ Confirm_Login();
 <!--NAVIGATION BAR ENDS-->
 
 <!--HEADER STARTS-->
-<header class="bg-dark text-white py-3">
+<header class="text-white py-3"style="background-image:linear-gradient(360deg, #1B80B2 ,#1B0039);">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
