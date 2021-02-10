@@ -1,3 +1,8 @@
+@font-face {
+    font-family: mindsagacustom;
+    src: url(../fonts/Gistesy.ttf);
+}
+
 a{
     color: #ffffff;
 }

@@ -1,3 +1,7 @@
+@font-face {
+    font-family: mindsagacustom;
+    src: url(../fonts/Gistesy.ttf);
+}
 .footer-distributed{
     background-image:linear-gradient(90deg, #280038,#01193d);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
