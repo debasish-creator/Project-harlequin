@@ -3,6 +3,7 @@
 <head>
     <title>footer</title>
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <!--SIDE ARE START-->
 <div class="col-sm-4 ">
@@ -113,7 +114,7 @@
     <div class="footer-center">
 
         <div>
-            <i class="fa fa-map-marker"></i>
+            <i class="fa fa-map-marker" ></i>
             <p><span>Loremlaudantium assumenda</span> Odisha, India</p>
         </div>
 
@@ -137,34 +138,22 @@
         </p>
         <ul class="social">
             <li>
-                <a href="#" class="tw" title="Tweet this page!">
-                    <i class="icon-twitter"></i>
-                </a>
+            <a href="#" class="fa fa-twitter"></a>
             </li>
             <li>
-                <a href="#" class="fb" title="Share this page!">
-                    <i class="icon-facebook"></i>
-                </a>
+                <a href="#" class="fa fa-facebook"></a>
             </li>
             <li>
-                <a href="#" class="gp" title="Share this page!">
-                    <i class="icon-google-plus"></i>
-                </a>
+            <a href="#" class="fa fa-google"></a>
             </li>
             <li>
-                <a href="#" class="gh" title="Tweet this page!">
-                    <i class="icon-github"></i>
-                </a>
+            <a href="#" class="fa fa-github"></a>
             </li>
             <li>
-                <a href="#" class="insta" title="Tweet this page!">
-                    <i class="icon-instagram"></i>
-                </a>
+            <a href="#" class="fa fa-instagram"></a>
             </li>
             <li>
-                <a href="#" class="in" title="Tweet this page!">
-                    <i class="icon-linkedin"></i>
-                </a>
+            <a href="#" class="fa fa-linkedin"></a>
             </li>
         </ul>
     </div>
