@@ -48,9 +48,9 @@ if(isset($_POST["Submit"])){
 <body>
 <!--NAVIGATION BAR STARTS-->
 
-<div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a href="#" class="navbar-brand " style= "color:aliceblue;">MindSaga</a>
+<div class="navbar navbar-expand-lg navbar-light bg-custom">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
     </div>
 </div>
 

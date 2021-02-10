@@ -27,27 +27,27 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
         </button>
         <div class="collapse navbar-collapse" id="Rcollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
+                <li class="nav-item" >
+                    <a href="MyProfile.php" class="nav-link" style= "color:white ; font-weight: bolder;">My Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Dashboard.php" class="nav-link">Dashboard</a>
+                    <a href="Dashboard.php" class="nav-link" style= "color:white ; font-weight: bolder;">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Posts</a>
+                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Categories.php" class="nav-link">Categories</a>
+                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;">Categories</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Comments.php" class="nav-link">Comments</a>
+                    <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link">GO Live</a>
+                    <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">GO Live</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

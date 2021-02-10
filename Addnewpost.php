@@ -65,41 +65,43 @@ if(isset($_POST["Submit"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <title>Add New Post</title>
 </head>
 <body>
 <?php  ?>
 <!--NAVBAR STARTS-->
-<div class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="navbar navbar-expand-lg navbar-light bg-custom">
     <div class="container">
-        <a href="#" class="navbar-brand " style= "color:aliceblue;">MindSaga</a>
-        <button style="background-color: #BEC9F2;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#Rcollapse">
-            <span class="navbar-toggle-icon"></span>
+        <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
+        <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="Rcollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="MyProfile.php" class="nav-link"><i class="fas fa-user text-success"></i> My Profile</a>
+                    <a href="MyProfile.php" class="nav-link" style= "color:white ; font-weight: bolder;>My Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Dashboard.php" class="nav-link">Dashboard</a>
+                    <a href="Dashboard.php" class="nav-link" style= "color:white ; font-weight: bolder;>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Posts.php" class="nav-link">Posts</a>
+                    <a href="Posts.php" class="nav-link" style= "color:white ; font-weight: bolder;>Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Categories.php" class="nav-link">Categories</a>
+                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;>Categories</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;>Manage Admins</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Comments.php" class="nav-link">Comments</a>
+                    <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;>Comments</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link">GO Live</a>
+                    <a href="index.php" class="nav-link"style= "color:white ; font-weight: bolder;>GO Live</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
