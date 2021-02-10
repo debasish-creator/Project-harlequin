@@ -1,9 +1,10 @@
 <?php Confirm_Login(); ?>
-<!--SIDE ARE START-->
+
 <head>
     <title>footer</title>
     <link rel="stylesheet" href="css/footer.css">
 </head>
+<!--SIDE ARE START-->
 <div class="col-sm-4 ">
     <div class="card mt-4">
         <div class="card-body">
@@ -88,9 +89,9 @@
 </div>
 
 <!--HEADER ENDS-->
-
-
 <!--SIDE AREA ENDS-->
+
+
 <!--FOOTER STARTS-->
 <div style="height: 5px; background: cornflowerblue"></div>
 <footer class="footer-distributed" id="contact">
