@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <!--FOOTER STARTS-->
+<!--FOOTER STARTS-->
 <div style="height: 5px; background: cornflowerblue"></div>
 <footer class="footer-distributed" id="contact">
     <div class="footer-left">
