@@ -8,7 +8,7 @@
 <div style="height: 5px; background: cornflowerblue"></div>
 <footer class="footer-distributed" id="contact">
     <div class="footer-left">
-        <h3 style="font-family: mindsagacustom;">MindSaga <span id="year" style="font-family: sans-serif;"></span></h3>
+        <h3>MindSaga <span id="year"></span></h3>
         <p class="footer-links">
             <a href="#" class="nav-link" style="margin-left: -15px;">About Us</a>
             ·
