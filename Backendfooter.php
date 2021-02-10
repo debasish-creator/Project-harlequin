@@ -10,7 +10,7 @@
     <div class="footer-left">
         <h3>MindSaga <span id="year"></span></h3>
         <p class="footer-links">
-            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link" style="margin-left: -15px;">About Us</a>
             ·
             <a href="index.php" class="nav-link">Blog</a>
             ·
