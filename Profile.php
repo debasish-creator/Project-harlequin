@@ -31,35 +31,37 @@ if( $Result==1 ){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <title>Profile</title>
 </head>
 <body>
 <!--NAVIGATION BAR STARTS-->
 <div style="height: 10px; background: cornflowerblue"></div>
-    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar navbar-expand-lg navbar-light bg-custom">
         <div class="container">
-            <a href="#" class="navbar-brand">THINK HARD</a>
-            <button style="background-color: #BEC9F2;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#Rcollapse">
-                <span class="navbar-toggle-icon"></span>
+            <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
+            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="Rcollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link">Home</a>
+                        <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link">Blog</a>
+                        <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">Blog</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
+                        <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Features</a>
+                        <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Features</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -103,23 +105,4 @@ if( $Result==1 ){
     </div>
 </section>
 <!--FOOTER STARTS-->
-<div style="height: 5px; background: cornflowerblue"></div>
-<footer class="bg-dark text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            <p class="lead text-center">THINK HARD  |  <span id="year"></span>&copy: -----All right reserved</p>
-            </div>
-        </div>
-    </div>
-</footer>
-<div style="height: 5px; background: cornflowerblue"></div>
-<!--FOOTER ENDS-->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script>
-    $('#year').text(new Date().getFullYear());
-</script>
-</body>
-</html>
+<?php require_once ("footer.php");?>

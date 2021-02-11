@@ -53,6 +53,8 @@ if(isset($_POST["Submit"])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <title>Full Post</title>
     <style media="screen">
@@ -68,32 +70,30 @@ if(isset($_POST["Submit"])) {
 </head>
 <body>
 <!--NAVIGATION BAR STARTS-->
-<div style="height: 10px; background: cornflowerblue"></div>
-<div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a href="#" class="navbar-brand">THINK HARD</a>
-        <button style="background-color: #BEC9F2;" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#Rcollapse">
-            <span class="navbar-toggle-icon"></span>
+<div class="navbar navbar-expand-lg navbar-light bg-custom">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
+        <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="Rcollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="index.php?page=1" class="nav-link">Home</a>
+                    <a href="index.php?page=1" class="nav-link" style= "color:white ; font-weight: bolder;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">About Us</a>
+                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?page=1" class="nav-link">Blog</a>
+                    <a href="index.php?page=1" class="nav-link" style= "color:white ; font-weight: bolder;">Blog</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Contact Us</a>
+                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Features</a>
+                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Features</a>
                 </li>
-
             </ul>
             <ul class="navbar-nav ml-auto">
                 <form class="form-inline d-none d-sm-block" action="index.php">
@@ -104,10 +104,8 @@ if(isset($_POST["Submit"])) {
                 </form>
             </ul>
         </div>
-
     </div>
 </div>
-<div style="height: 10px; background: cornflowerblue"></div>
 <!--NAVIGATION BAR ENDS-->
 
 <!--HEADER STARTS-->
@@ -116,10 +114,7 @@ if(isset($_POST["Submit"])) {
 
         <!--main area starts---->
 
-        <div class="col-sm-8">
-            <h1>The Complete Responsive CMS Blog</h1>
-            <h1 class="lead">By Debashis Nayak</h1>
-
+        <div class="col-sm-8 mt-4">
             <?php
             echo ErrorMessage();
             echo SuccessMessage();
@@ -159,7 +154,7 @@ if(isset($_POST["Submit"])) {
 
                 ?>
                 <div class="card">
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" style="max-height: 450px;" class="img-fluid card-img-top"/>
+                    <img src="Uploads/<?php echo htmlentities($Image); ?>" style="max-height: 500px;" class="img-fluid card-img-top"/>
                     <div class="card-body">
                         <h4 class="card-title"><?php echo htmlentities($PostTitle)?></h4>
                         <small class="text-muted">Written by <?php echo htmlentities($Admin);?> on <?php echo htmlentities($DateTime); ?></small>
