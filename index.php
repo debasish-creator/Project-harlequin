@@ -17,7 +17,7 @@
         .heading{
             font-family: Bitter,Georgia,"Times New Roman",Times,serif;
             font-weight: bold;
-            color: red;
+            color: blue;
         }
     </style>
 </head>
