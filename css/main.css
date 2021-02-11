@@ -41,7 +41,7 @@ html, body {
     padding-top: 1rem;
 }
 .text-center{
-    padding: 0rem;
+    padding: 0rem !important;
 }
 .badge{
     margin-top: 0.5rem;
@@ -58,7 +58,4 @@ html, body {
 .test{
     float: left;
     width: 100%;
-}
-.margin{
-    margin-bottom: 0.5rem;
 }

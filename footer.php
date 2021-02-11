@@ -27,13 +27,13 @@
             <h2 class="lead">Sign Up</h2>
         </div>
         <div class="card-body">
-            <button type="button" class="btn btn-primary btn-block text-center text-white" name="button">Join the Forum</button>
-            <button type="button" class="btn btn-success btn-block text-center text-white margin" name="button"><a href="Login.php" style="text-decoration:none;color:#ffffff">Log In</a></button>
+            <button type="button" class="btn btn-primary btn-block text-white" name="button">Join the Forum</button>
+            <button type="button" class="btn btn-success btn-block text-white" name="button"><a href="Login.php" style="text-decoration:none;color:#ffffff">Log In</a></button>
             <br>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" name="" placeholder="Enter your email" value="">
+                <input type="text" class="form-control"style="margin-top: 0.5rem" name="" placeholder="Enter your email" value="">
                 <div class="input-group-append">
-                    <button type="button" class="btn btn-primary btn-sm text-center text-white" name="button">Subscribe Now</button>
+                    <button type="button" class="btn btn-primary btn-sm text-white" name="button"style = "margin-top: 0.5rem">Subscribe Now</button>
                 </div>
             </div>
         </div>
