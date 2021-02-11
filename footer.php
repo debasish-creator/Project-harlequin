@@ -23,12 +23,12 @@
     </div>
     <br>
     <div class="card">
-        <div class="card-header bg-dark text-light">
+        <div class="card-header text-light" style = "background-color:#280038">
             <h2 class="lead">Sign Up</h2>
         </div>
         <div class="card-body">
-            <button type="button" class="btn btn-success btn-block text-center text-white" name="button">Join the Forum</button>
-            <button type="button" class="btn btn-danger btn-block text-center text-white" name="button"><a href="Login.php">Log In</a></button>
+            <button type="button" class="btn btn-primary btn-block text-center text-white" name="button">Join the Forum</button>
+            <button type="button" class="btn btn-success btn-block text-center text-white margin" name="button"><a href="Login.php" style="text-decoration:none;color:#ffffff">Log In</a></button>
             <br>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" name="" placeholder="Enter your email" value="">
@@ -40,7 +40,7 @@
     </div>
     <br>
     <div class="card">
-        <div class="card-header bg-primary text-light">
+        <div class="card-header text-light" style = "background-color:#280038">
             <h2 class="lead">Categories</h2>
         </div>
         <div class="card-body">
@@ -58,7 +58,7 @@
     </div>
     <br>
     <div class="card">
-        <div class="card-header bg-info text-white">
+        <div class="card-header text-white" style = "background-color:#280038">
             <h2 class="lead"> Recent Posts</h2>
         </div>
         <div class="card-body">
