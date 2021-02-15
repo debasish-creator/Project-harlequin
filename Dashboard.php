@@ -99,8 +99,8 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
 
                <!-- left side starts-->
             <div class="col-lg-2 d-none d-md-block">
-                      <div class="card text-center bg-dark text-white mb-3">
-                         <div class="card-body">
+                      <div class="card text-center text-white mb-3" style="background-color: #1B0039;">
+                         <div class="card-body" >
                               <h1 class="lead">Posts</h1>
                               <h4 class="display-5">
                                     <i class="fab fa-readme"></i>
