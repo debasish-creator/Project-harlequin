@@ -11,7 +11,16 @@ if(isset($_POST["Submit"])){
     $Image = $_FILES["Image"]["name"];
     $Target = "Uploads/".basename($_FILES["Image"]["name"]);
     $PostText = $_POST["PostDescription"];
-    $Admin =  $_SESSION["Username"];
+    //    2nd content
+    $Image2 = $_FILES["Image2"]["name"];
+    $Target2 = "Uploads/".basename($_FILES["Image2"]["name"]);
+    $PostText2 = $_POST["PostDescription2"];
+    // 3 rd content
+    $Image3 = $_FILES["Image3"]["name"];
+    $Target3 = "Uploads/".basename($_FILES["Image3"]["name"]);
+    $PostText3 = $_POST["PostDescription3"];
+    //---end
+    $Admin = $_SESSION["UserName"];
     date_default_timezone_set("Asia/Kolkata");
     $CurrentTime=time();
     $DateTime=strftime("%B-%d-%Y %H: %M: %S",$CurrentTime);
@@ -24,20 +33,29 @@ if(isset($_POST["Submit"])){
         $_SESSION["ErrorMessage"] = "Post title should be greater than 5 character";
         Redirect_to("Posts.php");
     }elseif (strlen($PostText)>9999) {
-        $_SESSION["ErrorMessage"] = "Post description should be less than 10000 character";
+        $_SESSION["ErrorMessage"] = "Post content should be less than 10000 character";
+        Redirect_to("Posts.php");
+    }elseif (strlen($PostText2)>9999) {
+        $_SESSION["ErrorMessage"] = "Content 2 description should be less than 10000 character";
+        Redirect_to("Posts.php");
+    }elseif (strlen($PostText3)>9999) {
+        $_SESSION["ErrorMessage"] = "Content 3 description should be less than 10000 character";
         Redirect_to("Posts.php");
     }else{
         //Query to update post in database when everything is good
         global $ConnectingDB;
-        if(!empty($_FILES["Image"]["name"])){
-            $sql = "UPDATE posts SET title='$PostTitle', category='$Category', image='$Image', post='$PostText' 
+        if(!empty($_FILES["Image"]["name"]) && !empty($_FILES["Image2"]["name"]) && !empty($_FILES["Image3"]["name"])){
+            $sql = "UPDATE posts SET title='$PostTitle', category='$Category', image='$Image', post='$PostText', image2='$Image2', post2='$PostText2', image3='$Image3', post3='$PostText3' 
         WHERE id='$SearchQueryParameter'";
         }else{
-            $sql = "UPDATE posts SET title='$PostTitle', category='$Category', post='$PostText' 
+            $sql = "UPDATE posts SET title='$PostTitle', category='$Category', post='$PostText', post2='$PostText2', post3='$PostText3'
         WHERE id='$SearchQueryParameter'";
         }
-        $Execute =$ConnectingDB->query($sql);
+        $Execute = $ConnectingDB->query($sql);
+
         move_uploaded_file($_FILES["Image"]["tmp_name"],$Target);
+        move_uploaded_file($_FILES["Image2"]["tmp_name"],$Target2);
+        move_uploaded_file($_FILES["Image3"]["tmp_name"],$Target3);
 
         if($Execute){
             $_SESSION["SuccessMessage"]="post  updated Successfully";
@@ -126,8 +144,8 @@ if(isset($_POST["Submit"])){
             <?php
             echo ErrorMessage();
             echo SuccessMessage();
-//            taking existing contents from post
-            $ConnectingDB;
+            //            taking existing contents from post
+            global $ConnectingDB;
             $sql = "SELECT * FROM posts WHERE id='$SearchQueryParameter'";
             $stmt = $ConnectingDB ->query($sql);
             while ($DataRows=$stmt->fetch()){
@@ -135,6 +153,12 @@ if(isset($_POST["Submit"])){
                 $CategoryToBeUpdated = $DataRows['category'];
                 $ImageToBeUpdated = $DataRows['image'];
                 $PostToBeUpdated = $DataRows['post'];
+                //
+                $ImageToBeUpdated2 = $DataRows['image2'];
+                $PostToBeUpdated2 = $DataRows['post2'];
+                //
+                $ImageToBeUpdated3 = $DataRows['image3'];
+                $PostToBeUpdated3 = $DataRows['post3'];
             }
             ?>
             <form class="" action="EditPost.php?id=<?php echo $SearchQueryParameter;?>" method="post" enctype="multipart/form-data">
@@ -163,19 +187,52 @@ if(isset($_POST["Submit"])){
                                 <?php } ?>
                             </select>
                         </div>
+                        <!--primary content-->
                         <div class="form-group">
-                            <span class="fieldinfo">Existing Image: </span>
-                            <img class="mb-2"src="uploads/<?php echo $ImageToBeUpdated; ?>" width="170px"; height="70px";>
+                            <span class="fieldinfo">Existing Image1: </span>
+                            <img class="mb-2" src="uploads/<?php echo $ImageToBeUpdated; ?>" width="170px" alt="image" ; height="70px" ; alt="image">
 
                             <div class="custom-file">
-                                <input class="custom-file-input"type="file" name="Image" id="imageselect" value="">
-                                <label for="imageselect" class="custom-file-label">Select Image </label>
+                                <input class="custom-file-input" type="file" name="Image" id="imageselect" value="">
+                                <label for="imageselect" class="custom-file-label">Select Image 1</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Post"><span class="fieldinfo">Post :</span></label>
+                            <label for="Post"><span class="fieldinfo">Content 1 :</span></label>
                             <textarea class="form-control" name="PostDescription" cols="80" rows="8" id="Post">
                                 <?php echo $PostToBeUpdated; ?>
+                            </textarea>
+                        </div>
+                        <!--secondary content-->
+                        <div class="form-group">
+                            <span class="fieldinfo">Existing Image2: </span>
+                            <img class="mb-2" src="uploads/<?php echo $ImageToBeUpdated2; ?>" width="170px" ; height="70px" ;alt="image">
+
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" name="Image2" id="imageselect2" value="">
+                                <label for="imageselect2" class="custom-file-label">Select Image 2</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Post"><span class="fieldinfo">Content 2:</span></label>
+                            <textarea class="form-control" name="PostDescription2" cols="80" rows="8" id="Post2">
+                                <?php echo $PostToBeUpdated2; ?>
+                            </textarea>
+                        </div>
+                        <!--tertiary content-->
+                        <div class="form-group">
+                            <span class="fieldinfo">Existing Image3: </span>
+                            <img class="mb-2" src="uploads/<?php echo $ImageToBeUpdated3; ?>" width="170px" ; height="70px" ; alt="image">
+
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" name="Image3" id="imageselect3" value="">
+                                <label for="imageselect3" class="custom-file-label">Select Image 3</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Post"><span class="fieldinfo">Content 3 :</span></label>
+                            <textarea class="form-control" name="PostDescription3" cols="80" rows="8" id="Post3">
+                                <?php echo $PostToBeUpdated3; ?>
                             </textarea>
                         </div>
                         <div class="row">
