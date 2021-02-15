@@ -39,7 +39,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                     <a href="Posts.php" class="nav-link" style= "color:white ; font-weight: bolder;">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Categories.php" class="nav-link"style= "color:white ; font-weight: bolder;">Categories</a>
+                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;">Categories</a>
                 </li>
 
                 <li class="nav-item">
