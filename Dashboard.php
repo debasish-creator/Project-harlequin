@@ -66,7 +66,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1> <i class="fas fa-cog" style="color: #27aae1;"></i> Dashboard</h1>
+                <h1> <i  class="fa fa-dashboard" style="color:rgb(252, 255, 254) ; padding-right:40px; "></i> Dashboard</h1>
             </div>
             <div class="col-lg-3 mb-2">
                 <a href="Addnewpost.php" class="btn btn-primary btn-block">
@@ -98,64 +98,90 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     <div class="row">
 
                <!-- left side starts-->
-            <div class="col-lg-2 d-none d-md-block">
-                      <div class="card text-center bg-dark text-white mb-3">
-                         <div class="card-body">
-                              <h1 class="lead">Posts</h1>
-                              <h4 class="display-5">
-                                    <i class="fab fa-readme"></i>
-                                    <?php
-                                     TotalPosts();
-                                    ?>
-                              </h4>
-                         </div>
-                     </div>
+        <div class="col-lg-2 d-none d-md-block" >
+                    
 
-                     <div class="card text-center bg-dark text-white mb-3">
-                         <div class="card-body">
-                              <h1 class="lead">Categories</h1>
-                              <h4 class="display-5">
-                                 <i class="fab fa-folder"></i>
-                                  <?php
-                                  TotalCategories();
-                                  ?>
-                             </h4>
-                        </div>
-                    </div>
+<div class="flip-card"   >
+  <div class="flip-card-inner"  >
+    <div class="flip-card-front" style="padding-top:20px;">
+      <h1 class="lead" style="font-weight:bold;" >Posts</h1>
+      <h4 class="display-5">    
+    <i class="fab fa-readme"></i> </h4> 
+    </div>
+    <div class="flip-card-back">
+    <h4 class="display-5" style="padding-top:30px;">    
+        <?php 
+        TotalPosts();
+        ?>
+        </h4>
+    </div>
+  </div>
+</div>
 
-                    <div class="card text-center bg-dark text-white mb-3">
-                        <div class="card-body">
-                            <h1 class="lead">Admins</h1>
-                            <h4 class="display-5">
-                               <i class="fas fa-user"></i>
-                                <?php
-                                TotalAdmins();
-                                ?>
-                            </h4>
-                       </div>
-                    </div>
 
-                    <div class="card text-center bg-dark text-white mb-3">
-                        <div class="card-body">
-                            <h1 class="lead">Comments</h1>
-                            <h4 class="display-5">
-                                <i class="fas fa-comments"></i>
-                                <?php
-                                TotalComments();
-                                ?>
-                            </h4>
-                        </div>
-                    </div>
+<div class="flip-card"   style="margin-top:10px;" >
+  <div class="flip-card-inner"  >
+    <div class="flip-card-front" style="padding-top:20px;">
+      <h1 class="lead" style="font-weight:bold;" >Categories</h1>
+      <h4 class="display-5">    
+    <i class="fa fa-list" style="padding-top:1px; padding-left:0px;" ></i> </h4> 
+    </div>
+    <div class="flip-card-back">
+    <h4 class="display-5" style="padding-top:30px;">    
+        <?php 
+         TotalCategories();
+        ?>
+        </h4>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card"   style="margin-top:10px; " >
+  <div class="flip-card-inner"  >
+    <div class="flip-card-front" style="padding-top:20px;">
+      <h1 class="lead" style="font-weight:bold;" >Admins</h1>
+      <h4 class="display-5">    
+    <i class="fas fa-users"></i> </h4> 
+    </div>
+    <div class="flip-card-back">
+    <h4 class="display-5" style="padding-top:30px;">    
+        <?php 
+         TotalAdmins();
+        ?>
+        </h4>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card"   style="margin-top:10px; " >
+  <div class="flip-card-inner"  >
+    <div class="flip-card-front" style="padding-top:20px;">
+      <h1 class="lead" style="font-weight:bold;" >Comments</h1>
+      <h4 class="display-5">    
+    <i class="fas fa-comments"></i> </h4> 
+    </div>
+    <div class="flip-card-back">
+    <h4 class="display-5" style="padding-top:30px;">    
+        <?php 
+         TotalComments();
+        ?>
+        </h4>
+    </div>
+  </div>
+</div>
+
+
             </div>
               <!--left-side ends-->
 
               <!--right area starts-->
-            <div class="col-lg-10">
+            <div class="col-lg-10" style="padding-left:40px;">
                 <?php
                 echo ErrorMessage();
                 echo SuccessMessage();
                 ?>
-            <h1>Top Posts</h1>
+            <h1 style="padding-bottom :15px;">Top Posts</h1>
                 <div class="table-responsive">
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
