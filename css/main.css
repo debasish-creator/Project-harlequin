@@ -109,7 +109,8 @@ html, body {
 
 
   .styled-table{
-    box-shadow: 8px 8px 5px #a89bc7;
+    box-shadow: 8px 8px 10px #a89bc7;
+    margin-left: -60px;
   }
 
   .styled-table thead tr {
@@ -117,7 +118,27 @@ html, body {
     color: #ffffff;
     text-align: left;
 }
-.styled-table th,
+.styled-table th{
+    padding: 12px 15px;
+}
+thead tr th{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+tbody tr td:nth-child(2){
+    position: sticky;
+    left: 0;
+    z-index: 6;
+    background-color: whitesmoke;
+}
+thead tr th:nth-child(2){
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    background-color: #190053;
+}
+
 .styled-table td {
     padding: 12px 15px;
 }
@@ -129,7 +150,28 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
   }
 
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #190053;
+@media only screen and (max-width: 600px){
+    .styled-table{
+        box-shadow: 8px 8px 5px #a89bc7;
+        margin-left: -60px;
+    }
+}
+@media only screen and (min-width: 600px){
+    .styled-table{
+        box-shadow: 8px 8px 5px #a89bc7;
+        margin-left: -30px;
+    }
+}
+@media only screen and (min-width: 992px){
+    .styled-table{
+        box-shadow: 8px 8px 5px #a89bc7;
+        margin-left: -10px;
+    }
 }
 
+/*testing for comments.php*/
+.custom-thead thead tr {
+    background-color: #190053;
+    color: #ffffff;
+    text-align: left;
+}

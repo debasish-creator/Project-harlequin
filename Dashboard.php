@@ -98,29 +98,24 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     <div class="row">
 
                <!-- left side starts-->
-
-        <div class="col-lg-2 d-none d-md-block" >
-                    
-
-<div class="flip-card"   >
-  <div class="flip-card-inner"  >
-    <div class="flip-card-front" style="padding-top:20px;">
-      <h1 class="lead" style="font-weight:bold;" >Posts</h1>
-      <h4 class="display-5">    
-    <i class="fab fa-readme"></i> </h4> 
-    </div>
-    <div class="flip-card-back">
-    <h4 class="display-5" style="padding-top:30px;">    
-        <?php 
-        TotalPosts();
-        ?>
-        </h4>
-    </div>
-  </div>
-</div>
-
-
-<div class="flip-card"   style="margin-top:10px;" >
+               <div class="col-lg-2 d-none d-md-block" >
+                   <div class="flip-card">
+                       <div class="flip-card-inner">
+                           <div class="flip-card-front" style="padding-top:20px;">
+                               <h1 class="lead" style="font-weight:bold;" >Posts</h1>
+                               <h4 class="display-5">
+                                   <i class="fab fa-readme"></i> </h4>
+                           </div>
+                           <div class="flip-card-back">
+                               <h4 class="display-5" style="padding-top:30px;">
+                                   <?php
+                                   TotalPosts();
+                                   ?>
+                               </h4>
+                           </div>
+                       </div>
+                   </div>
+                  <div class="flip-card"   style="margin-top:10px;" >
   <div class="flip-card-inner"  >
     <div class="flip-card-front" style="padding-top:20px;">
       <h1 class="lead" style="font-weight:bold;" >Categories</h1>
@@ -136,8 +131,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     </div>
   </div>
 </div>
-
-<div class="flip-card"   style="margin-top:10px; " >
+                  <div class="flip-card"   style="margin-top:10px; " >
   <div class="flip-card-inner"  >
     <div class="flip-card-front" style="padding-top:20px;">
       <h1 class="lead" style="font-weight:bold;" >Admins</h1>
@@ -153,52 +147,48 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     </div>
   </div>
 </div>
-
-
-<div class="flip-card"   style="margin-top:10px; " >
-  <div class="flip-card-inner"  >
-    <div class="flip-card-front" style="padding-top:20px;">
-      <h1 class="lead" style="font-weight:bold;" >Comments</h1>
-      <h4 class="display-5">    
-    <i class="fas fa-comments"></i> </h4> 
-    </div>
-    <div class="flip-card-back">
-    <h4 class="display-5" style="padding-top:30px;">    
-        <?php 
-         TotalComments();
-        ?>
+                  <div class="flip-card"   style="margin-top:10px; " >
+   <div class="flip-card-inner"  >
+      <div class="flip-card-front" style="padding-top:20px;">
+             <h1 class="lead" style="font-weight:bold;" >Comments</h1>
+             <h4 class="display-5">
+             <i class="fas fa-comments"></i> </h4>
+      </div>
+      <div class="flip-card-back">
+         <h4 class="display-5" style="padding-top:30px;">
+           <?php
+            TotalComments();
+            ?>
         </h4>
-    </div>
+     </div>
   </div>
 </div>
+               </div>
+            <!--left-side ends-->
 
-
-
-            </div>
-              <!--left-side ends-->
-
-              <!--right area starts-->
+            <!--right area starts-->
             <div class="col-lg-10" style="padding-left:70px;">
                 <?php
                 echo ErrorMessage();
                 echo SuccessMessage();
                 ?>
             <h1 style="padding-bottom :15px;">Top Posts</h1>
+            <div class="table-responsive">
             <table class="styled-table">
-    <thead>
-        <tr>
-            <th>No.</th>
-            <th>Title</th>
-            <th>Date&Time</th>
-            <th>Author</th>
-            <th>Comments</th>
-            <th>Details</th>
-        </tr>
-    </thead>
+            <thead>
+               <tr>
+                  <th>No.</th>
+                  <th>Title</th>
+                  <th>Date&Time</th>
+                  <th>Author</th>
+                  <th>Comments</th>
+                  <th>Details</th>
+               </tr>
+           </thead>
     <?php
                     $SrNo = 0;
                     global $ConnectingDB;
-                    $sql="SELECT * FROM posts ORDER BY id desc LIMIT 0,5";
+                    $sql="SELECT * FROM posts ORDER BY id desc LIMIT 0,7";
                     $stmt=$ConnectingDB->query($sql);
                     while($DataRows=$stmt->fetch()){
                         $PostId = $DataRows["id"];
@@ -241,6 +231,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     </tbody>
     <?php } ?>
 </table>
+            </div>
 </div>
     </div>
 </section>

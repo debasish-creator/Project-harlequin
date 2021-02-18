@@ -100,8 +100,8 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
             echo SuccessMessage();
             ?>
             <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="thead-dark">
+            <table class="styled-table" style="margin-left: 160px; max-height: 5em;">
+                <thead class="">
                 <tr>
                     <th>#</th>
                     <th>Title</th>
