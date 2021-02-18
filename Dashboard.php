@@ -178,25 +178,24 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
               <!--left-side ends-->
 
               <!--right area starts-->
-            <div class="col-lg-10" style="padding-left:40px;">
+            <div class="col-lg-10" style="padding-left:70px;">
                 <?php
                 echo ErrorMessage();
                 echo SuccessMessage();
                 ?>
             <h1 style="padding-bottom :15px;">Top Posts</h1>
-                <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th>No.</th>
-                        <th>Title</th>
-                        <th>Date&Time</th>
-                        <th>Author</th>
-                        <th>Comments</th>
-                        <th>Details</th>
-                    </tr>
-                    </thead>
-                    <?php
+            <table class="styled-table">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Date&Time</th>
+            <th>Author</th>
+            <th>Comments</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <?php
                     $SrNo = 0;
                     global $ConnectingDB;
                     $sql="SELECT * FROM posts ORDER BY id desc LIMIT 0,5";
@@ -207,9 +206,9 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                         $Author = $DataRows["author"];
                         $Title =  $DataRows["title"];
                         $SrNo++;
-                    ?>
-                    <tbody>
-                    <tr>
+                    ?>    
+    <tbody>
+    <tr>
                         <td><?php echo $SrNo;?></td>
                         <td><?php echo $Title;?></td>
                         <td><?php echo $DateTime;?></td>
@@ -236,13 +235,13 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                                 <?php } ?>
                                 </span>
                         </td>
-                        <td><a href="FullPost.php?id=<?php echo $PostId; ?>" target="_blank"  </a><span class="btn btn-info">Preview</span></td>
+                        <td><a href="FullPost.php?id=<?php echo $PostId; ?>" target="_blank" > </a> <span class="btn" style="background-color: #190053; color:white">Preview</span></td>
                     </tr>
-                    </tbody>
-                    <?php } ?>
-                </table>
-                </div>
-            </div>
+
+    </tbody>
+    <?php } ?>
+</table>
+</div>
     </div>
 </section>
 <!--MAIN AREA-->
