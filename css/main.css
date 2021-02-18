@@ -106,3 +106,30 @@ html, body {
     color: white;
     transform: rotateY(180deg);
   }
+
+
+  .styled-table{
+    box-shadow: 8px 8px 5px #a89bc7;
+  }
+
+  .styled-table thead tr {
+    background-color: #190053;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #190053;
+}
+
