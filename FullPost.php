@@ -151,6 +151,12 @@ if(isset($_POST["Submit"])) {
                 $Admin = $DataRows["author"];
                 $Image = $DataRows["image"];
                 $PostDescription = $DataRows["post"];
+                //
+                $Image2 = $DataRows["image2"];
+                $PostDescription2 = $DataRows["post2"];
+                //
+                $Image3 = $DataRows["image3"];
+                $PostDescription3 = $DataRows["post3"];
 
                 ?>
                 <div class="card">
@@ -158,78 +164,84 @@ if(isset($_POST["Submit"])) {
                     <div class="card-body">
                         <h4 class="card-title"><?php echo htmlentities($PostTitle)?></h4>
                         <small class="text-muted">Written by <?php echo htmlentities($Admin);?> on <?php echo htmlentities($DateTime); ?></small>
-
                         <hr>
                         <p class="card-text">
                             <?php  echo nl2br($PostDescription) ?>
                         </p>
-
+                        <img src="Uploads/<?php echo htmlentities($Image2); ?>" style="max-height: 500px;" class="img-fluid card-img-top"/>
+                        <p class="card-text">
+                            <?php  echo nl2br($PostDescription2) ?>
+                        </p>
+                        <img src="Uploads/<?php echo htmlentities($Image3); ?>" style="max-height: 500px;" class="img-fluid card-img-top"/>
+                        <p class="card-text">
+                            <?php  echo nl2br($PostDescription3) ?>
+                        </p>
                     </div>
                 </div>
 
             <?php } ?>
             <br>
             <br>
-                   <!--starting of comment part.-->
-                       <!--fetching existing comments from database-->
-                       <span class="fieldinfo">Comments</span>
-                       <br><br>
-                       <?php
-                       global $ConnectingDB;
-                       $sql ="SELECT * FROM comments WHERE post_id='$SearchQueryParameter' AND status='ON'";
-                       $stmt =$ConnectingDB->query($sql);
-                       while ($DataRows = $stmt->fetch()){
-                           $CommentDate = $DataRows['datetime'];
-                           $CommenterName = $DataRows['name'];
-                           $CommentContent = $DataRows['comment'];
+            <!--starting of comment part.-->
+            <!--fetching existing comments from database-->
+            <span class="fieldinfo">Comments</span>
+            <br><br>
+            <?php
+            global $ConnectingDB;
+            $sql ="SELECT * FROM comments WHERE post_id='$SearchQueryParameter' AND status='ON'";
+            $stmt =$ConnectingDB->query($sql);
+            while ($DataRows = $stmt->fetch()){
+                $CommentDate = $DataRows['datetime'];
+                $CommenterName = $DataRows['name'];
+                $CommentContent = $DataRows['comment'];
 
-                       ?>
-            <div>
-                <div class="media CommentBackground">
-                    <img class="d-block img-fluid align-self-center" src="images/comment.png" alt="">
-                    <div class="media-body ml-2 ">
-                        <h6 class="lead"><?php echo $CommenterName; ?></h6>
-                        <p class="small"><?php echo $CommentDate; ?></p>
-                        <p><?php echo $CommentContent; ?></p>
+                ?>
+                <div>
+                    <div class="media CommentBackground">
+                        <img class="d-block img-fluid align-self-center" src="images/comment.png" alt="">
+                        <div class="media-body ml-2 ">
+                            <h6 class="lead"><?php echo $CommenterName; ?></h6>
+                            <p class="small"><?php echo $CommentDate; ?></p>
+                            <p><?php echo $CommentContent; ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-                            <hr>
+                <hr>
             <?php } ?>
-                       <!--ends of fetching commenting parts-->
+            <!--ends of fetching commenting parts-->
 
             <div >
-               <form class="" action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
-                   <div class="card mb-3">
-                       <div class="card-header">
-                           <h5 class="Fieldinfo">Want to share something with this post we are here for you</h5>
-                       </div>
-                       <div class="card-body">
-                           <div class="form-group">
-                               <div class="input-group">
-                                   <div class="input-group-prepend">
-                                       <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                   </div>
-                                   <input class="form-control" type="text" name="CommenterName" placeholder="want your name" value="">
-                               </div>
-                           </div>
-                           <div class="form-group">
-                               <div class="input-group">
-                                   <div class="input-group-prepend">
-                                       <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                   </div>
-                                   <input class="form-control" type="email" name="CommenterEmail" placeholder="want your Email" value="">
-                               </div>
-                           </div>
-                           <div class="form-group">
-                               <textarea name="CommenterThoughts" class="form-control" cols="800" rows="6"></textarea>
-                           </div>
-                           <div class="">
-                               <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
-                           </div>
-                       </div>
-                   </div>
-               </form>
+                <form class="" action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h5 class="Fieldinfo">Want to share something with this post we are here for you</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="CommenterName" placeholder="want your name" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    </div>
+                                    <input class="form-control" type="email" name="CommenterEmail" placeholder="want your Email" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="CommenterThoughts" class="form-control" cols="800" rows="6"></textarea>
+                            </div>
+                            <div class="">
+                                <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <?php require_once ("footer.php");?>

@@ -39,7 +39,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                     <a href="Posts.php" class="nav-link" style= "color:white ; font-weight: bolder;">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Categories.php" class="nav-link"style= "color:white ; font-weight: bolder;">Categories</a>
+                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;">Categories</a>
                 </li>
 
                 <li class="nav-item">
@@ -66,7 +66,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1> <i class="fas fa-cog" style="color: #27aae1;"></i> Dashboard</h1>
+                <h1> <i  class="fa fa-dashboard" style="color:rgb(252, 255, 254) ; padding-right:40px; "></i> Dashboard</h1>
             </div>
             <div class="col-lg-3 mb-2">
                 <a href="Addnewpost.php" class="btn btn-primary btn-block">
@@ -98,80 +98,97 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
     <div class="row">
 
                <!-- left side starts-->
-            <div class="col-lg-2 d-none d-md-block">
-                      <div class="card text-center bg-dark text-white mb-3">
-                         <div class="card-body">
-                              <h1 class="lead">Posts</h1>
-                              <h4 class="display-5">
-                                    <i class="fab fa-readme"></i>
-                                    <?php
-                                     TotalPosts();
-                                    ?>
-                              </h4>
-                         </div>
-                     </div>
-
-                     <div class="card text-center bg-dark text-white mb-3">
-                         <div class="card-body">
-                              <h1 class="lead">Categories</h1>
-                              <h4 class="display-5">
-                                 <i class="fab fa-folder"></i>
-                                  <?php
-                                  TotalCategories();
-                                  ?>
-                             </h4>
-                        </div>
-                    </div>
-
-                    <div class="card text-center bg-dark text-white mb-3">
-                        <div class="card-body">
-                            <h1 class="lead">Admins</h1>
-                            <h4 class="display-5">
-                               <i class="fas fa-user"></i>
-                                <?php
-                                TotalAdmins();
-                                ?>
-                            </h4>
+               <div class="col-lg-2 d-none d-md-block" >
+                   <div class="flip-card">
+                       <div class="flip-card-inner">
+                           <div class="flip-card-front" style="padding-top:20px;">
+                               <h1 class="lead" style="font-weight:bold;" >Posts</h1>
+                               <h4 class="display-5">
+                                   <i class="fab fa-readme"></i> </h4>
+                           </div>
+                           <div class="flip-card-back">
+                               <h4 class="display-5" style="padding-top:30px;">
+                                   <?php
+                                   TotalPosts();
+                                   ?>
+                               </h4>
+                           </div>
                        </div>
-                    </div>
+                   </div>
+                  <div class="flip-card"   style="margin-top:10px;" >
+  <div class="flip-card-inner"  >
+    <div class="flip-card-front" style="padding-top:20px;">
+      <h1 class="lead" style="font-weight:bold;" >Categories</h1>
+      <h4 class="display-5">    
+    <i class="fa fa-list" style="padding-top:1px; padding-left:0px;" ></i> </h4> 
+    </div>
+    <div class="flip-card-back">
+    <h4 class="display-5" style="padding-top:30px;">    
+        <?php 
+         TotalCategories();
+        ?>
+        </h4>
+    </div>
+  </div>
+</div>
+                  <div class="flip-card"   style="margin-top:10px; " >
+  <div class="flip-card-inner"  >
+    <div class="flip-card-front" style="padding-top:20px;">
+      <h1 class="lead" style="font-weight:bold;" >Admins</h1>
+      <h4 class="display-5">    
+    <i class="fas fa-users"></i> </h4> 
+    </div>
+    <div class="flip-card-back">
+    <h4 class="display-5" style="padding-top:30px;">    
+        <?php 
+         TotalAdmins();
+        ?>
+        </h4>
+    </div>
+  </div>
+</div>
+                  <div class="flip-card"   style="margin-top:10px; " >
+   <div class="flip-card-inner"  >
+      <div class="flip-card-front" style="padding-top:20px;">
+             <h1 class="lead" style="font-weight:bold;" >Comments</h1>
+             <h4 class="display-5">
+             <i class="fas fa-comments"></i> </h4>
+      </div>
+      <div class="flip-card-back">
+         <h4 class="display-5" style="padding-top:30px;">
+           <?php
+            TotalComments();
+            ?>
+        </h4>
+     </div>
+  </div>
+</div>
+               </div>
+            <!--left-side ends-->
 
-                    <div class="card text-center bg-dark text-white mb-3">
-                        <div class="card-body">
-                            <h1 class="lead">Comments</h1>
-                            <h4 class="display-5">
-                                <i class="fas fa-comments"></i>
-                                <?php
-                                TotalComments();
-                                ?>
-                            </h4>
-                        </div>
-                    </div>
-            </div>
-              <!--left-side ends-->
-
-              <!--right area starts-->
-            <div class="col-lg-10">
+            <!--right area starts-->
+            <div class="col-lg-10" style="padding-left:70px;">
                 <?php
                 echo ErrorMessage();
                 echo SuccessMessage();
                 ?>
-            <h1>Top Posts</h1>
-                <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th>No.</th>
-                        <th>Title</th>
-                        <th>Date&Time</th>
-                        <th>Author</th>
-                        <th>Comments</th>
-                        <th>Details</th>
-                    </tr>
-                    </thead>
-                    <?php
+            <h1 style="padding-bottom :15px;">Top Posts</h1>
+            <div class="table-responsive">
+            <table class="styled-table">
+            <thead>
+               <tr>
+                  <th>No.</th>
+                  <th>Title</th>
+                  <th>Date&Time</th>
+                  <th>Author</th>
+                  <th>Comments</th>
+                  <th>Details</th>
+               </tr>
+           </thead>
+    <?php
                     $SrNo = 0;
                     global $ConnectingDB;
-                    $sql="SELECT * FROM posts ORDER BY id desc LIMIT 0,5";
+                    $sql="SELECT * FROM posts ORDER BY id desc LIMIT 0,7";
                     $stmt=$ConnectingDB->query($sql);
                     while($DataRows=$stmt->fetch()){
                         $PostId = $DataRows["id"];
@@ -179,9 +196,9 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                         $Author = $DataRows["author"];
                         $Title =  $DataRows["title"];
                         $SrNo++;
-                    ?>
-                    <tbody>
-                    <tr>
+                    ?>    
+    <tbody>
+    <tr>
                         <td><?php echo $SrNo;?></td>
                         <td><?php echo $Title;?></td>
                         <td><?php echo $DateTime;?></td>
@@ -208,13 +225,14 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                                 <?php } ?>
                                 </span>
                         </td>
-                        <td><a href="FullPost.php?id=<?php echo $PostId; ?>" target="_blank"  </a><span class="btn btn-info">Preview</span></td>
+                        <td><a href="FullPost.php?id=<?php echo $PostId; ?>" target="_blank" > </a> <span class="btn" style="background-color: #190053; color:white">Preview</span></td>
                     </tr>
-                    </tbody>
-                    <?php } ?>
-                </table>
-                </div>
+
+    </tbody>
+    <?php } ?>
+</table>
             </div>
+</div>
     </div>
 </section>
 <!--MAIN AREA-->

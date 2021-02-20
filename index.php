@@ -86,9 +86,9 @@
                 if($Page==0||$Page<1){
                     $ShowPostFrom=0;
                 }else {
-                    $ShowPostFrom = ($Page * 5) - 5;
+                    $ShowPostFrom = ($Page * 6) - 6;
                 }
-                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT $ShowPostFrom,5";
+                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT $ShowPostFrom,6";
                 $stmt = $ConnectingDB->query($sql);
             }
 //            query when category is active in URL tab
@@ -99,7 +99,7 @@
             }
               //the default SQL query
             else{
-                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,4";
+                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,6";
                 $stmt = $ConnectingDB->query($sql);
             }
             while ($DataRows = $stmt->fetch()){
@@ -132,9 +132,9 @@
                   </div>
                 </div>
             <?php } ?>
-
+            <br><br><br><br>
             <!--pagination-->
-             <nav>
+             <nav style="float: left;">
                  <ul class="pagination pagination-lg">
 <!--                     backward button-->
                      <?php
@@ -153,7 +153,7 @@
                       $RowPagination=$stmt->fetch();
                       $TotalPosts=array_shift($RowPagination);
                                //echo $TotalPosts."<br>";
-                      $PostPagination=$TotalPosts/5;
+                      $PostPagination=$TotalPosts/6;
                       $PostPagination=ceil($PostPagination);
                               // echo $PostPagination;
                        for ($i=1; $i<=$PostPagination ; $i++){

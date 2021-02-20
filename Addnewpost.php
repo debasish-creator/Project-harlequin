@@ -11,6 +11,15 @@ if(isset($_POST["Submit"])){
     $Image = $_FILES["Image"]["name"];
     $Target = "Uploads/".basename($_FILES["Image"]["name"]);
     $PostText = $_POST["PostDescription"];
+    //    2nd content
+    $Image2 = $_FILES["Image2"]["name"];
+    $Target2 = "Uploads/".basename($_FILES["Image2"]["name"]);
+    $PostText2 = $_POST["PostDescription2"];
+    // 3 rd content
+    $Image3 = $_FILES["Image3"]["name"];
+    $Target3 = "Uploads/".basename($_FILES["Image3"]["name"]);
+    $PostText3 = $_POST["PostDescription3"];
+    //---end
     $Admin = $_SESSION["UserName"];
     date_default_timezone_set("Asia/Kolkata");
     $CurrentTime=time();
@@ -24,12 +33,18 @@ if(isset($_POST["Submit"])){
         $_SESSION["ErrorMessage"] = "Post title should be greater than 5 character";
         Redirect_to("Addnewpost.php");
     }elseif (strlen($PostText)>9999) {
-        $_SESSION["ErrorMessage"] = "Post description should be less than 1000 character";
+        $_SESSION["ErrorMessage"] = "Primary content of post should be less than 1000 character";
+        Redirect_to("Addnewpost.php");
+    }elseif (strlen($PostText2)>9999) {
+        $_SESSION["ErrorMessage"] = "secondary content should be less than 1000 character";
+        Redirect_to("Addnewpost.php");
+    }elseif (strlen($PostText3)>9999) {
+        $_SESSION["ErrorMessage"] = "Tertiary content should be less than 1000 character";
         Redirect_to("Addnewpost.php");
     }else{
         //Query to insert post in database when everything is good
         global $ConnectingDB;
-        $sql = "INSERT INTO posts(datetime,title,category,author,image,post)VALUES(:dateTime,:postTitle,:categoryName,:adminName,:imageName,:postDescription)";
+        $sql = "INSERT INTO posts(datetime,title,category,author,image,post,image2,post2,image3,post3)VALUES(:dateTime,:postTitle,:categoryName,:adminName,:imageName,:postDescription,:imageName2,:postDescription2,:imageName3,:postDescription3)";
         $stmt = $ConnectingDB->prepare($sql);
 
         //binding the values
@@ -39,10 +54,18 @@ if(isset($_POST["Submit"])){
         $stmt->bindValue(':adminName',$Admin);
         $stmt->bindValue(':imageName',$Image);
         $stmt->bindValue(':postDescription',$PostText);
+        //
+        $stmt->bindValue(':imageName2',$Image2);
+        $stmt->bindValue(':postDescription2',$PostText2);
+        //
+        $stmt->bindValue(':imageName3',$Image3);
+        $stmt->bindValue(':postDescription3',$PostText3);
 
 
         $Execute=$stmt->execute();
         move_uploaded_file($_FILES["Image"]["tmp_name"],$Target);
+        move_uploaded_file($_FILES["Image2"]["tmp_name"],$Target2);
+        move_uploaded_file($_FILES["Image3"]["tmp_name"],$Target3);
 
         if($Execute){
             $_SESSION["SuccessMessage"]="post with id : ".$ConnectingDB->lastInsertId() ." Added Successfully";
@@ -144,7 +167,7 @@ if(isset($_POST["Submit"])){
                             <label for="CategoryTitle"><span class="fieldinfo">Choose Category :</span></label>
                             <select class="form-control" id="CategoryTitle" name="Category">
                                 <?php
-                                    // fetching all the category from category table
+                                // fetching all the category from category table
                                 global $ConnectingDB;
                                 $sql = "SELECT id,title FROM category";
                                 $stmt = $ConnectingDB->Query($sql);
@@ -152,20 +175,46 @@ if(isset($_POST["Submit"])){
                                     $Id = $Datarows["id"];
                                     $CategoryName = $Datarows["title"];
                                     ?>
-                                <option><?php echo $CategoryName; ?></option>
+                                    <option><?php echo $CategoryName; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
+                        <!--Primary part-->
                         <div class="form-group">
                             <div class="custom-file">
-                            <input class="custom-file-input"type="file" name="Image" id="imageselect" value="">
-                                <label for="imageselect" class="custom-file-label">Select Image </label>
-                           </div>
+                                <input class="custom-file-input"type="file" name="Image" id="imageselect" value="">
+                                <label for="imageselect" class="custom-file-label">Select Image 1 </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="Post"><span class="fieldinfo">Post :</span></label>
+                            <label for="Post"><span class="fieldinfo">Content 1:</span></label>
                             <textarea class="form-control" name="PostDescription" cols="80" rows="8" id="Post"></textarea>
                         </div>
+                        <!--Primary part ends-->
+                        <!--secondary part-->
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input class="custom-file-input"type="file" name="Image2" id="imageselect2" value="">
+                                <label for="imageselect2" class="custom-file-label">Select Image 2 </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Post2"><span class="fieldinfo">Content 2 :</span></label>
+                            <textarea class="form-control" name="PostDescription2" cols="80" rows="8" id="Post2"></textarea>
+                        </div>
+                        <!--secondary part ends-->
+                        <!--tertiary part-->
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input class="custom-file-input"type="file" name="Image3" id="imageselect3" value="">
+                                <label for="imageselect3" class="custom-file-label">Select Image 3 </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Post3"><span class="fieldinfo">Content 3 :</span></label>
+                            <textarea class="form-control" name="PostDescription3" cols="80" rows="8" id="Post3"></textarea>
+                        </div>
+                        <!--tertiary part end-->
                         <div class="row">
                             <div class="col-lg-6 mb-2">
                                 <a href="#" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back to dashboard</a>
