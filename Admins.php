@@ -95,7 +95,7 @@ Confirm_Login(); ?>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage-Admins</a>
                 </li>
                 <li class="nav-item">
                     <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
@@ -118,7 +118,7 @@ Confirm_Login(); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user" style="color:#27aae1;"></i> Manage Admins</h1>
+                <h1><i class="fas fa-user" style="color:#27aae1;"></i> Manage-Admins</h1>
             </div>
         </div>
     </div>
