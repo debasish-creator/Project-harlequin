@@ -172,8 +172,8 @@ Confirm_Login(); ?>
            <!--  deleting admins-->
           <h2>Existing Admins</h2>
           <div class="table-responsive">
-          <table class="table table-striped table-hover">
-              <thead class="thead-dark">
+          <table class="table custom-thead">
+              <thead class="">
               <tr>
                   <th>No. </th>
                   <th>Date&Time</th>

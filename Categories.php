@@ -150,8 +150,8 @@ Confirm_Login(); ?>
          <!--delete category-->
           <h2>Existing Categories</h2>
           <div class="table-responsive">
-          <table class="table table-striped table-hover">
-              <thead class="thead-dark">
+          <table class="table custom-thead">
+              <thead class="">
               <tr>
                   <th>No. </th>
                   <th>Date&Time</th>
