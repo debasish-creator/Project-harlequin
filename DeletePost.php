@@ -7,7 +7,7 @@
 $SearchQueryParameter = $_GET["id"];
 
 //            taking existing contents from post
-$ConnectingDB;
+global $ConnectingDB;
 $sql = "SELECT * FROM posts WHERE id='$SearchQueryParameter'";
 $stmt = $ConnectingDB ->query($sql);
 while ($DataRows=$stmt->fetch()){
@@ -15,23 +15,36 @@ while ($DataRows=$stmt->fetch()){
     $CategoryToBeDeleted = $DataRows['category'];
     $ImageToBeDeleted = $DataRows['image'];
     $PostToBeDeleted = $DataRows['post'];
+    //
+    $ImageToBeDeleted2 = $DataRows['image2'];
+    $PostToBeDeleted2 = $DataRows['post2'];
+    //
+    $ImageToBeDeleted3 = $DataRows['image3'];
+    $PostToBeDeleted3 = $DataRows['post3'];
 }
 
 if(isset($_POST["Submit"])){
-        //Query to delete post in database when everything is good
-        $ConnectingDB;
-        $sql ="DELETE FROM posts WHERE id='$SearchQueryParameter'";
-        $Execute =$ConnectingDB->query($sql);
+    //Query to delete post in database when everything is good
+    global $ConnectingDB;
+    $sql ="DELETE FROM posts WHERE id='$SearchQueryParameter'";
+    $Execute =$ConnectingDB->query($sql);
 
-        if($Execute){
-            $Target_Path_To_DELETE_Image = "Uploads/$ImageToBeDeleted";
-            unlink($Target_Path_To_DELETE_Image);
-            $_SESSION["SuccessMessage"]="post  DELETED Successfully";
-            Redirect_to("Posts.php");
-        }else{
-            $_SESSION["ErrorMessage"]= "something went wrong. Try Again !";
-            Redirect_to("Posts.php");
-        }
+    if($Execute){
+        $Target_Path_To_DELETE_Image = "Uploads/$ImageToBeDeleted";
+        unlink($Target_Path_To_DELETE_Image);
+        //
+        $Target_Path_To_DELETE_Image2 = "Uploads/$ImageToBeDeleted2";
+        unlink($Target_Path_To_DELETE_Image2);
+        //
+        $Target_Path_To_DELETE_Image3 = "Uploads/$ImageToBeDeleted3";
+        unlink($Target_Path_To_DELETE_Image3);
+        //
+        $_SESSION["SuccessMessage"]="post  DELETED Successfully";
+        Redirect_to("Posts.php");
+    }else{
+        $_SESSION["ErrorMessage"]= "something went wrong. Try Again !";
+        Redirect_to("Posts.php");
+    }
 
 
 }
@@ -54,7 +67,7 @@ if(isset($_POST["Submit"])){
 <body>
 <?php  ?>
 <!--NAVBAR STARTS-->
-<div style="height: 10px; background: cornflowerblue"></div>
+
 <div class="navbar navbar-expand-lg navbar-light bg-custom">
     <div class="container">
         <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
@@ -77,7 +90,7 @@ if(isset($_POST["Submit"])){
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage-Admins</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
@@ -87,13 +100,13 @@ if(isset($_POST["Submit"])){
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li class="nav-item"><a href="Logout.php" class="nav-link text-warning"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
 
     </div>
 </div>
-<div style="height: 10px; background: cornflowerblue"></div>
+
 <!--NAVBAR ENDS-->
 
 <!--HEADER STARTS-->
@@ -128,8 +141,9 @@ if(isset($_POST["Submit"])){
                             <?php echo $CategoryToBeDeleted;?>
                             <br>
                         </div>
+                        <!--primary content-->
                         <div class="form-group">
-                            <span class="fieldinfo">Existing Image: </span>
+                            <span class="fieldinfo">Existing Image 1: </span>
                             <img class="mb-2"src="uploads/<?php echo $ImageToBeDeleted; ?>" width="170px"; height="70px";>
                         </div>
                         <div class="form-group">
@@ -138,6 +152,29 @@ if(isset($_POST["Submit"])){
                                 <?php echo $PostToBeDeleted; ?>
                             </textarea>
                         </div>
+                        <!--secondary content-->
+                        <div class="form-group">
+                            <span class="fieldinfo">Existing Image 2: </span>
+                            <img class="mb-2"src="uploads/<?php echo $ImageToBeDeleted2; ?>" width="170px"; height="70px";>
+                        </div>
+                        <div class="form-group">
+                            <label for="Post"><span class="fieldinfo">Post :</span></label>
+                            <textarea disabled class="form-control" name="PostDescription2" cols="80" rows="8" id="Post">
+                                <?php echo $PostToBeDeleted2; ?>
+                            </textarea>
+                        </div>
+                        <!--tertiary content-->
+                        <div class="form-group">
+                            <span class="fieldinfo">Existing Image 3: </span>
+                            <img class="mb-2"src="uploads/<?php echo $ImageToBeDeleted3; ?>" width="170px"; height="70px";>
+                        </div>
+                        <div class="form-group">
+                            <label for="Post"><span class="fieldinfo">Post :</span></label>
+                            <textarea disabled class="form-control" name="PostDescription3" cols="80" rows="8" id="Post">
+                                <?php echo $PostToBeDeleted3; ?>
+                            </textarea>
+                        </div>
+
                         <div class="row">
                             <div class="col-lg-6 mb-2">
                                 <a href="#" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back to dashboard</a>

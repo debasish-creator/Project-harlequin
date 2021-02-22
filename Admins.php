@@ -95,7 +95,7 @@ Confirm_Login(); ?>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage-Admins</a>
                 </li>
                 <li class="nav-item">
                     <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
@@ -105,7 +105,7 @@ Confirm_Login(); ?>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li class="nav-item"><a href="Logout.php" class="nav-link text-warning"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
 
@@ -118,7 +118,7 @@ Confirm_Login(); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1><i class="fas fa-user" style="color:#27aae1;"></i> Manage Admins</h1>
+                <h1><i class="fas fa-user" style="color:#27aae1;"></i> Manage-Admins</h1>
             </div>
         </div>
     </div>
@@ -172,8 +172,8 @@ Confirm_Login(); ?>
            <!--  deleting admins-->
           <h2>Existing Admins</h2>
           <div class="table-responsive">
-          <table class="table table-striped table-hover">
-              <thead class="thead-dark">
+          <table class="table custom-thead">
+              <thead class="">
               <tr>
                   <th>No. </th>
                   <th>Date&Time</th>

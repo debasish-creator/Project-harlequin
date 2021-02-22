@@ -41,7 +41,7 @@ Confirm_Login();
                    <a href="Categories.php" class="nav-link" style= "color:white ; font-weight: bolder;">Categories</a>
               </li>
               <li class="nav-item">
-                   <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
+                   <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage-Admins</a>
               </li>
               <li class="nav-item">
                    <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
@@ -51,7 +51,7 @@ Confirm_Login();
              </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-               <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+               <li class="nav-item"><a href="Logout.php" class="nav-link text-warning"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
           </ul>
         </div>
     </div>
@@ -78,8 +78,8 @@ Confirm_Login();
             ?>
             <h2>Un-Approved Comments</h2>
             <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="thead-dark">
+            <table class="table custom-thead">
+                <thead class="">
                     <tr>
                         <th>No. </th>
                         <th>Date&Time</th>
@@ -121,8 +121,8 @@ Confirm_Login();
               <!-- approved comments-->
             <h2>Approved Comments</h2>
             <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="thead-dark">
+            <table class="table custom-thead">
+                <thead>
                 <tr>
                     <th>No. </th>
                     <th>Date&Time</th>
@@ -154,7 +154,7 @@ Confirm_Login();
                         <td><?php echo htmlentities($CommentContent); ?></td>
                         <td style="min-width:140px;"><a href="DisApproveComments.php?id=<?php echo $CommentId;?>" class="btn btn-warning">Dis-Approve</a></td>
                         <td style="min-width:140px;"><a href="DeleteComments.php?id=<?php echo $CommentId;?>" class="btn btn-danger">Delete</a></td>
-                        <td style="min-width:140px;"><a class="btn btn-primary" href="FullPost.php?id<?php echo $CommentPostId; ?>" target="_blank">Live preview</a></td>
+                        <td style="min-width:140px;"><a class="btn" href="FullPost.php?id<?php echo $CommentPostId; ?>" target="_blank"> <span class="btn" style="background-color: #190053; color:white">Live preview</span></a></td>
                     </tr>
                     </tbody>
                 <?php }?>

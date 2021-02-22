@@ -87,7 +87,7 @@ Confirm_Login(); ?>
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage-Admins</a>
                 </li>
                 <li class="nav-item">
                     <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
@@ -97,7 +97,7 @@ Confirm_Login(); ?>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li class="nav-item"><a href="Logout.php" class="nav-link text-warning"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
     </div>
@@ -150,8 +150,8 @@ Confirm_Login(); ?>
          <!--delete category-->
           <h2>Existing Categories</h2>
           <div class="table-responsive">
-          <table class="table table-striped table-hover">
-              <thead class="thead-dark">
+          <table class="table custom-thead">
+              <thead class="">
               <tr>
                   <th>No. </th>
                   <th>Date&Time</th>

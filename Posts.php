@@ -41,7 +41,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                 </li>
 
                 <li class="nav-item">
-                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage Admins</a>
+                    <a href="Admins.php" class="nav-link" style= "color:white ; font-weight: bolder;">Manage-Admins</a>
                 </li>
                 <li class="nav-item">
                     <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
@@ -51,7 +51,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="Logout.php" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li class="nav-item"><a href="Logout.php" class="nav-link text-warning"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
 
@@ -100,8 +100,8 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
             echo SuccessMessage();
             ?>
             <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="thead-dark">
+            <table class="styled-table" style="margin-left: 160px; max-height: 5em;">
+                <thead class="">
                 <tr>
                     <th>#</th>
                     <th>Title</th>
