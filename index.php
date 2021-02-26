@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card.css">
     <title>Mind Saga</title>
     <style>
         .heading{
@@ -42,7 +43,7 @@
                     <a href="index.php" class="nav-link " style= "color:white ; font-weight: bolder; ">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link " style= "color:white ; font-weight: bolder; " >Contact Us</a>
+                    <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link" style= "color:white ; font-weight: bolder; ">Features</a>
@@ -64,8 +65,11 @@
 <!--HEADER STARTS-->
 <div class="container-fluid">
     <div class="row mt-5">
+        <div class="webpagetitle">
+            <h1>MindSaga</h1>
+        </div>
             <!--main area starts---->
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-lg-12">
             <?php
             global $ConnectingDB;
              //sql query when search button is active
@@ -86,9 +90,9 @@
                 if($Page==0||$Page<1){
                     $ShowPostFrom=0;
                 }else {
-                    $ShowPostFrom = ($Page * 6) - 6;
+                    $ShowPostFrom = ($Page * 12) - 12;
                 }
-                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT $ShowPostFrom,6";
+                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT $ShowPostFrom,12";
                 $stmt = $ConnectingDB->query($sql);
             }
 //            query when category is active in URL tab
@@ -99,7 +103,7 @@
             }
               //the default SQL query
             else{
-                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,6";
+                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,12";
                 $stmt = $ConnectingDB->query($sql);
             }
             while ($DataRows = $stmt->fetch()){
@@ -112,27 +116,30 @@
                 $PostDescription = $DataRows["post"];
 
             ?>
-                <div class="col-sm-6 mb-2 test">
-                   <div class="card h-100" style="border-radius: 2rem; box-shadow: 4px 11px 7px -2px skyblue;  margin: 0 auto; float: none;">
-                     <img src="Uploads/<?php echo htmlentities($Image); ?>" style="max-height: 350px;" class="img-fluid card-img-top"/>
-                      <div class="card-body">
-                         <h4 class="card-title"><?php echo htmlentities($PostTitle)?></h4>
-                         <small class="text-muted">Category: <span class="text-dark"> <a href="index.php?category=<?php echo htmlentities($Category); ?>"> <?php echo htmlentities($Category); ?> </a></span> & Written by <span class="text-muted"> <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>"> <?php echo htmlentities($Admin); ?></a></span> On <span class="text-muted"><?php echo htmlentities($DateTime); ?></span></small>
-                         <span style="float: right" class="badge badge-dark text-light px-3 py-2 mt-2">Comments
-                                <?php echo ApproveCommentsAccordingtoPost($PostId);?>
-                         </span>
-                         <hr>
-                         <p class="card-text px-4">
-                             <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,150).'...';} echo htmlentities($PostDescription) ?>
-                         </p>
-                         <a href="FullPost.php?id=<?php echo $PostId; ?>" style="float: right" class="px-2 py-2">
-                              <span class="btn btn-sm btn-info px-1" style="float: right;"> Read More >></span>
-                         </a>
-                     </div>
-                  </div>
+                <div class="float-container col-sm-6 mb-2 test">
+                    <div class="card2 float-child shadow">
+                        <div class="image-data">
+                            <div class="background-image">
+                                <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="image" class="background-image">
+                            </div>
+                            <div class="publication-details">
+                                <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" class="author"><i class="fa fa-user"></i><?php echo htmlentities($Admin); ?></a>
+                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($DateTime); ?></span>
+                            </div>
+                        </div>
+                        <div class="post-data">
+                            <h1 class="title"><?php echo htmlentities($PostTitle)?></h1>
+                            <h2 class="subtitle"><a href="index.php?category=<?php echo htmlentities($Category); ?>"> <?php echo htmlentities($Category); ?> </a></h2>
+                            <p class="description">
+                                <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
+                            </p>
+                            <div class="cta">
+                                <a href="FullPost.php?id=<?php echo $PostId; ?>"> Read More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             <?php } ?>
-            <br><br><br><br>
             <!--pagination-->
              <nav style="float: left;">
                  <ul class="pagination pagination-lg">
@@ -153,7 +160,7 @@
                       $RowPagination=$stmt->fetch();
                       $TotalPosts=array_shift($RowPagination);
                                //echo $TotalPosts."<br>";
-                      $PostPagination=$TotalPosts/6;
+                      $PostPagination=$TotalPosts/12;
                       $PostPagination=ceil($PostPagination);
                               // echo $PostPagination;
                        for ($i=1; $i<=$PostPagination ; $i++){
