@@ -208,7 +208,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                                 $Total=ApproveCommentsAccordingtoPost($PostId);
                                 if($Total>0) {
                                 ?>
-                                 <span class="badge badge-success">
+                                 <span class="badge">
                                      <?php
                                     echo $Total; ?>
                                  </span>
