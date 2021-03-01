@@ -20,163 +20,74 @@ if( $Result==1 ){
     $_SESSION["ErrorMessage"]="Bad Request !!";
     Redirect_to("index.php?page=1");
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scal=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Hind" />
+    <link rel="stylesheet" href="css/profile.css">
     <title>Profile</title>
 </head>
 <body>
-<!--NAVIGATION BAR STARTS-->
-    <div class="navbar navbar-expand-lg navbar-light bg-custom">
-        <div class="container">
-            <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
-            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="Rcollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">Blog</a>
-                    </li>
+<section class="profile-card">
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Features</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <form class="form-inline d-none d-sm-block" action="index.php">
-                        <div class="form-group">
-                            <input class="form-control mr-2" type="text" name="Search" placeholder="Search here" value="">
-                            <button  class="btn btn-primary" name="SearchButton">Go</button>
-                        </div>
-                    </form>
-                </ul>
-            </div>
-        </div>
-    </div>
-<!--NAVIGATION BAR ENDS-->
+    <header>
+        <!-- Profile Image-->
+        <a href="#">
+            <img src="images/<?php echo $ExistingImage; ?>" alt="image">
+        </a>
 
-<!--HEADER STARTS-->
-<header class="bg-dark text-white py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-            <h1><i class="fas fa-user text-success mr-2" style="color: #27aae1;"></i> <?php echo$ExistingName; ?></h1>
-                <h3><?php echo $ExistingHeadline; ?></h3>
-            </div>
-        </div>
+        <!-- Name of author -->
+        <h1><?php echo$ExistingName; ?></h1>
+
+        <!-- Field of Profession -->
+        <h2><?php echo $ExistingHeadline; ?></h2>
+    </header>
+
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+        <p><?php echo $ExistingBio; ?></p>
     </div>
-</header>
-<!--HEADER ENDS-->
-<section class="container py-2 mb-4">
-    <div class="row">
-        <div class="col-md-3">
-            <img src="images/<?php echo $ExistingImage; ?>" class="d-block img-fluid mb-3 rounded-circle" alt="">
-        </div>
-        <div class="col-md-9" style="min-height:400px;">
-            <div class="card">
-                <div class="card-body">
-                    <p class="lead"> <?php echo $ExistingBio; ?> </p>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <!-- some social links to show off -->
+    <ul class="profile-social-links">
+
+        <!-- your first social profile -->
+        <li>
+            <a href="#">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#3b5998" d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z" />
+                </svg>
+            </a>
+        </li>
+
+        <!-- your 2nd social profile -->
+        <li>
+            <a href="#">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#82B541" d="M18.334,1.909c-0.604-0.327-2.313-0.125-4.375,0.503c-3.621,2.464-6.664,6.11-6.89,11.971c-0.05,0.148-0.402-0.025-0.478-0.053c-0.981-1.859-1.358-3.846-0.554-6.688C6.189,7.39,5.686,7.089,5.611,7.165C5.435,7.34,4.681,8.145,4.178,9c-2.464,4.249-0.855,9.733,3.445,12.122c4.299,2.389,9.733,0.855,12.12-3.445C22.533,12.695,19.969,2.814,18.334,1.909z"
+                    />
+                </svg>
+            </a>
+        </li>
+
+        <!--- your 3rd social profile-->
+        <li>
+            <a href="#">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#000000" d="M19.45,13.29L17.5,12L19.45,10.71M12.77,18.78V15.17L16.13,12.93L18.83,14.74M12,13.83L9.26,12L12,10.17L14.74,12M11.23,18.78L5.17,14.74L7.87,12.93L11.23,15.17M4.55,10.71L6.5,12L4.55,13.29M11.23,5.22V8.83L7.87,11.07L5.17,9.26M12.77,5.22L18.83,9.26L16.13,11.07L12.77,8.83M21,9.16C21,9.15 21,9.13 21,9.12C21,9.1 21,9.08 20.97,9.06C20.97,9.05 20.97,9.03 20.96,9C20.96,9 20.95,9 20.94,8.96C20.94,8.95 20.93,8.94 20.92,8.93C20.92,8.91 20.91,8.89 20.9,8.88C20.89,8.86 20.88,8.85 20.88,8.84C20.87,8.82 20.85,8.81 20.84,8.79C20.83,8.78 20.83,8.77 20.82,8.76A0.04,0.04 0 0,0 20.78,8.72C20.77,8.71 20.76,8.7 20.75,8.69C20.73,8.67 20.72,8.66 20.7,8.65C20.69,8.64 20.68,8.63 20.67,8.62C20.66,8.62 20.66,8.62 20.66,8.61L12.43,3.13C12.17,2.96 11.83,2.96 11.57,3.13L3.34,8.61C3.34,8.62 3.34,8.62 3.33,8.62C3.32,8.63 3.31,8.64 3.3,8.65C3.28,8.66 3.27,8.67 3.25,8.69C3.24,8.7 3.23,8.71 3.22,8.72C3.21,8.73 3.2,8.74 3.18,8.76C3.17,8.77 3.17,8.78 3.16,8.79C3.15,8.81 3.13,8.82 3.12,8.84C3.12,8.85 3.11,8.86 3.1,8.88C3.09,8.89 3.08,8.91 3.08,8.93C3.07,8.94 3.06,8.95 3.06,8.96C3.05,9 3.05,9 3.04,9C3.03,9.03 3.03,9.05 3.03,9.06C3,9.08 3,9.1 3,9.12C3,9.13 3,9.15 3,9.16C3,9.19 3,9.22 3,9.26V14.74C3,14.78 3,14.81 3,14.84C3,14.85 3,14.87 3,14.88C3,14.9 3,14.92 3.03,14.94C3.03,14.95 3.03,14.97 3.04,15C3.05,15 3.05,15 3.06,15.04C3.06,15.05 3.07,15.06 3.08,15.07C3.08,15.09 3.09,15.11 3.1,15.12C3.11,15.14 3.12,15.15 3.12,15.16C3.13,15.18 3.15,15.19 3.16,15.21C3.17,15.22 3.17,15.23 3.18,15.24C3.2,15.25 3.21,15.27 3.22,15.28C3.23,15.29 3.24,15.3 3.25,15.31C3.27,15.33 3.28,15.34 3.3,15.35C3.31,15.36 3.32,15.37 3.33,15.38C3.34,15.38 3.34,15.38 3.34,15.39L11.57,20.87C11.7,20.96 11.85,21 12,21C12.15,21 12.3,20.96 12.43,20.87L20.66,15.39C20.66,15.38 20.66,15.38 20.67,15.38C20.68,15.37 20.69,15.36 20.7,15.35C20.72,15.34 20.73,15.33 20.75,15.31C20.76,15.3 20.77,15.29 20.78,15.28C20.79,15.27 20.8,15.25 20.82,15.24C20.83,15.23 20.83,15.22 20.84,15.21C20.85,15.19 20.87,15.18 20.88,15.16C20.88,15.15 20.89,15.14 20.9,15.12C20.91,15.11 20.92,15.09 20.92,15.07C20.93,15.06 20.94,15.05 20.94,15.04C20.95,15 20.96,15 20.96,15C20.97,14.97 20.97,14.95 20.97,14.94C21,14.92 21,14.9 21,14.88C21,14.87 21,14.85 21,14.84C21,14.81 21,14.78 21,14.74V9.26C21,9.22 21,9.19 21,9.16Z"
+                    />
+                </svg>
+            </a>
+        </li>
+
+        <!-- add or remove social profiles as you see fit -->
+    </ul>
+
 </section>
-<!--FOOTER STARTS-->
-<div style="height: 5px; background: cornflowerblue"></div>
-<footer class="footer-distributed" id="contact">
-    <div class="footer-left">
-        <h3>MindSaga <span id="year"></span></h3>
-        <p class="footer-links">
-            <a href="#" class="nav-link" style="margin-left: -15px;">About Us</a>
-            ·
-            <a href="index.php" class="nav-link">Blog</a>
-            ·
-            <a href="#" class="nav-link">Contact Us</a>
-            ·
-            <a href="#" class="nav-link">Features</a>
-            .
-        </p>
-        <p class="footer-company-name">Made with 💕 by Webwiz</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker" ></i>
-            <p><span>Loremlaudantium assumenda</span> Odisha, India</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>random789</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="">webwiz.nitrkl@gmail.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About MindSaga</span>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni expedita assumenda temporibus sapiente veritatis veniam
-        </p>
-        <ul class="social">
-            <li>
-                <a href="#" class="fa fa-twitter"></a>
-            </li>
-            <li>
-                <a href="#" class="fa fa-facebook"></a>
-            </li>
-            <li>
-                <a href="#" class="fa fa-google"></a>
-            </li>
-            <li>
-                <a href="#" class="fa fa-github"></a>
-            </li>
-            <li>
-                <a href="#" class="fa fa-instagram"></a>
-            </li>
-            <li>
-                <a href="#" class="fa fa-linkedin"></a>
-            </li>
-        </ul>
-    </div>
-</footer>
-<div style="height: 5px; background: cornflowerblue"></div>
-<!----FOOTER ENDS---->
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
 <script>
     $('#year').text(new Date().getFullYear());
 </script>

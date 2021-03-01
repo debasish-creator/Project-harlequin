@@ -102,7 +102,7 @@ if(isset($_POST["Submit"])){
                         <a href="Comments.php" class="nav-link" style= "color:white ; font-weight: bolder;">Comments</a>
                     </li>
                     <li class="nav-item">
-                        <a href="Blog.php" class="nav-link" style= "color:white ; font-weight: bolder;">GO Live</a>
+                        <a href="index.php" class="nav-link" style= "color:white ; font-weight: bolder;">GO Live</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -192,6 +192,5 @@ if(isset($_POST["Submit"])){
             </div>
         </div>
     </section>
-
     <!--FOOTER STARTS-->
 <?php require_once ("Backendfooter.php");?>
