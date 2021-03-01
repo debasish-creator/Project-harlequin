@@ -2,9 +2,7 @@
 :root{
     --gradient-color: linear-gradient(to bottom right, rgb(7, 53, 83), rgb(125, 204, 231));
 }
-html{
-    font-size:10px;
-}
+
 .webpagetitle{
     display: block;
     justify-content: center;
@@ -31,10 +29,7 @@ a{
     color: inherit;
 }
 body{
-    font-family:'open sans', 'san serif';
-    font-size: 1.6rem;
     color: #333;
-    background-color: #eee;
     width: 100%;
     align-items: center;
     justify-content: center;

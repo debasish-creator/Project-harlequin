@@ -70,6 +70,7 @@
         </div>
             <!--main area starts---->
         <div class="col-sm-8 col-lg-12">
+            <div class="float-container">
             <?php
             global $ConnectingDB;
              //sql query when search button is active
@@ -116,7 +117,7 @@
                 $PostDescription = $DataRows["post"];
 
             ?>
-                <div class="float-container col-sm-6 mb-2 test">
+
                     <div class="card2 float-child shadow">
                         <div class="image-data">
                             <div class="background-image">
@@ -138,8 +139,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
             <?php } ?>
+            </div>
             <!--pagination-->
              <nav style="float: left;">
                  <ul class="pagination pagination-lg">
