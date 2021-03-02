@@ -101,32 +101,33 @@ if(isset($_POST["Submit"])){
 <!--        </div>-->
 <!--    </div>-->
 <!--</section>-->
-<section class="container">
+<section class="container"> 
     <?php
     echo ErrorMessage();
     echo SuccessMessage();
     ?>
     <div class="login-container-wrapper clearfix">
-        <div class="logo">
+        <div class="logo" >
+          <h5 style="margin-left:-17px; color:aliceblue; font-family: mindsagacustom; font-size:30px">  Mindsaga</h5>
         </div>
-        <div class="welcome"><strong>Welcome,</strong> please login</div>
+        <div class="welcome"style="color: #000000;"><strong>Welcome,</strong> please login</div>
 
         <form class="form-horizontal login-form" action="Login.php" method="post">
             <div class="form-group relative">
                 <input id="Username" name="Username" class="form-control input-lg" type="text" placeholder="Username" required>
-                <i class="fa fa-user"></i>
+                <i class="fa fa-user" style="margin-top:-6px;"></i>
             </div>
             <div class="form-group relative password">
                 <input id="password" name="Password" class="form-control input-lg" type="password" placeholder="Password" required>
-                <i class="fa fa-lock"></i>
+                <i class="fa fa-lock"style="margin-top:-6px;"></i>
             </div>
             <div class="form-group">
                 <input type="submit" name="Submit" class="btn btn-success btn-lg btn-block" value="Login">
             </div>
-            <div class="checkbox pull-left">
+            <div class="checkbox pull-left" style="color: black;">
                 <label><input type="checkbox"> Remember</label>
             </div>
-            <div class="checkbox pull-right">
+            <div class="checkbox pull-right" >
                 <label> <a class="forget" href="" title="forget">Forgot your password</a> </label>
             </div>
         </form>

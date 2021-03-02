@@ -1,11 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Varela);
+@font-face {
+    font-family: mindsagacustom;
+    src: url(../fonts/Gistesy.ttf);
+}
 
 html {
     height: 100%;
+
+    
 }
 
-body {
-    background: #f2f2f2;
+body {    background: rgb(241, 242, 181);
+    background: -moz-radial-gradient(ellipse cover at center rgba(255, 255, 255, 1) 0%, rgb(0, 40, 150) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgb(80, 15, 150)));
+    background: -webkit-radial-gradient(ellipse cover at center, rgba(255, 255, 255, 1) 0%, rgb(29, 115, 195) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(13, 0, 129) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(11, 48, 150) 100%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgb(11, 39, 165) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f1f2b5', endColorstr='#135058', GradientType=1);
+
     font-family: 'Varela', sans-serif;
     font-size: 14px;
     line-height: 1.5;
@@ -20,12 +33,12 @@ label {
 }
 
 a {
-    color: #fff;
+    color: rgba(175, 0, 0, 0.856);
 }
 
 a:focus,
 a:hover {
-    color: #008080;
+    color: grey;
 }
 
 .checkbox-inline+.checkbox-inline,
@@ -35,16 +48,7 @@ a:hover {
 
 /******* Login Page *******/
 
-body.login {
-    background: rgb(241, 242, 181);
-    background: -moz-radial-gradient(ellipse cover at center rgba(255, 255, 255, 1) 0%, rgb(90, 7, 141) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgb(80, 15, 150)));
-    background: -webkit-radial-gradient(ellipse cover at center, rgba(255, 255, 255, 1) 0%, rgb(126, 29, 195) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(121, 17, 131) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(108, 11, 150) 100%);
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgb(133, 11, 165) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f1f2b5', endColorstr='#135058', GradientType=1);
-}
+
 
 .relative {
     position: relative;
@@ -67,9 +71,9 @@ body.login {
     width: 25%;
     left: 37.5%;
     border-radius: 50%;
-    background-color: #420253;
+    background-color: #022553;
     padding: 25px;
-    box-shadow: 0px 0px 9px 2px #54045d;
+    box-shadow: 0px 0px 9px 2px #f59aff;
 }
 
 .login-container-wrapper {
@@ -77,8 +81,10 @@ body.login {
     margin: 10% auto 8%;
     padding: 40px;
     box-sizing: border-box;
-    background: rgb(172, 18, 245);
-    box-shadow: 1px 1px 10px 1px #620588, 8px 8px 0 0 #82069f, 12px 12px 10px 0 #8124c8;
+    background: linear-gradient(90deg, #21D2FF 0% ,
+    #588CFE 35.94%, 
+    #8B19FF 100%);
+    box-shadow: 1px 1px 10px 1px #840588, 8px 8px 0 0 #46008b, 12px 12px 10px 0 #248cc8;
     position: relative;
     padding-top: 80px;
 }
@@ -87,7 +93,7 @@ body.login {
     font-size: 50px;
 }
 .login input:focus + .fa{
-    color:#fff;
+    color:rgb(27, 24, 27);
 }
 .login-form .form-group {
     margin-right: 0;
