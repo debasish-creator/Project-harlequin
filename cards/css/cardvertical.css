@@ -11,7 +11,7 @@
 html{
    font-size:10px;
 }
-.headtitle{
+.headtitle-2{
     display: block;
     justify-content: center;
     align-items: center;
@@ -50,31 +50,31 @@ body{
     justify-content: center;
     /* padding: 0 1.5rem; */
 }
-.float-container{
+.float-container-2{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 }
-.card{
+.card-3{
     display: flex;
     flex-direction:column;
     background-color: #fff;
 }
 
-.float-child {
+.float-child-2 {
     padding: 20px;
     border: 2px solid rgb(138, 132, 132);
     border-radius: 2rem;
     margin: .8rem;
 }
-.image-data{
+.image-data-2{
     height: 25rem;
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
 
-.background-image{
+.background-image-2{
     width: 100%;
     height: 100%;
     position: relative;
@@ -86,11 +86,11 @@ body{
     transition: transform 5s;
 }
 
-.card:hover .background-image{
+.card-3:hover .background-image-2{
     transform: scale(1.5);
 }
 
-.publication-details{
+.publication-details-2{
     width: 100%;
     height: 100%;
     background:var(--gradient-color);
@@ -102,45 +102,45 @@ body{
     left: 0;
     padding:1rem;
 }
-.publication-details i{
+.publication-details-2 i{
     margin-right: 1rem;
 }
 
-.author{
+.author-2{
     display: inline-block;
     margin-bottom: .5rem;
     transition: all .5s .3s;
 }
-.author:hover{
+.author-2:hover{
     color: rgba(255,255,255,.75);
 }
-.date{
+.date-2{
     display: block;
 }
-.post-data{
+.post-data-2{
     background-color: #fff;
     padding: 2rem 3rem;
     position: relative;
 }
-.title{
+.title-2{
     font-size: 3rem;
     line-height: 1;
 }
-.subtitle{
+.subtitle-2{
     font-size: 1.2rem;
     font-weight: 400;
     text-transform: uppercase;
     color: #a2a2a2;
     margin: 1rem 0 1.5rem 0;
 }
-.description{
+.description-2{
     position: relative;
 }
-.description::first-letter{
+.description-2::first-letter{
     margin-left: 1rem;
 }
 
-.description::before{
+.description-2::before{
     content: '';
     position: absolute;
     top: 0;
@@ -151,20 +151,20 @@ body{
     border-radius: 2rem;
 }
 
-.cta{
+.cta-2{
     text-align: right;
     font-weight: bold;
     margin-top: 1rem;
 }
 
-.cta a{
+.cta-2 a{
     background: var(--gradient-color);
     -webkit-background-clip: text;
     color: transparent;
     position: relative;
 }
 
-.cta a::before{
+.cta-2 a::before{
     content: '';
     position: absolute;
     left: 0;
@@ -176,7 +176,7 @@ body{
     transform-origin: left;
     transition: transform .5s;
 }
-.cta a:hover::before{
+.cta-2 a:hover::before{
     transform: scaleX(1);
 }
 .shadow {
@@ -188,75 +188,75 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
 -webkit-box-shadow: 0 0 10px rgba(206, 202, 202, 0.6);
 -o-box-shadow: 10px 10px 10px rgba(235, 227, 227, 0.6);
 }
-.publication-details{
+.publication-details-2{
     transform: translateY(-100%);
     transition: transform .5s;
 }
-.card:hover .publication-details{
+.card-3:hover .publication-details-2{
     transform: translateX(0);
 }
-.author{
+.author-2{
     transform: translateY(-3rem);
     opacity: 0;
     transition-delay: .3s;
 }
-.date{
+.date-2{
     transform: translateY(3rem);
     opacity: 0;
     transition: all .5s .3s;
 }
-.card:hover .author,
-.card:hover .date{
+.card-3:hover .author-2,
+.card-3:hover .date-2{
     transform: translateY(0);
     opacity: 1;
 }
 
 @media only screen and (max-width: 950px) and (min-width: 500px){
-    .float-container{
+    .float-container-2{
         display: block;
         justify-content: center;
         align-items: center;
     }
-    .card{
+    .card-3{
         display: inline-flex;
         flex-direction: row;
         max-width: 95rem;
     }
-    .image-data{
+    .image-data-2{
         flex-basis: 40%;
         height: unset;
     }
-    .publication-details{
+    .publication-details-2{
         transform: translateX(-100%);
         transition: transform .5s;
     }
-    .card:hover .publication-details{
+    .card-3:hover .publication-details-2{
         transform: translateX(0);
     }
-    .author{
+    .author-2{
         transform: translateY(-3rem);
         opacity: 0;
         transition-delay: .3s;
     }
-    .date{
+    .date-2{
         transform: translateY(3rem);
         opacity: 0;
         transition: all .5s .3s;
     }
-    .card:hover .author,
-    .card:hover .date{
+    .card-3:hover .author-2,
+    .card-3:hover .date-2{
         transform: translateY(0);
         opacity: 1;
     }
-    .post-data{
+    .post-data-2{
         flex-basis: 60%;
     }
 
-    .post-data::before{
+    .post-data-2::before{
         content: '';
         width: 2.9rem;
         height: 100%;
-        background-color: red;
+        background-color: #221264;
         position: absolute;
         top:0;
         left: -1.5rem;
@@ -266,7 +266,7 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
 
 }
 @media only screen and (max-width: 500px){
-    .headtitle{
+    .headtitle-2{
         display: block;
         justify-content: center;
         align-items: center;
@@ -305,7 +305,7 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
         justify-content: center;
         /* padding: 0 1.5rem; */
     }
-    .float-container{
+    .float-container-2{
         /* padding: 0 0 0 14rem; */
         /* top: 100rem; */
         display: block;
@@ -316,26 +316,26 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
         /* display: flex; */
         /* flex-wrap: wrap; */
     }
-    .card{
+    .card-3{
         display: flex;
         flex-direction:column;
         background-color: #fff;
     }
     
-    .float-child {
+    .float-child-2 {
         padding: 20px;
         border: 2px solid rgb(138, 132, 132);
         border-radius: 2rem;
         margin: .8rem;
     }
-    .image-data{
+    .image-data-2{
         height: 25rem;
         position: relative;
         z-index: 1;
         overflow: hidden;
     }
     
-    .background-image{
+    .background-image-2{
         width: 100%;
         height: 100%;
         position: relative;
@@ -347,11 +347,11 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
         transition: transform 5s;
     }
     
-    .card:hover .background-image{
+    .card-3:hover .background-image-2{
         transform: scale(1.5);
     }
     
-    .publication-details{
+    .publication-details-2{
         width: 100%;
         height: 100%;
         background:var(--gradient-color);
@@ -363,45 +363,45 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
         left: 0;
         padding:1rem;
     }
-    .publication-details i{
+    .publication-details-2 i{
         margin-right: 1rem;
     }
     
-    .author{
+    .author-2{
         display: inline-block;
         margin-bottom: .5rem;
         transition: all .5s .3s;
     }
-    .author:hover{
+    .author-2:hover{
         color: rgba(255,255,255,.75);
     }
-    .date{
+    .date-2{
         display: block;
     }
-    .post-data{
+    .post-data-2{
         background-color: #fff;
         padding: 2rem 3rem;
         position: relative;
     }
-    .title{
+    .title-2{
         font-size: 3rem;
         line-height: 1;
     }
-    .subtitle{
+    .subtitle-2{
         font-size: 1.2rem;
         font-weight: 400;
         text-transform: uppercase;
         color: #a2a2a2;
         margin: 1rem 0 1.5rem 0;
     }
-    .description{
+    .description-2{
         position: relative;
     }
-    .description::first-letter{
+    .description-2::first-letter{
         margin-left: 1rem;
     }
     
-    .description::before{
+    .description-2::before{
         content: '';
         position: absolute;
         top: 0;
@@ -412,20 +412,20 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
         border-radius: 2rem;
     }
     
-    .cta{
+    .cta-2{
         text-align: right;
         font-weight: bold;
         margin-top: 1rem;
     }
     
-    .cta a{
+    .cta-2 a{
         background: var(--gradient-color);
         -webkit-background-clip: text;
         color: transparent;
         position: relative;
     }
     
-    .cta a::before{
+    .cta-2 a::before{
         content: '';
         position: absolute;
         left: 0;
@@ -437,7 +437,7 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
         transform-origin: left;
         transition: transform .5s;
     }
-    .cta a:hover::before{
+    .cta-2 a:hover::before{
         transform: scaleX(1);
     }
     .shadow {
@@ -448,6 +448,17 @@ box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
     -moz-box-shadow: 0 0 10px rgba(223, 215, 215, 0.6);
     -webkit-box-shadow: 0 0 10px rgba(206, 202, 202, 0.6);
     -o-box-shadow: 10px 10px 10px rgba(235, 227, 227, 0.6);
+    }
+    .post-data-2::before{
+        content: '';
+        width: 2.9rem;
+        height: 100%;
+        background-color: #221264;
+        position: absolute;
+        top:2px;
+        left: -0.8rem;
+        z-index: 10;
+        transform: skewX(-6deg);
     }
     
     
