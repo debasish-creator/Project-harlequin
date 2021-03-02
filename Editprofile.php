@@ -27,10 +27,10 @@ if(isset($_POST["Submit"])){
     $Target    = "images/".basename($_FILES["Image"]["name"]);
     if (strlen($AHeadline)>30) {
         $_SESSION["ErrorMessage"] = "Headline Should be less than 30 characters";
-        Redirect_to("MyProfile.php");
+        Redirect_to("Editprofile.php");
     }elseif (strlen($ABio)>500) {
         $_SESSION["ErrorMessage"] = "Bio should be less than than 500 characters";
-        Redirect_to("MyProfile.php");
+        Redirect_to("Editprofile.php");
     }else{
 
         // Query to Update Admin Data in DB When everything is fine
@@ -48,10 +48,10 @@ if(isset($_POST["Submit"])){
         move_uploaded_file($_FILES["Image"]["tmp_name"],$Target);
         if($Execute){
             $_SESSION["SuccessMessage"]="Details Updated Successfully";
-            Redirect_to("MyProfile.php");
+            Redirect_to("Editprofile.php");
         }else {
             $_SESSION["ErrorMessage"]= "Something went wrong. Try Again !";
-            Redirect_to("MyProfile.php");
+            Redirect_to("Editprofile.php");
         }
     }
 }
@@ -68,8 +68,7 @@ if(isset($_POST["Submit"])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/myprofile.css">
-    <title>My Profile</title>
+    <title>Edit Profile</title>
 </head>
 <body>
 <?php  ?>
@@ -84,7 +83,7 @@ if(isset($_POST["Submit"])){
         <div class="collapse navbar-collapse" id="Rcollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">My Profile</a>
+                    <a href="MyProfile.php" class="nav-link" style= "color:white ; font-weight: bolder;">My Profile</a>
                 </li>
                 <li class="nav-item">
                     <a href="Dashboard.php" class="nav-link" style= "color:white ; font-weight: bolder;">Dashboard</a>
@@ -133,12 +132,12 @@ if(isset($_POST["Submit"])){
 <section class="container py-2 mb-4">
     <div class="row">
         <!--RIGHT AREA-->
-        <div class="col-md-9" style="min-height: 400px;">
+        <div class="offset-lg-2 col-lg-8" style="min-height: 400px;">
             <?php
             echo ErrorMessage();
             echo SuccessMessage();
             ?>
-            <form class="" action="MyProfile.php" method="post" enctype="multipart/form-data">
+            <form class="" action="Editprofile.php" method="post" enctype="multipart/form-data">
                 <div class="card bg-dark text-light">
                     <div class="card-header bg-secondary text-light">
                         <h4>Edit Profile</h4>
@@ -166,11 +165,11 @@ if(isset($_POST["Submit"])){
                         </div>
                         <div class="row">
                             <div class="col-lg-6 mb-2">
-                                <a href="Dashboard.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back To Dashboard</a>
+                                <a href="MyProfile.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back To My Profile</a>
                             </div>
                             <div class="col-lg-6 mb-2">
                                 <button type="submit" name="Submit" class="btn btn-success btn-block">
-                                    <i class="fas fa-check"></i> Publish
+                                    <i class="fas fa-check"></i> Update
                                 </button>
                             </div>
                         </div>

@@ -19,42 +19,6 @@ while($DataRows = $stmt->fetch()){
     $ExistingImage    = $DataRows['aimage'];
 }
 //fetching admin data ends
-if(isset($_POST["Submit"])){
-    $AName     = $_POST["Name"];
-    $AHeadline = $_POST["Headline"];
-    $ABio      = $_POST["Bio"];
-    $Image     = $_FILES["Image"]["name"];
-    $Target    = "images/".basename($_FILES["Image"]["name"]);
-    if (strlen($AHeadline)>30) {
-        $_SESSION["ErrorMessage"] = "Headline Should be less than 30 characters";
-        Redirect_to("MyProfile.php");
-    }elseif (strlen($ABio)>500) {
-        $_SESSION["ErrorMessage"] = "Bio should be less than than 500 characters";
-        Redirect_to("MyProfile.php");
-    }else{
-
-        // Query to Update Admin Data in DB When everything is fine
-        global $ConnectingDB;
-        if (!empty($_FILES["Image"]["name"])) {
-            $sql = "UPDATE admins
-              SET aname='$AName', aheadline='$AHeadline', abio='$ABio', aimage='$Image'
-              WHERE id='$AdminId'";
-        }else {
-            $sql = "UPDATE admins
-              SET aname='$AName', aheadline='$AHeadline', abio='$ABio'
-              WHERE id='$AdminId'";
-        }
-        $Execute= $ConnectingDB->query($sql);
-        move_uploaded_file($_FILES["Image"]["tmp_name"],$Target);
-        if($Execute){
-            $_SESSION["SuccessMessage"]="Details Updated Successfully";
-            Redirect_to("MyProfile.php");
-        }else {
-            $_SESSION["ErrorMessage"]= "Something went wrong. Try Again !";
-            Redirect_to("MyProfile.php");
-        }
-    }
-}
 ?>
 
     <!DOCTYPE html>
