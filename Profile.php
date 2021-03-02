@@ -33,7 +33,6 @@ if( $Result==1 ){
 </head>
 <body>
 <section class="profile-card">
-
     <header>
         <!-- Profile Image-->
         <a href="#">
@@ -46,15 +45,12 @@ if( $Result==1 ){
         <!-- Field of Profession -->
         <h2><?php echo $ExistingHeadline; ?></h2>
     </header>
-
     <!-- bit of a bio; who are you? -->
     <div class="profile-bio">
         <p><?php echo $ExistingBio; ?></p>
     </div>
-
     <!-- some social links to show off -->
     <ul class="profile-social-links">
-
         <!-- your first social profile -->
         <li>
             <a href="#">
@@ -63,7 +59,6 @@ if( $Result==1 ){
                 </svg>
             </a>
         </li>
-
         <!-- your 2nd social profile -->
         <li>
             <a href="#">
@@ -73,7 +68,6 @@ if( $Result==1 ){
                 </svg>
             </a>
         </li>
-
         <!--- your 3rd social profile-->
         <li>
             <a href="#">
@@ -83,10 +77,7 @@ if( $Result==1 ){
                 </svg>
             </a>
         </li>
-
-        <!-- add or remove social profiles as you see fit -->
     </ul>
-
 </section>
 <script>
     $('#year').text(new Date().getFullYear());
