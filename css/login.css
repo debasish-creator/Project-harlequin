@@ -11,12 +11,12 @@ html {
 }
 
 body {    background: rgb(241, 242, 181);
-    background: -moz-radial-gradient(ellipse cover at center rgba(255, 255, 255, 1) 0%, rgb(0, 40, 150) 100%);
+    background: -moz-radial-gradient(ellipse cover at center rgba(255, 255, 255, 1) 0%, rgb(0, 217, 255) 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgb(80, 15, 150)));
-    background: -webkit-radial-gradient(ellipse cover at center, rgba(255, 255, 255, 1) 0%, rgb(29, 115, 195) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(13, 0, 129) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(11, 48, 150) 100%);
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgb(11, 39, 165) 100%);
+    background: -webkit-radial-gradient(ellipse cover at center, rgba(255, 255, 255, 1) 0%, rgb(180, 219, 255) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(0, 178, 209) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgb(0, 129, 138) 100%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgb(0, 177, 201) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f1f2b5', endColorstr='#135058', GradientType=1);
 
     font-family: 'Varela', sans-serif;
