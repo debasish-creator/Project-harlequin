@@ -12,7 +12,7 @@
     font-family: 'Courgette', cursive;
     font-size: 4rem;
     text-shadow: 0 1px 0 #1029d0,
-    0 2px 0 #6aade7,
+    0 2px 0 #0075db,
     0 3px 0 #adbcde,
     0 4px 0 #7488b5,
     0 5px 0 #aaa,
@@ -26,7 +26,7 @@
 }
 a{
     text-decoration: none;
-    color: inherit;
+    color: inherit; 
 }
 body{
     color: #333;
