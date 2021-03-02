@@ -133,11 +133,26 @@ Confirm_Login(); ?>
                  echo SuccessMessage();
           ?>
           <form class="" action="Admins.php" method="post">
-              <div class="card bg-secondary text-light mb-3">
-                  <div class="card-header">
-                      <h1>Add New Admin</h1>
+              <div class="card  mb-3"  style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255 / 19%) " >
+                  <div class="card-header" style="background-color:#111111;">
+                      <h1 style="     
+  font-family: Montserrat;
+  text-align: left;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: .75;
+">Add New Admin</h1>
                   </div>
-                  <div class="card-body bg-dark">
+                  <div class="card-body " style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
                       <div class="form-group">
                           <label for="username"><span class="fieldinfo"> Username:</span></label>
                           <input class="form-control" type="text" name="Username" id="username" value="">
@@ -145,7 +160,7 @@ Confirm_Login(); ?>
                       <div class="form-group">
                           <label for="Name"><span class="fieldinfo"> Name:</span></label>
                           <input class="form-control" type="text" name="Name" id="Name" value="">
-                          <small class="text-warning text-muted">Optional</small>
+                          <small class="text-warning text-muted" style="color:#f4f4f4!important">Optional</small>
                       </div>
                       <div class="form-group">
                           <label for="Password"><span class="fieldinfo"> Password:</span></label>

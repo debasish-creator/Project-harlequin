@@ -2,14 +2,17 @@
     font-family: mindsagacustom;
     src: url(../fonts/Gistesy.ttf);
 }
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 
 a{
     color: #ffffff;
 }
-.fieldinfo{
-    color: rgb(251,174,44);
+.fieldinfo {
+    color: rgb(0 0 0);
     font-family: Bitter,Georgia,"Times New Roman",Times,serif;
     font-size: 1.2em;
+    font-weight: 600;
 }
 .CommentBackground{
     background-color: #ff8c00;

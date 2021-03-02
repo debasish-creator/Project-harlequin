@@ -13,6 +13,7 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/card-2.css">
     <title>Mind Saga</title>
     <style>
         .heading{
@@ -69,7 +70,7 @@
             <h1>MindSaga</h1>
         </div>
             <!--main area starts---->
-        <div class="col-sm-8 col-lg-12">
+
             <div class="float-container">
             <?php
             global $ConnectingDB;
@@ -91,9 +92,9 @@
                 if($Page==0||$Page<1){
                     $ShowPostFrom=0;
                 }else {
-                    $ShowPostFrom = ($Page * 12) - 12;
+                    $ShowPostFrom = ($Page * 10) - 10;
                 }
-                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT $ShowPostFrom,12";
+                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT $ShowPostFrom,10";
                 $stmt = $ConnectingDB->query($sql);
             }
 //            query when category is active in URL tab
@@ -104,9 +105,12 @@
             }
               //the default SQL query
             else{
-                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,12";
+                $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,10";
                 $stmt = $ConnectingDB->query($sql);
             }
+            $sql = "SELECT * FROM posts ORDER BY id desc LIMIT 0,4";
+            $stmt = $ConnectingDB->query($sql);
+
             while ($DataRows = $stmt->fetch()){
                 $PostId = $DataRows["id"];
                 $DateTime = $DataRows["datetime"];
@@ -117,8 +121,7 @@
                 $PostDescription = $DataRows["post"];
 
             ?>
-
-                    <div class="card2 float-child shadow">
+                <div class="card2 float-child shadow">
                         <div class="image-data">
                             <div class="background-image">
                                 <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="image" class="background-image">
@@ -139,9 +142,50 @@
                             </div>
                         </div>
                     </div>
-
-            <?php } ?>
+              <?php } ?>
             </div>
+
+                <div class="headtitle-2">
+                    <h1>More posts from MindSaga</h1>
+                </div>
+                <div class="float-container-2">
+                    <?php
+                    global $ConnectingDB;
+                    $sql= "SELECT * FROM posts ORDER BY id desc LIMIT 0,4";
+                    $stmt= $ConnectingDB->query($sql);
+                    while ($DataRows=$stmt->fetch()) {
+                        $PostId = $DataRows["id"];
+                        $DateTime = $DataRows["datetime"];
+                        $PostTitle = $DataRows["title"];
+                        $Category  = $DataRows["category"];
+                        $Admin = $DataRows["author"];
+                        $Image = $DataRows["image"];
+                        $PostDescription = $DataRows["post"];
+                        ?>
+                    <div class="card-3 float-child-2 shadow-2">
+                        <div class="image-data-2">
+                            <div class="background-image-2">
+                                <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="image" class="background-image-2">
+                            </div>
+                            <div class="publication-details-2">
+                                <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" class="author"><i class="fa fa-user"></i><?php echo htmlentities($Admin); ?></a>
+                                <span class="date-2"><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($DateTime); ?></span>
+                            </div>
+                        </div>
+                        <div class="post-data-2">
+                            <h1 class="title-2"><?php echo htmlentities($PostTitle)?></h1>
+                            <h2 class="subtitle-2"><a href="index.php?category=<?php echo htmlentities($Category); ?>"> <?php echo htmlentities($Category); ?> </a></h2>
+                            <p class="description-2">
+                                <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
+                            </p>
+                            <div class="cta-2">
+                                <a href="FullPost.php?id=<?php echo $PostId; ?>"> Read More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+
             <!--pagination-->
              <nav style="float: left;">
                  <ul class="pagination pagination-lg">
@@ -162,7 +206,7 @@
                       $RowPagination=$stmt->fetch();
                       $TotalPosts=array_shift($RowPagination);
                                //echo $TotalPosts."<br>";
-                      $PostPagination=$TotalPosts/12;
+                      $PostPagination=$TotalPosts/10;
                       $PostPagination=ceil($PostPagination);
                               // echo $PostPagination;
                        for ($i=1; $i<=$PostPagination ; $i++){
