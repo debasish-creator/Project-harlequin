@@ -53,9 +53,9 @@
 <!--            --><?php //} ?>
 <!--        </div>-->
 <!--    </div>-->
-</div>
-</div>
-</div>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
 <!--HEADER ENDS-->
 <!--SIDE AREA ENDS-->
