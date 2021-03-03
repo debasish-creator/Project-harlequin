@@ -178,3 +178,6 @@ tr:nth-child(even) {
     color: #ffffff;
     text-align: left;
 }
+.custom-toggler.navbar-toggler { 
+    border-color: white; 
+} 
