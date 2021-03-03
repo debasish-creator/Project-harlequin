@@ -65,8 +65,8 @@
 
 <!--HEADER STARTS-->
 <div class="container-fluid">
-    <div class="row mt-5">
-        <div class="webpagetitle">
+    <div class="">
+        <div class="headtitle">
             <h1>MindSaga</h1>
         </div>
             <!--main area starts---->
@@ -121,7 +121,7 @@
                 $PostDescription = $DataRows["post"];
 
             ?>
-                <div class="card2 float-child shadow">
+                <div class="card-2 float-child shadow">
                         <div class="image-data">
                             <div class="background-image">
                                 <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="image" class="background-image">
