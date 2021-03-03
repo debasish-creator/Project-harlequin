@@ -198,15 +198,15 @@ echo SuccessMessage();
                     </div>
                     <div class="card-body" style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Name" id="title" placeholder="Name" value="">
+                            <input class="form-control" type="text" name="Name" id="title"  value=" ">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="text" id="title" placeholder="Headline" name="Headline" value="">
-                            <small class="text-muted"> Add a professional headline like, 'Engineer' at XYZ or 'Architect' </small>
+                            <small style="color:white"> Add a professional headline like, 'Engineer' at XYZ or 'Architect' </small>
                             <span class="text-danger">Not more than 30 characters</span>
                         </div>
                         <div class="form-group">
-                            <textarea  placeholder="Enter something about you" class="form-control" id="Post" name="Bio" rows="8" cols="80">
+                            <textarea  placeholder="Bio" class="form-control" id="Post" name="Bio" rows="8" cols="80">
 
                             </textarea>
                         </div>
