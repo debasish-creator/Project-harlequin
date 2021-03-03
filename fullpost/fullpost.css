@@ -1,20 +1,31 @@
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     width: 100%;
-    /* padding-right: var(--bs-gutter-x,.75rem);
-    padding-left: var(--bs-gutter-x,.75rem); */
-    /* margin-right: auto;
-    margin-left: auto; */
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
 }    
 
 .user-info{
     position: absolute;
     float: left;
-    top: 40%;
-    left: 5rem;
+    top: 30%;
+    left: 1rem;
     position: sticky;
     visibility: visible;
 }
 
+
+.comt{
+    padding-left: 2rem;
+    font-size: 5rem;
+    color: grey;
+    cursor: pointer;
+}
+.hidden{
+    visibility: hidden;
+}
 
 .btn-user{
     background-color: rgba(26, 137, 23, 1);
@@ -32,7 +43,7 @@ p{
 }
 .cimg{
    float: left;
-   padding-right: 0.5rem;
+   /* padding-right: 0.5rem; */
   
 }
 .blog-post-meta{
@@ -50,68 +61,52 @@ p{
 .responsive {
     width: 100%;
     height: auto;
-    padding: 1rem 0 1rem 0rem;
+    /* padding: 1rem 0 1rem 0rem; */
   }
 
+  .sidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: grey;
+    overflow-x:hidden;
+    padding-top: 6rem;
+    transition: all 0.5s;
+}
 
-@media only screen and (max-width: 1220px) {
+.sidenav a{
+    text-decoration: none;
+    font-size: 4rem;
+    color: #fff;
+    display: block;
+    padding-top: 30px 0 30px 20px;
+} 
+.sidenav a:hover{
+    color: rgba(255,255,255,0.7);
+}
+
+.closebtn{
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 45px!important;
+}
+
+.btn-cmt{
+    border: 1px solid green;
+}
+@media only screen and (max-width: 768px) {
     .user-info{
        visibility: hidden;
     }
    
 }
-/* @media only screen and (min-width: 1220px) {
-    .user-info{
-        opacity: 1;
+@media only screen and (min-width: 767px) {
+    .mobile-comt{
+       display: none;
     }
    
-} */
-@media only screen and (max-width: 767px){
-    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        width: 100%;
-        padding-right: var(--bs-gutter-x,.75rem);
-        padding-left: var(--bs-gutter-x,.75rem);
-        margin-right: auto;
-        margin-left: auto;
-    }    
-    
-    
-    
-    .btn-user{
-        background-color: rgba(26, 137, 23, 1);
-        border-radius: .5rem;
-        color: white;
-    }
-    
-    html{
-        overflow-x: hidden;
-    }
-    
-    p{
-        font-family: 'Comfortaa', cursive;
-        font-size: large;
-    }
-    .cimg{
-       float: left;
-       padding-right: 0.5rem;
-      
-    }
-    .blog-post-meta{
-        float: right;
-        
-        
-    }
-    /* .btn-secondary{
-        float: right;
-        margin-top: -5rem;
-        margin-right: 23rem;
-        display: flex;
-       
-    } */
-    .responsive {
-        width: 100%;
-        height: auto;
-        padding: 1rem 0 1rem 0rem;
-      }
-    
 }
