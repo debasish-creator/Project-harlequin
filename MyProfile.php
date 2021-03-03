@@ -183,7 +183,7 @@ echo SuccessMessage();
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Name" id="title"  value=" ">
+                            <input class="form-control" type="text" name="Name" id="title" placeholder="Name" value="">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="text" id="title" placeholder="Headline" name="Headline" value="">
@@ -191,7 +191,7 @@ echo SuccessMessage();
                             <span class="text-danger">Not more than 30 characters</span>
                         </div>
                         <div class="form-group">
-                            <textarea  placeholder="Bio" class="form-control" id="Post" name="Bio" rows="8" cols="80">
+                            <textarea  placeholder="Enter something about you" class="form-control" id="Post" name="Bio" rows="8" cols="80">
 
                             </textarea>
                         </div>
