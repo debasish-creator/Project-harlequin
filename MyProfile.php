@@ -19,20 +19,55 @@ while($DataRows = $stmt->fetch()){
     $ExistingImage    = $DataRows['aimage'];
 }
 //fetching admin data ends
-?>
+if(isset($_POST["Submit"])){
+    $AName     = $_POST["Name"];
+    $AHeadline = $_POST["Headline"];
+    $ABio      = $_POST["Bio"];
+    $Image     = $_FILES["Image"]["name"];
+    $Target    = "images/".basename($_FILES["Image"]["name"]);
+    if (strlen($AHeadline)>30) {
+        $_SESSION["ErrorMessage"] = "Headline Should be less than 30 characters";
+        Redirect_to("MyProfile.php");
+    }elseif (strlen($ABio)>500) {
+        $_SESSION["ErrorMessage"] = "Bio should be less than than 500 characters";
+        Redirect_to("MyProfile.php");
+    }else{
 
+        // Query to Update Admin Data in DB When everything is fine
+        global $ConnectingDB;
+        if (!empty($_FILES["Image"]["name"])) {
+            $sql = "UPDATE admins
+              SET aname='$AName', aheadline='$AHeadline', abio='$ABio', aimage='$Image'
+              WHERE id='$AdminId'";
+        }else {
+            $sql = "UPDATE admins
+              SET aname='$AName', aheadline='$AHeadline', abio='$ABio'
+              WHERE id='$AdminId'";
+        }
+        $Execute= $ConnectingDB->query($sql);
+        move_uploaded_file($_FILES["Image"]["tmp_name"],$Target);
+        if($Execute){
+            $_SESSION["SuccessMessage"]="Details Updated Successfully";
+            Redirect_to("MyProfile.php");
+        }else {
+            $_SESSION["ErrorMessage"]= "Something went wrong. Try Again !";
+            Redirect_to("MyProfile.php");
+        }
+    }
+}
+?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scal=1.0">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/myprofile.css">
+        <link rel="stylesheet" href="css/MyProfile.css">
         <title>My Profile</title>
     </head>
 <body>
@@ -77,8 +112,12 @@ while($DataRows = $stmt->fetch()){
         </div>
     </div>
     <!--NAVBAR ENDS-->
-    <div class="test2">
-    <section class="profile-card">
+<?php
+echo ErrorMessage();
+echo SuccessMessage();
+?>
+    <div class="test-2">
+     <section class="profile-card">
         <header>
             <!-- Profile Image-->
             <a href="#">
@@ -124,13 +163,84 @@ while($DataRows = $stmt->fetch()){
                 </a>
             </li>
         </ul>
-        <a href="Editprofile.php" target="_blank">
-            <svg class="icon">
-                <use xlink:href="images/edit.svg#edit" />
-            </svg>
-        </a>
-    </section>
+         <svg class="icon" id="edit">
+             <use xlink:href="images/edit.svg#edit" />
+         </svg>
+
+     </section>
+<!--    modal-->
+
+        <!--MAIN AREA-->
+        <div class="bg-modal">
+	       <div class="modal-contents">
+              <div class="col-lg-12" style="min-height: 400px;">
+                   <div class="close">+</div>
+
+                <form class="" action="MyProfile.php" method="post" enctype="multipart/form-data">
+                <div class="card"  style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255 / 19%) ">
+                    <div class="card-header" style="background-color:rgb(180 177 217)">
+                        <h4 style="     
+  font-family: Montserrat;
+  text-align: left;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: .75;
+">Edit Profile</h4>
+                    </div>
+                    <div class="card-body" style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Name" id="title"  value=" ">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="title" placeholder="Headline" name="Headline" value="">
+                            <small style="color:white"> Add a professional headline like, 'Engineer' at XYZ or 'Architect' </small>
+                            <span class="text-danger">Not more than 30 characters</span>
+                        </div>
+                        <div class="form-group">
+                            <textarea  placeholder="Bio" class="form-control" id="Post" name="Bio" rows="8" cols="80">
+
+                            </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="File" name="Image" id="imageSelect" value="">
+                                <label for="imageSelect" class="custom-file-label">Select Image </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 mb-2">
+                                <button type="submit" name="Submit" class="btn btn-success btn-block">
+                                    <i class="fas fa-check"></i> Update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+          </div>
+       </div>
 </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script >
+document.getElementById('edit').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "flex";
+});
+
+document.querySelector('.close').addEventListener("click", function() {
+	document.querySelector('.bg-modal').style.display = "none";
+});
+</script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br>
     <!--FOOTER STARTS-->
 <?php require_once ("Backendfooter.php");?>

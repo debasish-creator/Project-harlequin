@@ -1,10 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 :root{
     --gradient-color: linear-gradient(to bottom right, rgba(22, 187, 72, 0.938), rgb(231, 186, 36));
 }

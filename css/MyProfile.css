@@ -1,18 +1,17 @@
 html {
     height: 100%;
 }
-test2 {
-    /*background: #9b780b;*/
-    /*background-size: 120% auto;*/
+body{
+    background:url("https://wallpaperaccess.com/full/1924554.jpg");
     position: fixed;
     padding: 0;
     margin: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     font: normal 14px/1.618em "Hind", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-test2:before {
+test-2:before {
     content: "";
     height: 0;
     padding: 0;
@@ -43,7 +42,7 @@ p {
     margin: 0;
 }
 .profile-card {
-    background: #baa413;
+    background: #9a09cf;
     width: 56px;
     height: 56px;
     position: absolute;
@@ -106,7 +105,8 @@ p {
     animation: scaleIn 0.3s 3.5s ease forwards;
 }
 .profile-card header a > img {
-    width: 120px;
+    width: 180px;
+    height: 180px;
     max-width: 100%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -157,9 +157,9 @@ p {
 }
 .profile-social-links li a {
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    padding: 6px;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
     position: relative;
     overflow: hidden!important;
     -webkit-border-radius: 50%;
@@ -172,7 +172,7 @@ p {
 .profile-social-links li a:before {
     display: block;
     content: "";
-    background: rgba(0, 0, 0, 0.3);
+    background: rgb(68, 6, 102);
     position: absolute;
     left: 0;
     top: 0;
@@ -195,15 +195,15 @@ p {
     width: 24px;
 }
 .icon{
-    width: 15%;
-    height: 15%;
-    margin: 30px 80px 20px 120px;
+    width: 10%;
+    height: 10%;
+    margin: 20px 176px 4px 185px;
 }
 @media screen and (min-aspect-ratio: 4/3) {
-    test2 {
+    test-2 {
         background-size: 100% auto;
     }
-    test2:before {
+    test-2:before {
         width: 0;
     }
     @-webkit-keyframes puff {
@@ -379,7 +379,7 @@ p {
 }
 @-webkit-keyframes moveUp {
     0% {
-        background: #FFB300;
+        background: #761898;
         top: 100%;
     }
     50% {
@@ -392,7 +392,7 @@ p {
 }
 @keyframes moveUp {
     0% {
-        background: #FFB300;
+        background: #7415cf;
         top: 100%;
     }
     50% {
@@ -453,8 +453,8 @@ p {
         border-radius: 4px;
     }
     100% {
-        width: 280px;
-        height: 440px;
+        width: 400px;
+        height: 500px;
         background: #FFFFFF;
         border-radius: 4px;
     }
@@ -517,3 +517,36 @@ p {
         opacity: 0;
     }
 }
+
+/*modal*/
+.bg-modal {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.modal-contents {
+    height: 560px;
+    width: 600px;
+    background-color: #bcafce;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    border-radius: 4px;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    font-size: 50px;
+    color: #3b0217;
+    transform: rotate(45deg);
+    cursor: pointer;
+
+ }

@@ -27,10 +27,10 @@ if(isset($_POST["Submit"])){
     $Target    = "images/".basename($_FILES["Image"]["name"]);
     if (strlen($AHeadline)>30) {
         $_SESSION["ErrorMessage"] = "Headline Should be less than 30 characters";
-        Redirect_to("Editprofile.php");
+        Redirect_to("EditProfile.php");
     }elseif (strlen($ABio)>500) {
         $_SESSION["ErrorMessage"] = "Bio should be less than than 500 characters";
-        Redirect_to("Editprofile.php");
+        Redirect_to("EditProfile.php");
     }else{
 
         // Query to Update Admin Data in DB When everything is fine
@@ -48,10 +48,10 @@ if(isset($_POST["Submit"])){
         move_uploaded_file($_FILES["Image"]["tmp_name"],$Target);
         if($Execute){
             $_SESSION["SuccessMessage"]="Details Updated Successfully";
-            Redirect_to("Editprofile.php");
+            Redirect_to("EditProfile.php");
         }else {
             $_SESSION["ErrorMessage"]= "Something went wrong. Try Again !";
-            Redirect_to("Editprofile.php");
+            Redirect_to("EditProfile.php");
         }
     }
 }
@@ -137,23 +137,23 @@ if(isset($_POST["Submit"])){
             echo ErrorMessage();
             echo SuccessMessage();
             ?>
-            <form class="" action="Editprofile.php" method="post" enctype="multipart/form-data">
+            <form class="" action="EditProfile.php" method="post" enctype="multipart/form-data">
                 <div class="card bg-dark text-light">
                     <div class="card-header bg-secondary text-light">
                         <h4>Edit Profile</h4>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Name" id="title"  value="<?php echo $ExistingName; ?>">
+                            <input class="form-control" type="text" name="Name" id="title"  value=" ">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" id="title" placeholder="Headline" name="Headline" value="<?php echo $ExistingHeadline; ?>">
+                            <input class="form-control" type="text" id="title" placeholder="Headline" name="Headline" value="">
                             <small class="text-muted"> Add a professional headline like, 'Engineer' at XYZ or 'Architect' </small>
                             <span class="text-danger">Not more than 30 characters</span>
                         </div>
                         <div class="form-group">
                             <textarea  placeholder="Bio" class="form-control" id="Post" name="Bio" rows="8" cols="80">
-                                <?php echo $ExistingBio; ?>
+
                             </textarea>
                         </div>
 
