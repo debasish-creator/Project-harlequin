@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     width: 100%;
     padding-right: var(--bs-gutter-x,.75rem);
@@ -5,15 +6,24 @@
     max-width: 100%;
     margin: auto;
     overflow: hidden;
-}    
+    position: absolute;
+    margin-top: 2rem;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 .user-info{
-    position: absolute;
+    position: fixed;
     float: left;
-    top: 30%;
+    margin-left: 2.5rem;
+    margin-top: 16rem;
     left: 1rem;
-    position: sticky;
     visibility: visible;
+    z-index: 12;
+    font-family: 'Akaya Kanadaka', 'cursive';
 }
 
 
@@ -42,36 +52,30 @@ p{
     font-size: large;
 }
 .cimg{
-   float: left;
-   /* padding-right: 0.5rem; */
-  
+    border: 1px solid black;
+    float: left;
+    /* padding-right: 0.5rem; */
+    border-radius: 50%;
+
 }
 .blog-post-meta{
     float: right;
-    
-    
+
 }
-/* .btn-secondary{
-    float: right;
-    margin-top: -5rem;
-    margin-right: 23rem;
-    display: flex;
-   
-} */
+
 .responsive {
     width: 100%;
     height: auto;
-    /* padding: 1rem 0 1rem 0rem; */
-  }
+}
 
-  .sidenav{
+.sidenav{
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
     right: 0;
     z-index: 1;
-    background-color: grey;
+    background-color: rgb(238, 230, 230);
     overflow-x:hidden;
     padding-top: 6rem;
     transition: all 0.5s;
@@ -82,8 +86,8 @@ p{
     font-size: 4rem;
     color: #fff;
     display: block;
-    padding: 30px 0 30px 20px;
-} 
+    padding-top: 30px 0 30px 20px;
+}
 .sidenav a:hover{
     color: rgba(255,255,255,0.7);
 }
@@ -94,19 +98,27 @@ p{
     left: 25px;
     font-size: 45px!important;
 }
-
-.btn-cmt{
-    border: 1px solid green;
+.fa-comment:hover{
+    color: rgb(202, 229, 240);
 }
+.fa-comment:before{
+    font-size: 2rem;
+    padding-top:.5rem ;
+    position: absolute;
+    margin-top: -1.9rem;
+}
+/* .btn-cmt{
+    border: 1px solid green;
+} */
 @media only screen and (max-width: 768px) {
     .user-info{
-       visibility: hidden;
+        visibility: hidden;
     }
-   
+
 }
 @media only screen and (min-width: 767px) {
     .mobile-comt{
-       display: none;
+        display: none;
     }
-   
+
 }

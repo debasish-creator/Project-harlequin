@@ -51,68 +51,27 @@ if(isset($_POST["Submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/fullpost.css">
+    <link rel="stylesheet" href="css/FullPost.css">
 
     <title>Full Post</title>
-    <style media="screen">
-        .heading{
-            font-family: Bitter,Georgia,"Times New Roman",Times,serif;
-            font-weight: bold;
-            color: #005E90;
-        }
-        .heading:hover{
-            color: #0090DB;
-        }
-    </style>
+<!--    <style media="screen">-->
+<!--        .heading{-->
+<!--            font-family: Bitter,Georgia,"Times New Roman",Times,serif;-->
+<!--            font-weight: bold;-->
+<!--            color: #005E90;-->
+<!--        }-->
+<!--        .heading:hover{-->
+<!--            color: #0090DB;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 <body>
-<!--NAVIGATION BAR STARTS-->
-<div class="navbar navbar-expand-lg navbar-dark bg-custom">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
-        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="Rcollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a href="index.php?page=1" class="nav-link" style= "color:white ; font-weight: bolder;">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=1" class="nav-link" style= "color:white ; font-weight: bolder;">Blog</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder;">Features</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <form class="form-inline d-none d-sm-block" action="index.php">
-                    <div class="form-group">
-                        <input class="form-control mr-2" type="text" name="Search" placeholder="Search here" value="">
-                        <button  class="btn btn-primary" name="SearchButton">Go</button>
-                    </div>
-                </form>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--NAVIGATION BAR ENDS-->
-
 <!--HEADER STARTS-->
-<div class="user-info" data-aos = "fade-right">
+<div class="user-info" style="font-family: 'Times New Roman';font-weight: bold;" data-aos = "fade-right">
     WEBWIZ
     <br>
     <br>
@@ -132,27 +91,51 @@ if(isset($_POST["Submit"])) {
         </a>
         <section>
             <div class="container">
-                <div class="">
-                    <form id="algin-form" class=""action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
-                        <div class="form-group">
-                            <h4>Leave a comment</h4>
-                            <label for="message">Message</label>
-                            <textarea name="CommenterThoughts" id="" msg cols="30" rows="5" class="form-control" style="background-color: white;">
+                <div class="row">
+                    <div class="">
+                        <h1>Comments</h1>
+                        <?php
+                        global $ConnectingDB;
+                        $sql ="SELECT * FROM comments WHERE post_id='$SearchQueryParameter' AND status='ON'";
+                        $stmt =$ConnectingDB->query($sql);
+                        while ($DataRows = $stmt->fetch()){
+                            $CommentDate = $DataRows['datetime'];
+                            $CommenterName = $DataRows['name'];
+                            $CommentContent = $DataRows['comment'];
+
+                            ?>
+                            <div class="comment mt-4 text-justify float-left"> <img src="images/comment.png" alt="" class="rounded-circle" width="40" height="40">
+                                <h4><?php echo $CommenterName; ?></h4> <span>- <?php echo $CommentDate; ?></span> <br>
+                                <p>
+                                    <?php echo $CommentContent; ?>
+                                </p>
+                            </div>
+                            <hr>
+                        <?php } ?>
+                    </div>
+                    <!--ends of fetching commenting parts-->
+                    <div class="">
+                        <form  class="" id="algin-form" action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
+                            <div class="form-group">
+                                <h4>Leave a comment</h4>
+                                <label for="message">Message</label>
+                                <textarea name="CommenterThoughts" id=""  cols="30" rows="5" class="form-control" style="background-color: white;">
 
                                 </textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="CommenterName" id="fullname" class="form-control" placeholder="want your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name="CommenterEmail" placeholder="want your Email" id="email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" name="Submit" class="btn btn-success" style="padding: 1rem;">Post Comment</button>
-                        </div>
-                    </form>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="CommenterName" id="" class="form-control" placeholder="want your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="CommenterEmail" placeholder="want your Email" id="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="Submit" class="btn btn-success" style="margin: 1rem 0 1rem 0;">Post Comment</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -302,8 +285,29 @@ if(isset($_POST["Submit"])) {
                 </div>
             </div>
         </section>
+    </div>
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        offset: 500,
+        duration: 1000,
+    });
 
-        <?php require_once ("footer.php");?>
+    const openNav = () => {
+        document.getElementById('mySidenav').style.width="24rem";
+    }
+    const closeNav = () => {
+        document.getElementById('mySidenav').style.width="0";
+    }
+</script>
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
 
