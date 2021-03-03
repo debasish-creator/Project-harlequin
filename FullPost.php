@@ -49,13 +49,16 @@ if(isset($_POST["Submit"])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scal=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fullpost.css">
+
     <title>Full Post</title>
     <style media="screen">
         .heading{
@@ -109,41 +112,87 @@ if(isset($_POST["Submit"])) {
 <!--NAVIGATION BAR ENDS-->
 
 <!--HEADER STARTS-->
+<div class="user-info" data-aos = "fade-right">
+    WEBWIZ
+    <br>
+    <br>
+    The official Medium <br>
+    of WEBWIZ. <br>Learn more:
+    <br>
+    https://webwiz.xyz
+    <br>
+    <br>
+    <button type="button" class="btn btn-success">Follow</button>
+    <!-- left sidebar ends -->
+
+    <!-- comment sidebar starts... -->
+    <div class="sidenav" id="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            &times;
+        </a>
+        <section>
+            <div class="container">
+                <div class="">
+                    <form id="algin-form" class=""action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
+                        <div class="form-group">
+                            <h4>Leave a comment</h4>
+                            <label for="message">Message</label>
+                            <textarea name="CommenterThoughts" id="" msg cols="30" rows="5" class="form-control" style="background-color: white;">
+
+                                </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="CommenterName" id="fullname" class="form-control" placeholder="want your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="CommenterEmail" placeholder="want your Email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="Submit" class="btn btn-success" style="padding: 1rem;">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <a href="javascript:void(0)"><i class="fa fa-comment comt" aria-hidden="true" onclick="openNav()"></i></a>
+</div>
 <div class="container">
-    <div class="row mt-4">
+    <div class="row justify-content-md-center">
 
         <!--main area starts---->
+        <div class="col-md-6 align-self-center">
+                <?php
+                echo ErrorMessage();
+                echo SuccessMessage();
+                ?>
 
-        <div class="col-sm-8 mt-4">
-            <?php
-            echo ErrorMessage();
-            echo SuccessMessage();
-            ?>
 
             <?php
-            $ConnectingDB;
-            if(isset($_GET["SearchButton"])){
+                global $ConnectingDB;
+                if(isset($_GET["SearchButton"])){
                 $Search = $_GET["Search"];
-                $sql="SELECT * FROM posts 
+                $sql="SELECT * FROM posts
                 WHERE datetime LIKE :Search
                 OR title LIKE :Search
-                OR category LIKE :Search 
+                OR category LIKE :Search
                 OR post LIKE :Search";
                 $stmt = $ConnectingDB->prepare($sql);
                 $stmt->bindvalue(':Search','%'.$Search.'%');
                 $stmt->execute();
-            }
-
-            else{
+                }
+                else{
                 $PostIdFromURL = $_GET["id"];
                 if(!isset($PostIdFromURL)){
-                    $_SESSION["ErrorMessage"]="Bad Request !";
-                    Redirect_to("index.php");
+                $_SESSION["ErrorMessage"]="Bad Request !";
+                Redirect_to("index.php");
                 }
                 $sql = "SELECT * FROM posts WHERE id= '$PostIdFromURL'";
                 $stmt = $ConnectingDB->query($sql);
-            }
-            while ($DataRows = $stmt->fetch()){
+                }
+                while ($DataRows = $stmt->fetch()){
                 $PostId = $DataRows["id"];
                 $DateTime = $DataRows["datetime"];
                 $PostTitle = $DataRows["title"];
@@ -159,91 +208,101 @@ if(isset($_POST["Submit"])) {
                 $PostDescription3 = $DataRows["post3"];
 
                 ?>
-                <div class="card">
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" style="max-height: 500px;" class="img-fluid card-img-top"/>
-                    <div class="card-body">
-                        <h4 class="card-title"><?php echo htmlentities($PostTitle)?></h4>
-                        <small class="text-muted">Written by <?php echo htmlentities($Admin);?> on <?php echo htmlentities($DateTime); ?></small>
-                        <hr>
-                        <p class="card-text">
-                            <?php  echo nl2br($PostDescription) ?>
-                        </p>
-                        <img src="Uploads/<?php echo htmlentities($Image2); ?>" style="max-height: 500px;" class="img-fluid card-img-top"/>
-                        <p class="card-text">
-                            <?php  echo nl2br($PostDescription2) ?>
-                        </p>
-                        <img src="Uploads/<?php echo htmlentities($Image3); ?>" style="max-height: 500px;" class="img-fluid card-img-top"/>
-                        <p class="card-text">
-                            <?php  echo nl2br($PostDescription3) ?>
-                        </p>
-                    </div>
-                </div>
+                <h1 class="phoenix" style="align-items: center;  font-family:  'Bebas Neue', cursive; padding: 2rem; padding-left: 4rem; font-size: 60px;">
+                    <?php echo htmlentities($PostTitle)?>
+                    <br>
+                </h1>
+                <article class="blog-post">
+                  <!--author description-->
+                    <img alt="Sean Kernan" class="cimg" src="https://miro.medium.com/fit/c/72/72/1*guKWDyFxW4c3NBQrrHt2PA.jpeg">
+                    <p class="blog-post-meta">
+                        <h5 style="padding-top: 0.64rem;"><?php echo htmlentities($DateTime); ?> by <a href="#"><?php echo htmlentities($Admin);?></a></h5>
+                        <br>
+                    </p>
 
-            <?php } ?>
-            <br>
-            <br>
-            <!--starting of comment part.-->
-            <!--fetching existing comments from database-->
-            <span class="fieldinfo">Comments</span>
-            <br><br>
-            <?php
-            global $ConnectingDB;
-            $sql ="SELECT * FROM comments WHERE post_id='$SearchQueryParameter' AND status='ON'";
-            $stmt =$ConnectingDB->query($sql);
-            while ($DataRows = $stmt->fetch()){
-                $CommentDate = $DataRows['datetime'];
-                $CommenterName = $DataRows['name'];
-                $CommentContent = $DataRows['comment'];
+                    <p>
+                       <h5 style="font-family: 'Akaya Telivigala', cursive;">This blog post shows a few different types of content that’s supported and styled with
+                        Bootstrap. Basic typography, images, and code are all supported.
+                      </h5>
+                    </p>
+                    <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="" class="responsive">
 
-                ?>
-                <div>
-                    <div class="media CommentBackground">
-                        <img class="d-block img-fluid align-self-center" src="images/comment.png" alt="">
-                        <div class="media-body ml-2 ">
-                            <h6 class="lead"><?php echo $CommenterName; ?></h6>
-                            <p class="small"><?php echo $CommentDate; ?></p>
-                            <p><?php echo $CommentContent; ?></p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            <?php } ?>
-            <!--ends of fetching commenting parts-->
-
-            <div >
-                <form class="" action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <h5 class="Fieldinfo">Want to share something with this post we are here for you</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                    </div>
-                                    <input class="form-control" type="text" name="CommenterName" placeholder="want your name" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                    </div>
-                                    <input class="form-control" type="email" name="CommenterEmail" placeholder="want your Email" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="CommenterThoughts" class="form-control" cols="800" rows="6"></textarea>
-                            </div>
-                            <div class="">
-                                <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                    <hr>
+                    <p>
+                        <?php  echo nl2br($PostDescription) ?>
+                    </p>
+                    <img src="Uploads/<?php echo htmlentities($Image2); ?>" alt="" class="responsive">
+                    <p>
+                        <?php  echo nl2br($PostDescription2) ?>
+                    </p>
+                    <img src="Uploads/<?php echo htmlentities($Image3); ?>" alt="" class="responsive">
+                    <p>
+                        <?php  echo nl2br($PostDescription3) ?>
+                    </p>
+                </article>
+                <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">Secondary</span>
+                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
+                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
+                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
             </div>
-        </div>
+        <?php } ?>
+            <br>
+            <br>
+        <!--starting of comment part.-->
+        <!--fetching existing comments from database-->
+        <section class="mobile-comt">
+            <div class="container">
+                <div class="row">
+                    <div class="">
+                        <h1>Comments</h1>
+                        <?php
+                        global $ConnectingDB;
+                        $sql ="SELECT * FROM comments WHERE post_id='$SearchQueryParameter' AND status='ON'";
+                        $stmt =$ConnectingDB->query($sql);
+                        while ($DataRows = $stmt->fetch()){
+                            $CommentDate = $DataRows['datetime'];
+                            $CommenterName = $DataRows['name'];
+                            $CommentContent = $DataRows['comment'];
+
+                            ?>
+
+
+                        <div class="comment mt-4 text-justify float-left"> <img src="images/comment.png" alt="" class="rounded-circle" width="40" height="40">
+                            <h4><?php echo $CommenterName; ?></h4> <span>- <?php echo $CommentDate; ?></span> <br>
+                            <p>
+                                <?php echo $CommentContent; ?>
+                            </p>
+                        </div>
+                            <hr>
+                        <?php } ?>
+                    </div>
+                    <!--ends of fetching commenting parts-->
+                    <div class="">
+                        <form id="algin-form" class=""action="FullPost.php?id=<?php echo $SearchQueryParameter ?>" method="post">
+                            <div class="form-group">
+                                <h4>Leave a comment</h4>
+                                <label for="message">Message</label>
+                                <textarea name="CommenterThoughts" id="" msg cols="30" rows="5" class="form-control" style="background-color: white;">
+
+                                </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="CommenterName" id="fullname" class="form-control" placeholder="want your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="CommenterEmail" placeholder="want your Email" id="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="Submit" class="btn btn-success" style="padding: 1rem;">Post Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <?php require_once ("footer.php");?>
 
 
