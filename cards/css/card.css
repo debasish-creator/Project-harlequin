@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    /*box-sizing: border-box;*/
-}
 :root{
     --gradient-color: linear-gradient(to bottom right, rgba(22, 187, 72, 0.938), rgb(231, 186, 36));
 }
@@ -50,18 +45,12 @@ body{
     /* padding: 0 1.5rem; */
 }
 .float-container{
-    /* padding: 0 0 0 14rem; */
-    /* top: 100rem; */
-    /*display: block;*/
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
+
 }
 .card{
-    /*display: flex;*/
     flex-direction:column;
     background-color: #fff;
 }

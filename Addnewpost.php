@@ -96,10 +96,10 @@ if(isset($_POST["Submit"])){
 <body>
 <?php  ?>
 <!--NAVBAR STARTS-->
-<div class="navbar navbar-expand-lg navbar-light bg-custom">
+<div class="navbar navbar-expand-lg navbar-dark bg-custom">
     <div class="container">
         <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
-        <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="Rcollapse">
@@ -157,8 +157,8 @@ if(isset($_POST["Submit"])){
             echo SuccessMessage();
             ?>
             <form class="" action="Addnewpost.php" method="post" enctype="multipart/form-data">
-                <div class="card bg-secondary text-light mb-3">
-                    <div class="card-body bg-dark">
+                <div class="card mb-3" style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255 / 19%) ">
+                    <div class="card-body" style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
                         <div class="form-group">
                             <label for="title"><span class="fieldinfo">Post Title :</span></label>
                             <input class="form-control" type="text" name="PostTitle" placeholder="Type title here">

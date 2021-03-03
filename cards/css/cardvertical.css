@@ -1,0 +1,465 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gradient-color: linear-gradient(to bottom right, rgba(22, 187, 72, 0.938), rgb(231, 186, 36));
+}
+html{
+   font-size:10px;
+}
+.headtitle-2{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 2rem;
+    font-family: 'Courgette', cursive;
+    font-size: 4rem;
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    font-family:'open sans', 'san serif';
+    font-size: 1.6rem;
+    color: #333;
+    /* background-color: #eee; */
+    width: 100%;
+    /* height: 100vh; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 1.5rem; */
+}
+.float-container-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.card-3{
+    display: flex;
+    flex-direction:column;
+    background-color: #fff;
+}
+
+.float-child-2 {
+    padding: 20px;
+    border: 2px solid rgb(138, 132, 132);
+    border-radius: 2rem;
+    margin: .8rem;
+}
+.image-data-2{
+    height: 25rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.background-image-2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: url("https://source.unsplash.com/random") center no-repeat;
+    background-size: cover;
+    z-index: -1;
+    transition: transform 5s;
+}
+
+.card-3:hover .background-image-2{
+    transform: scale(1.5);
+}
+
+.publication-details-2{
+    width: 100%;
+    height: 100%;
+    background:var(--gradient-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:1rem;
+}
+.publication-details-2 i{
+    margin-right: 1rem;
+}
+
+.author-2{
+    display: inline-block;
+    margin-bottom: .5rem;
+    transition: all .5s .3s;
+}
+.author-2:hover{
+    color: rgba(255,255,255,.75);
+}
+.date-2{
+    display: block;
+}
+.post-data-2{
+    background-color: #fff;
+    padding: 2rem 3rem;
+    position: relative;
+}
+.title-2{
+    font-size: 3rem;
+    line-height: 1;
+}
+.subtitle-2{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #a2a2a2;
+    margin: 1rem 0 1.5rem 0;
+}
+.description-2{
+    position: relative;
+}
+.description-2::first-letter{
+    margin-left: 1rem;
+}
+
+.description-2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .5rem;
+    height: 1.8rem;
+    background: var(--gradient-color);
+    border-radius: 2rem;
+}
+
+.cta-2{
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.cta-2 a{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+.cta-2 a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s;
+}
+.cta-2 a:hover::before{
+    transform: scaleX(1);
+}
+.shadow {
+    /* width:350px;height:200px; */
+/* border: solid 1px #555; */
+/* background-color: #eed; */
+box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
+-moz-box-shadow: 0 0 10px rgba(223, 215, 215, 0.6);
+-webkit-box-shadow: 0 0 10px rgba(206, 202, 202, 0.6);
+-o-box-shadow: 10px 10px 10px rgba(235, 227, 227, 0.6);
+}
+.publication-details-2{
+    transform: translateY(-100%);
+    transition: transform .5s;
+}
+.card-3:hover .publication-details-2{
+    transform: translateX(0);
+}
+.author-2{
+    transform: translateY(-3rem);
+    opacity: 0;
+    transition-delay: .3s;
+}
+.date-2{
+    transform: translateY(3rem);
+    opacity: 0;
+    transition: all .5s .3s;
+}
+.card-3:hover .author-2,
+.card-3:hover .date-2{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@media only screen and (max-width: 950px) and (min-width: 500px){
+    .float-container-2{
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-3{
+        display: inline-flex;
+        flex-direction: row;
+        max-width: 95rem;
+    }
+    .image-data-2{
+        flex-basis: 40%;
+        height: unset;
+    }
+    .publication-details-2{
+        transform: translateX(-100%);
+        transition: transform .5s;
+    }
+    .card-3:hover .publication-details-2{
+        transform: translateX(0);
+    }
+    .author-2{
+        transform: translateY(-3rem);
+        opacity: 0;
+        transition-delay: .3s;
+    }
+    .date-2{
+        transform: translateY(3rem);
+        opacity: 0;
+        transition: all .5s .3s;
+    }
+    .card-3:hover .author-2,
+    .card-3:hover .date-2{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .post-data-2{
+        flex-basis: 60%;
+    }
+
+    .post-data-2::before{
+        content: '';
+        width: 2.9rem;
+        height: 100%;
+        background-color: #221264;
+        position: absolute;
+        top:0;
+        left: -1.5rem;
+        z-index: 10;
+        transform: skewX(-5deg);
+    }
+
+}
+@media only screen and (max-width: 500px){
+    .headtitle-2{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 2rem;
+        font-family: 'Courgette', cursive;
+        font-size: 4rem;
+        text-shadow: 0 1px 0 #ccc,
+                   0 2px 0 #c9c9c9,
+                   0 3px 0 #bbb,
+                   0 4px 0 #b9b9b9,
+                   0 5px 0 #aaa,
+                   0 6px 1px rgba(0,0,0,.1),
+                   0 0 5px rgba(0,0,0,.1),
+                   0 1px 3px rgba(0,0,0,.3),
+                   0 3px 5px rgba(0,0,0,.2),
+                   0 5px 10px rgba(0,0,0,.25),
+                   0 10px 10px rgba(0,0,0,.2),
+                   0 20px 20px rgba(0,0,0,.15);
+    }
+    
+    
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    body{
+        font-family:'open sans', 'san serif';
+        font-size: 1.6rem;
+        color: #333;
+        /* background-color: #eee; */
+        width: 100%;
+        /* height: 100vh; */
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        /* padding: 0 1.5rem; */
+    }
+    .float-container-2{
+        /* padding: 0 0 0 14rem; */
+        /* top: 100rem; */
+        display: block;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+    }
+    .card-3{
+        display: flex;
+        flex-direction:column;
+        background-color: #fff;
+    }
+    
+    .float-child-2 {
+        padding: 20px;
+        border: 2px solid rgb(138, 132, 132);
+        border-radius: 2rem;
+        margin: .8rem;
+    }
+    .image-data-2{
+        height: 25rem;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .background-image-2{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        background: url("https://source.unsplash.com/random") center no-repeat;
+        background-size: cover;
+        z-index: -1;
+        transition: transform 5s;
+    }
+    
+    .card-3:hover .background-image-2{
+        transform: scale(1.5);
+    }
+    
+    .publication-details-2{
+        width: 100%;
+        height: 100%;
+        background:var(--gradient-color);
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding:1rem;
+    }
+    .publication-details-2 i{
+        margin-right: 1rem;
+    }
+    
+    .author-2{
+        display: inline-block;
+        margin-bottom: .5rem;
+        transition: all .5s .3s;
+    }
+    .author-2:hover{
+        color: rgba(255,255,255,.75);
+    }
+    .date-2{
+        display: block;
+    }
+    .post-data-2{
+        background-color: #fff;
+        padding: 2rem 3rem;
+        position: relative;
+    }
+    .title-2{
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .subtitle-2{
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #a2a2a2;
+        margin: 1rem 0 1.5rem 0;
+    }
+    .description-2{
+        position: relative;
+    }
+    .description-2::first-letter{
+        margin-left: 1rem;
+    }
+    
+    .description-2::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: .5rem;
+        height: 1.8rem;
+        background: var(--gradient-color);
+        border-radius: 2rem;
+    }
+    
+    .cta-2{
+        text-align: right;
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+    
+    .cta-2 a{
+        background: var(--gradient-color);
+        -webkit-background-clip: text;
+        color: transparent;
+        position: relative;
+    }
+    
+    .cta-2 a::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient-color);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .5s;
+    }
+    .cta-2 a:hover::before{
+        transform: scaleX(1);
+    }
+    .shadow {
+        /* width:350px;height:200px; */
+    /* border: solid 1px #555; */
+    /* background-color: #eed; */
+    box-shadow: 10px 10px 100px rgba(219, 218, 218, 0.6);
+    -moz-box-shadow: 0 0 10px rgba(223, 215, 215, 0.6);
+    -webkit-box-shadow: 0 0 10px rgba(206, 202, 202, 0.6);
+    -o-box-shadow: 10px 10px 10px rgba(235, 227, 227, 0.6);
+    }
+    .post-data-2::before{
+        content: '';
+        width: 2.9rem;
+        height: 100%;
+        background-color: #221264;
+        position: absolute;
+        top:2px;
+        left: -0.8rem;
+        z-index: 10;
+        transform: skewX(-6deg);
+    }
+    
+    
+}
