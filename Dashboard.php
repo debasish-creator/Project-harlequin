@@ -59,7 +59,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
 
     </div>
 </div>
-<!--NAVBAR-->
+<!--NAVBAR -->
 
 <!--HEADER-->
 <header class=" text-white py-3" style="background-image:linear-gradient(360deg, #1B80B2 ,#1B0039);">
