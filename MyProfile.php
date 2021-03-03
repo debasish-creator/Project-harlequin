@@ -177,11 +177,26 @@ echo SuccessMessage();
                    <div class="close">+</div>
 
                 <form class="" action="MyProfile.php" method="post" enctype="multipart/form-data">
-                <div class="card bg-dark text-light">
-                    <div class="card-header bg-secondary text-light">
-                        <h4>Edit Profile</h4>
+                <div class="card"  style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255 / 19%) ">
+                    <div class="card-header" style="background-color:rgb(180 177 217)">
+                        <h4 style="     
+  font-family: Montserrat;
+  text-align: left;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: .75;
+">Edit Profile</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
                         <div class="form-group">
                             <input class="form-control" type="text" name="Name" id="title"  value=" ">
                         </div>
