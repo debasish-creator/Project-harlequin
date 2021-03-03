@@ -177,7 +177,7 @@ echo SuccessMessage();
                    <div class="close">+</div>
 
                 <form class="" action="MyProfile.php" method="post" enctype="multipart/form-data">
-                <div class="card"  style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255 / 19%) ">
+                <div class="card"  style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255/ 19%) ">
                     <div class="card-header" style="background-color:rgb(180 177 217)">
                         <h4 style="     
   font-family: Montserrat;
@@ -198,7 +198,7 @@ echo SuccessMessage();
                     </div>
                     <div class="card-body" style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Name" id="title"  value=" ">
+                            <input class="form-control" type="text" name="Name" id="title" placeholder="Your name" value="">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="text" id="title" placeholder="Headline" name="Headline" value="">
