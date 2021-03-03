@@ -25,10 +25,10 @@
 </head>
 <body>
 <!--NAVIGATION BAR STARTS-->
-<div class="navbar navbar-expand-lg navbar-light bg-custom">
+<div class="navbar navbar-expand-lg navbar-dark bg-custom">
     <div class="container-fluid">
         <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarContent" aria-controls="NavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarContent" aria-controls="NavbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 <!--        CONTENT WHEN NAVBAR IS COLLAPSE-->

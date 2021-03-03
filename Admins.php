@@ -73,10 +73,10 @@ Confirm_Login(); ?>
 <body>
 <?php  ?>
 <!--NAVIGATION BAR-->
-<div class="navbar navbar-expand-lg navbar-light bg-custom">
+<div class="navbar navbar-expand-lg navbar-dark bg-custom">
     <div class="container">
         <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
-        <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Rcollapse" aria-controls="Rcollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="Rcollapse">
