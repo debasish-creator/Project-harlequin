@@ -157,8 +157,8 @@ if(isset($_POST["Submit"])){
             echo SuccessMessage();
             ?>
             <form class="" action="Addnewpost.php" method="post" enctype="multipart/form-data">
-                <div class="card bg-secondary text-light mb-3">
-                    <div class="card-body bg-dark">
+                <div class="card mb-3" style=" box-shadow: 0 8px 14px 0 rgb(159 171 255), 0 16px 20px 0 rgb(121 255 255 / 19%) ">
+                    <div class="card-body" style="background-image:linear-gradient(270deg,#310265,#1B80B2);">
                         <div class="form-group">
                             <label for="title"><span class="fieldinfo">Post Title :</span></label>
                             <input class="form-control" type="text" name="PostTitle" placeholder="Type title here">

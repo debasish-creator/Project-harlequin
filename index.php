@@ -185,6 +185,35 @@
                     </div>
                     <?php } ?>
                 </div>
+        <div class="card">
+            <div class="card-header text-white" style = "background-color:#280038">
+                <h2 class="lead"> Recent Posts</h2>
+            </div>
+            <div class="card-body col-xs-6 col-sm-4 col-lg-12" >
+                <?php
+                global $ConnectingDB;
+                $sql= "SELECT * FROM posts ORDER BY id desc LIMIT 0,6";
+                $stmt= $ConnectingDB->query($sql);
+                while ($DataRows=$stmt->fetch()) {
+                    $Id     = $DataRows['id'];
+                    $Title  = $DataRows['title'];
+                    $DateTime = $DataRows['datetime'];
+                    $Image = $DataRows['image'];
+                    ?>
+                    <div class="media" style="display: inline-flex; flex-direction: row; margin-left: 30px; float: left;">
+                        <div class="" style="flex-basis: 40%;">
+                            <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start"  width="90" height="94" alt="">
+                        </div>
+                        <div class="media-body" style="flex-basis: 60%;" >
+                            <a style="text-decoration:none;"href="FullPost.php?id=<?php echo htmlentities($Id) ; ?>" target="_blank">
+                                <h6 class="lead heading"><?php echo htmlentities($Title); ?></h6>
+                            </a>
+                            <p class="small"><?php echo htmlentities($DateTime); ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
 
             <!--pagination-->
              <nav style="float: left;">
