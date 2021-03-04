@@ -219,10 +219,23 @@ if(isset($_POST["Submit"])) {
                         <?php  echo nl2br($PostDescription3) ?>
                     </p>
                 </article>
-                <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">Secondary</span>
-                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
-                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
-                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
+
+            <div class="card-body">
+                <?php
+                global $ConnectingDB;
+                $sql = "SELECT *FROM category ORDER BY id desc";
+                $stmt = $ConnectingDB->query($sql);
+                while ($DataRows = $stmt->fetch()){
+                    $categoryId = $DataRows["id"];
+                    $CategoryName=$DataRows["title"];
+                    ?>
+                    <a href="index.php?category=<?php echo $CategoryName; ?>">
+                         <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">
+                         <?php echo $CategoryName; ?>
+                         </span>
+                    </a>
+                <?php }?>
+            </div>
             </div>
         <?php } ?>
 

@@ -92,6 +92,7 @@
     <div class="row mt-5">
         <!--main area starts---->
         <div class="col-sm-8">
+
             <div class="card-body">
             <?php
             global $ConnectingDB;
@@ -139,40 +140,25 @@
                 $Image = $DataRows["image"];
                 $PostDescription = $DataRows["post"];
                 ?>
-<!--                                       <div class="card-2 float-child shadow">-->
-<!--                                        <div class="image-data">-->
-<!--                                            <div class="background-image">-->
-<!--                                                <img src="Uploads/--><?php //echo htmlentities($Image); ?><!--" alt="image" class="background-image">-->
-<!--                                            </div>-->
-<!--                                            <div class="publication-details">-->
-<!--                                                <a href="Profile.php?username=--><?php //echo htmlentities($Admin); ?><!--" class="author"><i class="fa fa-user"></i>--><?php //echo htmlentities($Admin); ?><!--</a>-->
-<!--                                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i>--><?php //echo htmlentities($DateTime); ?><!--</span>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="post-data">-->
-<!--                                            <h1 class="title">--><?php //echo htmlentities($PostTitle)?><!--</h1>-->
-<!--                                            <h2 class="subtitle"><a href="index.php?category=--><?php //echo htmlentities($Category); ?><!--"> --><?php //echo htmlentities($Category); ?><!-- </a></h2>-->
-<!--                                            <p class="description">-->
-<!--                                                --><?php //if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
-<!--                                            </p>-->
-<!--                                            <div class="cta">-->
-<!--                                                <a href="FullPost.php?id=--><?php //echo $PostId; ?><!--"> Read More &rarr;</a>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-
                 <div class="media">
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start"  width="150" height="100" alt="">
-                    <a style="text-decoration:none;"href="FullPost.php?id=<?php echo htmlentities($PostId) ; ?>" target="_blank">
-                       <div class="media-body ml-2">
-                            <h4 class="lead heading"><?php echo htmlentities($PostTitle); ?></h4>
-                            <p class="description">
-                               <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,20).'...';} echo htmlentities($PostDescription) ?>
-                            </p>
-                            <p class="small"><?php echo htmlentities($DateTime); ?></p>
-                           <h4 class=""><a href="index.php?category=<?php echo htmlentities($Category); ?>"> <?php echo htmlentities($Category); ?> </a></h4>
+                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 160px; height: 110px;" alt="">
+                        <div class="media-body ml-2 card-body" style="outline:hidden; margin-top: 25px; padding-left: 1px ;">
+                            <h3 class="card-title">
+                                <a href="FullPost.php?id=<?php echo htmlentities($PostId);?>" target="_blank" style="color: #1B0039;">
+                                 <h2><?php echo htmlentities($PostTitle); ?></h2>
+                                </a>
+                            </h3>
+                           <p>
+                               By <a href="Profile.php?username=--><?php echo htmlentities($Admin); ?>" style="color: #025114">
+                                  <?php echo htmlentities($Admin); ?>
+                                  </a>
+                           </p>
+                           <p class="card-text" style="color: grey;">
+                               <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,70).'...';} echo htmlentities($PostDescription) ?>
+                               </br>
+                               <?php echo htmlentities($DateTime); ?>
+                           </p>
                       </div>
-                    </a>
                 </div>
                 <hr>
             <?php } ?>

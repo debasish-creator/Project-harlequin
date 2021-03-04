@@ -3,10 +3,9 @@
     src: url(../fonts/Gistesy.ttf);
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-
-a{
-    color: #ffffff;
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
 }
 .fieldinfo {
     color: #9826a4;
