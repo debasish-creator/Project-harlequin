@@ -12,8 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/card-2.css">
+<!--    <link rel="stylesheet" href="css/card.css">-->
+<!--    <link rel="stylesheet" href="css/card-2.css">-->
     <title>Mind Saga</title>
     <style>
         .heading{
@@ -66,9 +66,9 @@
 <!--HEADER STARTS-->
 <div class="container-fluid">
     <div class="">
-        <div class="headtitle">
-            <h1>MindSaga</h1>
-        </div>
+<!--        <div class="headtitle">-->
+<!--            <h1>MindSaga</h1>-->
+<!--        </div>-->
             <!--main area starts---->
 
             <div class="float-container">
@@ -121,33 +121,33 @@
                 $PostDescription = $DataRows["post"];
 
             ?>
-                <div class="card-2 float-child shadow">
-                        <div class="image-data">
-                            <div class="background-image">
-                                <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="image" class="background-image">
-                            </div>
-                            <div class="publication-details">
-                                <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" class="author"><i class="fa fa-user"></i><?php echo htmlentities($Admin); ?></a>
-                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($DateTime); ?></span>
-                            </div>
-                        </div>
-                        <div class="post-data">
-                            <h1 class="title"><?php echo htmlentities($PostTitle)?></h1>
-                            <h2 class="subtitle"><a href="index.php?category=<?php echo htmlentities($Category); ?>"> <?php echo htmlentities($Category); ?> </a></h2>
-                            <p class="description">
-                                <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
-                            </p>
-                            <div class="cta">
-                                <a href="FullPost.php?id=<?php echo $PostId; ?>"> Read More &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
+<!--                <div class="card-2 float-child shadow">-->
+<!--                        <div class="image-data">-->
+<!--                            <div class="background-image">-->
+<!--                                <img src="Uploads/--><?php //echo htmlentities($Image); ?><!--" alt="image" class="background-image">-->
+<!--                            </div>-->
+<!--                            <div class="publication-details">-->
+<!--                                <a href="Profile.php?username=--><?php //echo htmlentities($Admin); ?><!--" class="author"><i class="fa fa-user"></i>--><?php //echo htmlentities($Admin); ?><!--</a>-->
+<!--                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i>--><?php //echo htmlentities($DateTime); ?><!--</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="post-data">-->
+<!--                            <h1 class="title">--><?php //echo htmlentities($PostTitle)?><!--</h1>-->
+<!--                            <h2 class="subtitle"><a href="index.php?category=--><?php //echo htmlentities($Category); ?><!--"> --><?php //echo htmlentities($Category); ?><!-- </a></h2>-->
+<!--                            <p class="description">-->
+<!--                                --><?php //if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
+<!--                            </p>-->
+<!--                            <div class="cta">-->
+<!--                                <a href="FullPost.php?id=--><?php //echo $PostId; ?><!--"> Read More &rarr;</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
               <?php } ?>
             </div>
 
-                <div class="headtitle-2">
-                    <h1>More posts from MindSaga</h1>
-                </div>
+<!--                <div class="headtitle-2">-->
+<!--                    <h1>More posts from MindSaga</h1>-->
+<!--                </div>-->
                 <div class="float-container-2">
                     <?php
                     global $ConnectingDB;
@@ -162,30 +162,30 @@
                         $Image = $DataRows["image"];
                         $PostDescription = $DataRows["post"];
                         ?>
-                    <div class="card-3 float-child-2 shadow-2">
-                        <div class="image-data-2">
-                            <div class="background-image-2">
-                                <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="image" class="background-image-2">
-                            </div>
-                            <div class="publication-details-2">
-                                <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" class="author"><i class="fa fa-user"></i><?php echo htmlentities($Admin); ?></a>
-                                <span class="date-2"><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($DateTime); ?></span>
-                            </div>
-                        </div>
-                        <div class="post-data-2">
-                            <h1 class="title-2"><?php echo htmlentities($PostTitle)?></h1>
-                            <h2 class="subtitle-2"><a href="index.php?category=<?php echo htmlentities($Category); ?>"> <?php echo htmlentities($Category); ?> </a></h2>
-                            <p class="description-2">
-                                <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
-                            </p>
-                            <div class="cta-2">
-                                <a href="FullPost.php?id=<?php echo $PostId; ?>"> Read More &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="card-3 float-child-2 shadow-2">-->
+<!--                        <div class="image-data-2">-->
+<!--                            <div class="background-image-2">-->
+<!--                                <img src="Uploads/--><?php //echo htmlentities($Image); ?><!--" alt="image" class="background-image-2">-->
+<!--                            </div>-->
+<!--                            <div class="publication-details-2">-->
+<!--                                <a href="Profile.php?username=--><?php //echo htmlentities($Admin); ?><!--" class="author"><i class="fa fa-user"></i>--><?php //echo htmlentities($Admin); ?><!--</a>-->
+<!--                                <span class="date-2"><i class="fa fa-calendar" aria-hidden="true"></i>--><?php //echo htmlentities($DateTime); ?><!--</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="post-data-2">-->
+<!--                            <h1 class="title-2">--><?php //echo htmlentities($PostTitle)?><!--</h1>-->
+<!--                            <h2 class="subtitle-2"><a href="index.php?category=--><?php //echo htmlentities($Category); ?><!--"> --><?php //echo htmlentities($Category); ?><!-- </a></h2>-->
+<!--                            <p class="description-2">-->
+<!--                                --><?php //if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,40).'...';} echo htmlentities($PostDescription) ?>
+<!--                            </p>-->
+<!--                            <div class="cta-2">-->
+<!--                                <a href="FullPost.php?id=--><?php //echo $PostId; ?><!--"> Read More &rarr;</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <?php } ?>
                 </div>
-        <div class="card">
+        <div class="card" style="margin: 10px 50px 20px 50px;">
             <div class="card-header text-white" style = "background-color:#280038">
                 <h2 class="lead"> Recent Posts</h2>
             </div>
