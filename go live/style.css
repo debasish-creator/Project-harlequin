@@ -1,0 +1,31 @@
+.row{
+  /* margin: 2rem; */
+  padding: 1rem;
+  float: left;
+  width: 65%;
+}
+/* .col-md-4 abc{
+    padding: 2rem;
+} */
+.blog-post-thumbnail{
+    float:right; 
+    padding: 2rem 0rem 2rem 0rem;
+   
+}
+.blog-post-category{
+    color: rgb(92, 86, 86);
+}
+
+.left{
+    float:left; 
+    padding: 1rem 0 0rem 1rem;
+    /* width: 29%; */
+    
+}
+.card-body{
+    width: 20%;
+    /* top: 40%;
+    right: 20%; */
+    float: right;
+       
+}
