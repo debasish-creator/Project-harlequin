@@ -52,9 +52,9 @@ p{
     font-size: large;
 }
 .cimg{
-    border: 1px solid black;
+    border: 1px solid #c6720b;
     float: left;
-    /* padding-right: 0.5rem; */
+    height: 50px;
     border-radius: 50%;
 
 }

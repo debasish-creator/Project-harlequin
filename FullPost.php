@@ -58,16 +58,6 @@ if(isset($_POST["Submit"])) {
     <link rel="stylesheet" href="css/FullPost.css">
 
     <title>Full Post</title>
-<!--    <style media="screen">-->
-<!--        .heading{-->
-<!--            font-family: Bitter,Georgia,"Times New Roman",Times,serif;-->
-<!--            font-weight: bold;-->
-<!--            color: #005E90;-->
-<!--        }-->
-<!--        .heading:hover{-->
-<!--            color: #0090DB;-->
-<!--        }-->
-<!--    </style>-->
 </head>
 <body>
 <!--HEADER STARTS-->
@@ -152,7 +142,7 @@ if(isset($_POST["Submit"])) {
                 echo SuccessMessage();
                 ?>
 
-
+<!--            when search button is active-->
             <?php
                 global $ConnectingDB;
                 if(isset($_GET["SearchButton"])){
@@ -166,12 +156,14 @@ if(isset($_POST["Submit"])) {
                 $stmt->bindvalue(':Search','%'.$Search.'%');
                 $stmt->execute();
                 }
+//                default query
+
                 else{
-                $PostIdFromURL = $_GET["id"];
-                if(!isset($PostIdFromURL)){
-                $_SESSION["ErrorMessage"]="Bad Request !";
-                Redirect_to("index.php");
-                }
+                    $PostIdFromURL = $_GET["id"];
+                   if(!isset($PostIdFromURL)){
+                    $_SESSION["ErrorMessage"]="Bad Request !";
+                    Redirect_to("index.php");
+                    }
                 $sql = "SELECT * FROM posts WHERE id= '$PostIdFromURL'";
                 $stmt = $ConnectingDB->query($sql);
                 }
@@ -191,15 +183,19 @@ if(isset($_POST["Submit"])) {
                 $PostDescription3 = $DataRows["post3"];
 
                 ?>
+
                 <h1 class="phoenix" style="align-items: center;  font-family:  'Bebas Neue', cursive; padding: 2rem; padding-left: 4rem; font-size: 60px;">
                     <?php echo htmlentities($PostTitle)?>
                     <br>
                 </h1>
                 <article class="blog-post">
                   <!--author description-->
-                    <img alt="Sean Kernan" class="cimg" src="https://miro.medium.com/fit/c/72/72/1*guKWDyFxW4c3NBQrrHt2PA.jpeg">
+                    <img alt="Sean Kernan" class="cimg" src="images/comment.png">
                     <p class="blog-post-meta">
-                        <h5 style="padding-top: 0.64rem;"><?php echo htmlentities($DateTime); ?> by <a href="#"><?php echo htmlentities($Admin);?></a></h5>
+                        <h5 style="padding-top: 0.64rem;">
+                        <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
+                         on <?php echo htmlentities($DateTime); ?>
+                    </h5>
                         <br>
                     </p>
 
@@ -223,18 +219,32 @@ if(isset($_POST["Submit"])) {
                         <?php  echo nl2br($PostDescription3) ?>
                     </p>
                 </article>
-                <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">Secondary</span>
-                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
-                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
-                <span class="badge bg-secondary"style="padding: 0.65rem;">Secondary</span>
+
+            <div class="card-body">
+                <?php
+                global $ConnectingDB;
+                $sql = "SELECT *FROM category ORDER BY id desc";
+                $stmt = $ConnectingDB->query($sql);
+                while ($DataRows = $stmt->fetch()){
+                    $categoryId = $DataRows["id"];
+                    $CategoryName=$DataRows["title"];
+                    ?>
+                    <a href="index.php?category=<?php echo $CategoryName; ?>">
+                         <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">
+                         <?php echo $CategoryName; ?>
+                         </span>
+                    </a>
+                <?php }?>
+            </div>
             </div>
         <?php } ?>
+
             <br>
             <br>
         <!--starting of comment part.-->
         <!--fetching existing comments from database-->
         <section class="mobile-comt">
-            <div class="container">
+            <div class="container2">
                 <div class="row">
                     <div class="">
                         <h1>Comments</h1>
