@@ -51,15 +51,54 @@ if(isset($_POST["Submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7f6ee3d237.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/FullPost.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <title>Full Post</title>
 </head>
 <body>
+<!--NAVIGATION BAR STARTS-->
+<div class="navbar navbar-expand-lg navbar-dark bg-custom cst">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand " style= "color:aliceblue; font-family: mindsagacustom;">MindSaga</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarContent" aria-controls="NavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--        CONTENT WHEN NAVBAR IS COLLAPSE-->
+        <div class="collapse navbar-collapse" id="NavbarContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link active" style= "color:white ; font-weight: bolder; ">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link " style= "color:white ; font-weight: bolder; ">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link " style= "color:white ; font-weight: bolder; ">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder; ">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline d-none d-sm-block" action="index.php">
+                    <div class="form-group">
+                        <input class="form-control mr-2" type="text" name="Search" placeholder="Search here" value="">
+                        <button  class="btn btn-primary" name="SearchButton">Go</button>
+                    </div>
+                </form>
+            </ul>
+        </div>
+    </div>
+</div>
 <!--HEADER STARTS-->
 <div class="user-info" style="font-family: 'Times New Roman';font-weight: bold;" data-aos = "fade-right">
     WEBWIZ
@@ -137,15 +176,15 @@ if(isset($_POST["Submit"])) {
 
         <!--main area starts---->
         <div class="col-md-6 align-self-center">
-                <?php
-                echo ErrorMessage();
-                echo SuccessMessage();
-                ?>
-
-<!--            when search button is active-->
             <?php
-                global $ConnectingDB;
-                if(isset($_GET["SearchButton"])){
+            echo ErrorMessage();
+            echo SuccessMessage();
+            ?>
+
+            <!--            when search button is active-->
+            <?php
+            global $ConnectingDB;
+            if(isset($_GET["SearchButton"])){
                 $Search = $_GET["Search"];
                 $sql="SELECT * FROM posts
                 WHERE datetime LIKE :Search
@@ -155,70 +194,70 @@ if(isset($_POST["Submit"])) {
                 $stmt = $ConnectingDB->prepare($sql);
                 $stmt->bindvalue(':Search','%'.$Search.'%');
                 $stmt->execute();
-                }
+            }
 //                default query
 
-                else{
-                    $PostIdFromURL = $_GET["id"];
-                   if(!isset($PostIdFromURL)){
+            else{
+                $PostIdFromURL = $_GET["id"];
+                if(!isset($PostIdFromURL)){
                     $_SESSION["ErrorMessage"]="Bad Request !";
                     Redirect_to("index.php");
-                    }
+                }
                 $sql = "SELECT * FROM posts WHERE id= '$PostIdFromURL'";
                 $stmt = $ConnectingDB->query($sql);
-                }
-                while ($DataRows = $stmt->fetch()){
-                $PostId = $DataRows["id"];
-                $DateTime = $DataRows["datetime"];
-                $PostTitle = $DataRows["title"];
-                $Category  = $DataRows["category"];
-                $Admin = $DataRows["author"];
-                $Image = $DataRows["image"];
-                $PostDescription = $DataRows["post"];
-                //
-                $Image2 = $DataRows["image2"];
-                $PostDescription2 = $DataRows["post2"];
-                //
-                $Image3 = $DataRows["image3"];
-                $PostDescription3 = $DataRows["post3"];
+            }
+            while ($DataRows = $stmt->fetch()){
+            $PostId = $DataRows["id"];
+            $DateTime = $DataRows["datetime"];
+            $PostTitle = $DataRows["title"];
+            $Category  = $DataRows["category"];
+            $Admin = $DataRows["author"];
+            $Image = $DataRows["image"];
+            $PostDescription = $DataRows["post"];
+            //
+            $Image2 = $DataRows["image2"];
+            $PostDescription2 = $DataRows["post2"];
+            //
+            $Image3 = $DataRows["image3"];
+            $PostDescription3 = $DataRows["post3"];
 
-                ?>
+            ?>
 
-                <h1 class="phoenix" style="margin-left:-1.50rem; font-family:  'Bebas Neue', cursive; padding: 2rem;  font-size: 60px;">
-                    <?php echo htmlentities($PostTitle)?>
-                    <br>
-                </h1>
-                <article class="blog-post">
-                  <!--author description-->
-                    <img alt="Sean Kernan" class="cimg" src="images/comment.png">
-                    <p class="blog-post-meta">
-                        <h5 style="padding-top: 0.64rem;">
-                        <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
-                         on <?php echo htmlentities($DateTime); ?>
-                    </h5>
-                        <br>
-                    </p>
+            <h1 class="phoenix" style="margin-left:-1.50rem; font-family:  'Bebas Neue', cursive; padding: 2rem;  font-size: 60px;">
+                <?php echo htmlentities($PostTitle)?>
+                <br>
+            </h1>
+            <article class="blog-post">
+                <!--author description-->
+                <img alt="Sean Kernan" class="cimg" src="images/comment.png">
+                <p class="blog-post-meta">
+                <h5 style="padding-top: 0.64rem;">
+                    <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
+                    on <?php echo htmlentities($DateTime); ?>
+                </h5>
+                <br>
+                </p>
 
-                    <p>
-                       <h5 style="font-family: 'Akaya Telivigala', cursive;">This blog post shows a few different types of content that’s supported and styled with
-                        Bootstrap. Basic typography, images, and code are all supported.
-                      </h5>
-                    </p>
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="" class="responsive">
+                <p>
+                <h5 style="font-family: 'Akaya Telivigala', cursive;">This blog post shows a few different types of content that’s supported and styled with
+                    Bootstrap. Basic typography, images, and code are all supported.
+                </h5>
+                </p>
+                <img src="Uploads/<?php echo htmlentities($Image); ?>" alt="" class="responsive">
 
-                    <hr>
-                    <p>
-                        <?php  echo nl2br($PostDescription) ?>
-                    </p>
-                    <img src="Uploads/<?php echo htmlentities($Image2); ?>" alt="" class="responsive">
-                    <p>
-                        <?php  echo nl2br($PostDescription2) ?>
-                    </p>
-                    <img src="Uploads/<?php echo htmlentities($Image3); ?>" alt="" class="responsive">
-                    <p>
-                        <?php  echo nl2br($PostDescription3) ?>
-                    </p>
-                </article>
+                <hr>
+                <p>
+                    <?php  echo nl2br($PostDescription) ?>
+                </p>
+                <img src="Uploads/<?php echo htmlentities($Image2); ?>" alt="" class="responsive">
+                <p>
+                    <?php  echo nl2br($PostDescription2) ?>
+                </p>
+                <img src="Uploads/<?php echo htmlentities($Image3); ?>" alt="" class="responsive">
+                <p>
+                    <?php  echo nl2br($PostDescription3) ?>
+                </p>
+            </article>
 
             <div class="card-body">
                 <?php
@@ -236,11 +275,11 @@ if(isset($_POST["Submit"])) {
                     </a>
                 <?php }?>
             </div>
-            </div>
+        </div>
         <?php } ?>
 
-            <br>
-            <br>
+        <br>
+        <br>
         <!--starting of comment part.-->
         <!--fetching existing comments from database-->
         <section class="mobile-comt">
@@ -260,12 +299,12 @@ if(isset($_POST["Submit"])) {
                             ?>
 
 
-                        <div class="comment mt-4 text-justify float-left"> <img src="images/comment.png" alt="" class="rounded-circle" width="40" height="40">
-                            <h4><?php echo $CommenterName; ?></h4> <span>- <?php echo $CommentDate; ?></span> <br>
-                            <p>
-                                <?php echo $CommentContent; ?>
-                            </p>
-                        </div>
+                            <div class="comment mt-4 text-justify float-left"> <img src="images/comment.png" alt="" class="rounded-circle" width="40" height="40">
+                                <h4><?php echo $CommenterName; ?></h4> <span>- <?php echo $CommentDate; ?></span> <br>
+                                <p>
+                                    <?php echo $CommentContent; ?>
+                                </p>
+                            </div>
                             <hr>
                         <?php } ?>
                     </div>
@@ -275,7 +314,7 @@ if(isset($_POST["Submit"])) {
                             <div class="form-group">
                                 <h4>Leave a comment</h4>
                                 <label for="message">Message</label>
-                                <textarea name="CommenterThoughts" id="" msg cols="30" rows="5" class="form-control" style="background-color: white;">
+                                <textarea name="CommenterThoughts" id="" msg resize="none" class="form-control" style="background-color: white;">
 
                                 </textarea>
                             </div>
@@ -317,6 +356,8 @@ if(isset($_POST["Submit"])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>

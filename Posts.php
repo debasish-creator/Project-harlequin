@@ -82,7 +82,7 @@ $_SESSION["TrackingURL"]=$_SERVER["PHP_SELF"];
                 </a>
             </div>
             <div class="col-lg-3 mb-2">
-                <a href="ApproveComments.php" class="btn btn-success btn-block">
+                <a href="Comments.php" class="btn btn-success btn-block">
                     <i class="fas fa-check"></i> Approve Comments
                 </a>
             </div>

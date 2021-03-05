@@ -42,10 +42,10 @@
                     <a href="index.php" class="nav-link " style= "color:white ; font-weight: bolder; ">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
+                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder; ">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder; ">Features</a>
+                    <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
