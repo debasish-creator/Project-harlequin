@@ -75,9 +75,9 @@ p{
     top: 0;
     right: 0;
     z-index: 1;
-    background-color: rgb(238, 230, 230);
+    background-color: rgb(225, 234, 236);
     overflow-x:hidden;
-    padding-top: 6rem;
+    padding-top: 1.5rem;
     transition: all 0.5s;
 }
 
