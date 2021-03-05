@@ -167,7 +167,7 @@
         <!--side area starts-->
         <div class="col-sm-4">
             <div class="card">
-                <div class="card-header text-light" style = "background-color:#e7bf63">
+                <div class="card-header text-light" style = "background-color:#430264!important">
                     <h2 class="lead">Discover More of What Matters to You</h2>
                 </div>
                 <div class="card-body">
@@ -180,7 +180,7 @@
                         $CategoryName=$DataRows["title"];
                         ?>
                         <a href="index.php?category=<?php echo $CategoryName; ?>">
-                            <span class="badge bg-secondary" style="padding: 0.8rem; margin: 1rem 1rem 1rem 1rem;">
+                            <span class="badge bg-secondary" style="padding: 0.8rem; margin: 1rem 1rem 1rem 1rem ;background-color:#6509bb!important; ">
                                 <?php echo $CategoryName; ?>
                             </span></a>
                     <?php }?>
