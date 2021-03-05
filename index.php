@@ -149,7 +149,7 @@
                                 </a>
                             </h3>
                            <p>
-                               By <a href="Profile.php?username=--><?php echo htmlentities($Admin); ?>" style="color: #025114">
+                               By <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" style="color: #025114">
                                   <?php echo htmlentities($Admin); ?>
                                   </a>
                            </p>
