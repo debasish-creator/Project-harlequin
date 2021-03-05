@@ -141,7 +141,7 @@
                 $PostDescription = $DataRows["post"];
                 ?>
                 <div class="media">
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 180px; height: 180px;" alt="">
+                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 180px; height: 165px;" alt="">
                         <div class="media-body ml-2 card-body" style="outline:hidden; margin-top: 25px; padding-left: 6px; ">
                             <h3 class="card-title" >
                                 <a href="FullPost.php?id=<?php echo htmlentities($PostId);?>" target="_blank" style="color: #1B0039;">
