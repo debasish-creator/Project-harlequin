@@ -184,7 +184,7 @@ if(isset($_POST["Submit"])) {
 
                 ?>
 
-                <h1 class="phoenix" style="align-items: center;  font-family:  'Bebas Neue', cursive; padding: 2rem; padding-left: 4rem; font-size: 60px;">
+                <h1 class="phoenix" style="margin-left:-1.50rem; font-family:  'Bebas Neue', cursive; padding: 2rem;  font-size: 60px;">
                     <?php echo htmlentities($PostTitle)?>
                     <br>
                 </h1>
