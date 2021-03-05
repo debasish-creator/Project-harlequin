@@ -305,7 +305,7 @@ if(isset($_POST["Submit"])) {
     });
 
     const openNav = () => {
-        document.getElementById('mySidenav').style.width="24rem";
+        document.getElementById('mySidenav').style.width="20rem";
     }
     const closeNav = () => {
         document.getElementById('mySidenav').style.width="0";
