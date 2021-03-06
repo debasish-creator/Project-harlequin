@@ -32,14 +32,14 @@ if(isset($_POST["Submit"])){
     }elseif (strlen($PostTitle)<5){
         $_SESSION["ErrorMessage"] = "Post title should be greater than 5 character";
         Redirect_to("Posts.php");
-    }elseif (strlen($PostText)>9999) {
-        $_SESSION["ErrorMessage"] = "Post content should be less than 10000 character";
+    }elseif (strlen($PostText)>7999) {
+        $_SESSION["ErrorMessage"] = "Post content should be less than 8000 character";
         Redirect_to("Posts.php");
-    }elseif (strlen($PostText2)>9999) {
-        $_SESSION["ErrorMessage"] = "Content 2 description should be less than 10000 character";
+    }elseif (strlen($PostText2)>2999) {
+        $_SESSION["ErrorMessage"] = "Content 2 description should be less than 3000 character";
         Redirect_to("Posts.php");
-    }elseif (strlen($PostText3)>9999) {
-        $_SESSION["ErrorMessage"] = "Content 3 description should be less than 10000 character";
+    }elseif (strlen($PostText3)>2999) {
+        $_SESSION["ErrorMessage"] = "Content 3 description should be less than 3000 character";
         Redirect_to("Posts.php");
     }else{
         //Query to update post in database when everything is good
@@ -166,7 +166,7 @@ if(isset($_POST["Submit"])){
                     <div class="card-body bg-dark">
                         <div class="form-group">
                             <label for="title"><span class="fieldinfo">Post Title :</span></label>
-                            <input class="form-control" type="text" name="PostTitle" placeholder="Type title here" value="<?php echo $TitleToBeUpdated; ?>">
+                            <input class="form-control" type="text" name="PostTitle" placeholder="Type title here" value="<?php echo $TitleToBeUpdated;?>">
                         </div>
                         <div class="form-group">
                             <span class="fieldinfo">Existing Category:</span>
@@ -189,7 +189,7 @@ if(isset($_POST["Submit"])){
                         </div>
                         <!--primary content-->
                         <div class="form-group">
-                            <span class="fieldinfo">Existing Image1: </span>
+                            <span class="fieldinfo">Existing Image-1: </span>
                             <img class="mb-2" src="uploads/<?php echo $ImageToBeUpdated; ?>" width="170px" alt="image" ; height="70px" ; alt="image">
 
                             <div class="custom-file">
@@ -205,7 +205,7 @@ if(isset($_POST["Submit"])){
                         </div>
                         <!--secondary content-->
                         <div class="form-group">
-                            <span class="fieldinfo">Existing Image2: </span>
+                            <span class="fieldinfo">Existing Image-2: </span>
                             <img class="mb-2" src="uploads/<?php echo $ImageToBeUpdated2; ?>" width="170px" ; height="70px" ;alt="image">
 
                             <div class="custom-file">
@@ -221,7 +221,7 @@ if(isset($_POST["Submit"])){
                         </div>
                         <!--tertiary content-->
                         <div class="form-group">
-                            <span class="fieldinfo">Existing Image3: </span>
+                            <span class="fieldinfo">Existing Image-3: </span>
                             <img class="mb-2" src="uploads/<?php echo $ImageToBeUpdated3; ?>" width="170px" ; height="70px" ; alt="image">
 
                             <div class="custom-file">
@@ -237,11 +237,11 @@ if(isset($_POST["Submit"])){
                         </div>
                         <div class="row">
                             <div class="col-lg-6 mb-2">
-                                <a href="#" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back to dashboard</a>
+                                <a href="Posts.php" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back to Posts</a>
                             </div>
                             <div class="col-lg-6 mb-2">
                                 <button type="Submit" name="Submit" class="btn btn-success btn-block">
-                                    <i class="fas fa-check"></i> Publish
+                                    <i class="fas fa-check"></i> Update
                                 </button>
                             </div>
                         </div>

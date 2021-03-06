@@ -62,6 +62,7 @@
 <!--NAVIGATION BAR ends-->
 
 <!--HEADER STARTS-->
+
 <div class="card" style="margin: 10px 50px 20px 50px;">
     <div class="card-body col-xs-6 col-sm-4 col-lg-12" style="    background-color: rgb(250, 250, 250);">
         <?php
