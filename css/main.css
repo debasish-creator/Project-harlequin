@@ -7,13 +7,9 @@ a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
 }
-/*.icon-2{*/
-/*    width: 3%;*/
-/*    height: 3%;*/
-/*    margin: 40px 176px 4px 185px;*/
-/*}*/
+
 .fieldinfo {
-    color: #ffc017;
+    color: #eaeae3;
     font-family: Bitter,Georgia,"Times New Roman",Times,serif;
     font-size: 1.2em;
     font-weight: 600;
