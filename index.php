@@ -68,6 +68,8 @@
 <div class="card" style="margin: 30px 50px 20px 50px;">
     <div class="card-body col-xs-6 col-sm-4 col-lg-12" style="background-color: #b0ae912b;">
 
+<div class="card" style="margin: 10px 50px 20px 50px;">
+    <div class="card-body col-xs-6 col-sm-4 col-lg-12" style="    background-color: rgb(250, 250, 250);">
         <?php
         global $ConnectingDB;
         $sql= "SELECT * FROM posts ORDER BY id desc LIMIT 0,8";
@@ -144,12 +146,12 @@
                 $Image = $DataRows["image"];
                 $PostDescription = $DataRows["post"];
                 ?>
-                <div class="media">
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 155px; height: 155px; margin-top: 13px;" alt="">
+                <div class="media" style='    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;color: rgba(41, 41, 41, 1);font-size:16px;'>
+                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 155px; height: 155px; margin-top: 9px;" alt="">
                         <div class="media-body ml-2 card-body" style="outline:hidden; margin-top: 25px; padding-left: 6px; ">
                             <h3 class="card-title" >
-                                <a href="FullPost.php?id=<?php echo htmlentities($PostId);?>" target="_blank" style="color: #1B0039;">
-                                 <h3><?php echo htmlentities($PostTitle); ?></h3>
+                                <a href="FullPost.php?id=<?php echo htmlentities($PostId);?>" target="_blank" style="color: #1B0039;font-weight:bolder;">
+                                 <h3 style="    font-weight: 550;font-size:23.5px;     line-height: normal;"><?php echo htmlentities($PostTitle); ?></h3>
                                 </a>
                             </h3>
                             <p class="card-text" style="color: grey;">

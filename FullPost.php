@@ -223,23 +223,25 @@ if(isset($_POST["Submit"])) {
 
             ?>
 
-            <h1 class="phoenix" style="margin-left:-1.50rem; font-family:  'Bebas Neue', cursive; padding: 2rem;  font-size: 60px;">
+            <h1 class="phoenix" style="margin-left:-1.50rem; 
+    font-family: fell, Georgia, Cambria, 'Times New Roman', Times, serif;
+ padding: 2rem;  font-size: 48px ; letter-spacing: -0.011em;">
                 <?php echo htmlentities($PostTitle)?>
                 <br>
             </h1>
             <article class="blog-post">
                 <!--author description-->
-                <img alt="Sean Kernan" class="cimg" src="images/comment.png">
+                <img alt="Sean Kernan" class="cimg" src="images/comment.png"  style="width:40px; height:40px; margin-right:3px;">
                 <p class="blog-post-meta">
-                <h5 style="padding-top: 0.64rem;">
-                    <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
+                <h5 style="padding-top: 0.64rem; font-size:1rem">
+                    <a  style="color:green;" href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
                     on <?php echo htmlentities($DateTime); ?>
                 </h5>
                 <br>
                 </p>
 
                 <p>
-                <h5 style="font-family: 'Akaya Telivigala', cursive;">This blog post shows a few different types of content that’s supported and styled with
+                <h5 style="    font-family: sohne, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:22px; color:rgba(117, 117, 117, 1);font-weight: 400;">This blog post shows a few different types of content that’s supported and styled with
                     Bootstrap. Basic typography, images, and code are all supported.
                 </h5>
                 </p>
