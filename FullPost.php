@@ -271,7 +271,7 @@ if(isset($_POST["Submit"])) {
                     $CategoryName=$DataRows["title"];
                     ?>
                     <a href="index.php?category=<?php echo $CategoryName; ?>">
-                         <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">
+                         <span class="badge" style="padding: 0.65rem; margin-bottom: 1rem; background-color:#f2f2f2; color:#757575; font-size: 13px; font-weight: 400;">
                          <?php echo $CategoryName; ?>
                          </span>
                     </a>
