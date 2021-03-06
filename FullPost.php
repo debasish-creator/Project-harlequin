@@ -252,10 +252,12 @@ if(isset($_POST["Submit"])) {
                     <?php  echo nl2br($PostDescription) ?>
                 </p>
                 <img src="Uploads/<?php echo htmlentities($Image2); ?>" alt="" class="responsive">
+                <hr>
                 <p>
                     <?php  echo nl2br($PostDescription2) ?>
                 </p>
                 <img src="Uploads/<?php echo htmlentities($Image3); ?>" alt="" class="responsive">
+                <hr>
                 <p>
                     <?php  echo nl2br($PostDescription3) ?>
                 </p>
