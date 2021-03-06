@@ -234,7 +234,7 @@ if(isset($_POST["Submit"])) {
                 <img alt="Sean Kernan" class="cimg" src="images/comment.png"  style="width:40px; height:40px; margin-right:3px;">
                 <p class="blog-post-meta">
                 <h5 style="padding-top: 0.64rem; font-size:1rem">
-                    <a  style="color:green;" href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
+                    <a  style="color:rgba(26, 137, 23, 1);" href="Profile.php?username=<?php echo htmlentities($Admin); ?>"><?php echo htmlentities($Admin);?></a>
                     on <?php echo htmlentities($DateTime); ?>
                 </h5>
                 <br>

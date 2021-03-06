@@ -149,7 +149,7 @@
                                 </a>
                             </h3>
                             <p class="card-text" style="color: rgba(117, 117, 117, 1);">
-                               By <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" style="color: #025114">
+                               By <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" style="color: rgba(26, 137, 23, 1); font-weight:400;">
                                   <?php echo htmlentities($Admin); ?>
                                   </a>
                                   </br>
