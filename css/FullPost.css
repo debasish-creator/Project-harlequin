@@ -51,8 +51,10 @@ html{
 }
 
 p{
-    font-family: 'Comfortaa', cursive;
-    font-size: large;
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 21px;
+    color: rgba(41, 41, 41, 1);
+    font-weight: 400;
 }
 .cimg{
     border: 1px solid #c6720b;
