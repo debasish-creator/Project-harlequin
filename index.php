@@ -33,13 +33,13 @@
         <div class="collapse navbar-collapse" id="NavbarContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link active" style= "color:white ; font-weight: bolder; ">Home</a>
+                    <a href="index.php" class="nav-link active" style= "color:white ; font-weight: bolder; padding-left: 10px; margin-right: 30px;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="AboutUs.html" class="nav-link " style= "color:white ; font-weight: bolder; ">About Us</a>
+                    <a href="AboutUs.html" class="nav-link " style= "color:white ; font-weight: bolder;padding-left: 10px;margin-right: 30px; ">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
+                    <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; padding-left: 10px; margin-right: 30px;" >Log In</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -175,7 +175,7 @@
                         $CategoryName=$DataRows["title"];
                         ?>
                         <a href="index.php?category=<?php echo $CategoryName; ?>">
-                            <span class="badge bg-secondary" style="padding: 0.8rem; margin: 1rem 1rem 1rem 1rem ;background-color:#6509bb!important; ">
+                            <span class="badge bg-secondary" style="padding: 0.8rem; margin:1rem 0.5rem 0 0; background-color:#6509bb!important; ">
                                 <?php echo $CategoryName; ?>
                             </span></a>
                     <?php }?>
