@@ -252,10 +252,12 @@ if(isset($_POST["Submit"])) {
                     <?php  echo nl2br($PostDescription) ?>
                 </p>
                 <img src="Uploads/<?php echo htmlentities($Image2); ?>" alt="" class="responsive">
+                <hr>
                 <p>
                     <?php  echo nl2br($PostDescription2) ?>
                 </p>
                 <img src="Uploads/<?php echo htmlentities($Image3); ?>" alt="" class="responsive">
+                <hr>
                 <p>
                     <?php  echo nl2br($PostDescription3) ?>
                 </p>
@@ -271,7 +273,7 @@ if(isset($_POST["Submit"])) {
                     $CategoryName=$DataRows["title"];
                     ?>
                     <a href="index.php?category=<?php echo $CategoryName; ?>">
-                         <span class="badge" style="padding: 0.65rem; margin-bottom: 1rem; background-color:#f2f2f2; color:#757575; font-size: 13px; font-weight: 400;">
+                         <span class="badge" style="padding: 0.65rem; margin-bottom: 1rem; background-color:#f2f2f2; color:#757575; font-size: 13px; font-weight: 400; float: none;">
                          <?php echo $CategoryName; ?>
                          </span>
                     </a>

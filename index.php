@@ -36,13 +36,7 @@
                     <a href="index.php" class="nav-link active" style= "color:white ; font-weight: bolder; ">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link " style= "color:white ; font-weight: bolder; ">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php" class="nav-link " style= "color:white ; font-weight: bolder; ">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder; ">Features</a>
+                    <a href="AboutUs.html" class="nav-link " style= "color:white ; font-weight: bolder; ">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
