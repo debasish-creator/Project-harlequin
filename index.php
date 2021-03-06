@@ -157,7 +157,7 @@
                                  <h3 style="    font-weight: 550;font-size:23.5px;     line-height: normal;"><?php echo htmlentities($PostTitle); ?></h3>
                                 </a>
                             </h3>
-                            <p class="card-text" style="color: grey;">
+                            <p class="card-text" style="color: rgba(117, 117, 117, 1);">
                                By <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" style="color: #025114">
                                   <?php echo htmlentities($Admin); ?>
                                   </a>
