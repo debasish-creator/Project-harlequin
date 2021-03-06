@@ -214,7 +214,7 @@ echo SuccessMessage();
                         <div class="form-group">
                             <div class="custom-file">
                                 <input class="custom-file-input" type="File" name="Image" id="imageSelect" value="">
-                                <label for="imageSelect" class="custom-file-label">Select Image </label>
+                                <label for="imageSelect" class="custom-file-label">Select Your Image </label>
                             </div>
                         </div>
                         <div class="row">

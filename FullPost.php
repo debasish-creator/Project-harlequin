@@ -258,7 +258,7 @@ if(isset($_POST["Submit"])) {
                     <?php  echo nl2br($PostDescription3) ?>
                 </p>
             </article>
-
+            <hr>
             <div class="card-body">
                 <?php
                 global $ConnectingDB;
@@ -269,7 +269,7 @@ if(isset($_POST["Submit"])) {
                     $CategoryName=$DataRows["title"];
                     ?>
                     <a href="index.php?category=<?php echo $CategoryName; ?>">
-                         <span class="badge bg-secondary" style="padding: 0.65rem; margin-bottom: 1rem;">
+                         <span class="badge bg-secondary" style="padding: 0.8rem; margin: 1rem 1rem 1rem 1rem ;background-color:#6509bb!important; "">
                          <?php echo $CategoryName; ?>
                          </span>
                     </a>

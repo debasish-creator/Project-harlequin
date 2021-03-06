@@ -62,8 +62,12 @@
 <!--NAVIGATION BAR ends-->
 
 <!--HEADER STARTS-->
-<div class="card" style="margin: 10px 50px 20px 50px;">
+<!--<svg class="icon-2" id="arrow">-->
+<!--    <use xlink:href="images/arrow.svg#arrow" />-->
+<!--</svg>-->
+<div class="card" style="margin: 30px 50px 20px 50px;">
     <div class="card-body col-xs-6 col-sm-4 col-lg-12" style="background-color: #b0ae912b;">
+
         <?php
         global $ConnectingDB;
         $sql= "SELECT * FROM posts ORDER BY id desc LIMIT 0,8";
