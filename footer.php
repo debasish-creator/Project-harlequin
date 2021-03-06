@@ -5,62 +5,6 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<!--SIDE ARE START-->
-<!--<div class="col-sm-4 ">-->
-<!--    <div class="card">-->
-<!--        <div class="card-header text-light" style = "background-color:#280038">-->
-<!--            <h2 class="lead">Categories</h2>-->
-<!--        </div>-->
-<!--        <div class="card-body">-->
-<!--            --><?php
-//            global $ConnectingDB;
-//            $sql = "SELECT *FROM category ORDER BY id desc";
-//            $stmt = $ConnectingDB->query($sql);
-//            while ($DataRows = $stmt->fetch()){
-//                $categoryId = $DataRows["id"];
-//                $CategoryName=$DataRows["title"];
-//                ?>
-<!--                <a href="index.php?category=--><?php //echo $CategoryName; ?><!--"><span class="heading">--><?php //echo $CategoryName; ?><!--</span></a><br>-->
-<!--            --><?php //}?>
-<!--        </div>-->
-<!--    </div>-->
-<!--    <br>-->
-<!--    <div class="card">-->
-<!--        <div class="card-header text-white" style = "background-color:#280038">-->
-<!--            <h2 class="lead"> Recent Posts</h2>-->
-<!--        </div>-->
-<!--        <div class="card-body">-->
-<!--            --><?php
-//            global $ConnectingDB;
-//            $sql= "SELECT * FROM posts ORDER BY id desc LIMIT 0,5";
-//            $stmt= $ConnectingDB->query($sql);
-//            while ($DataRows=$stmt->fetch()) {
-//                $Id     = $DataRows['id'];
-//                $Title  = $DataRows['title'];
-//                $DateTime = $DataRows['datetime'];
-//                $Image = $DataRows['image'];
-//                ?>
-<!--                <div class="media">-->
-<!--                    <img src="Uploads/--><?php //echo htmlentities($Image); ?><!--" class="d-block img-fluid align-self-start"  width="90" height="94" alt="">-->
-<!--                    <div class="media-body ml-2">-->
-<!--                        <a style="text-decoration:none;"href="FullPost.php?id=--><?php //echo htmlentities($Id) ; ?><!--" target="_blank">-->
-<!--                            <h6 class="lead heading">--><?php //echo htmlentities($Title); ?><!--</h6>-->
-<!--                        </a>-->
-<!--                        <p class="small">--><?php //echo htmlentities($DateTime); ?><!--</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <hr>-->
-<!--            --><?php //} ?>
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--HEADER ENDS-->
-<!--SIDE AREA ENDS-->
-
-
 <!--FOOTER STARTS-->
 <div style="height: 5px; background: cornflowerblue"></div>
 <footer class="footer-distributed" id="contact">

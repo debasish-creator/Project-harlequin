@@ -7,8 +7,9 @@ a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
 }
+
 .fieldinfo {
-    color: #ffc017;
+    color: #eaeae3;
     font-family: Bitter,Georgia,"Times New Roman",Times,serif;
     font-size: 1.2em;
     font-weight: 600;
@@ -16,6 +17,7 @@ a, a:hover, a:focus, a:active {
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    
 }
 .navbar{
     background-image:linear-gradient(90deg, #1B80B2 ,#6606BB);
@@ -44,7 +46,6 @@ html, body {
 }
 .badge{
     margin-top: 0.5rem;
-    float: right;
     position: relative;
 }
 .lefty{

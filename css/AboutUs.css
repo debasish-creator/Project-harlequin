@@ -1,0 +1,261 @@
+html {
+    height: 100%;
+}
+body{
+    background:url("https://wallpaperaccess.com/full/1924554.jpg");
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font: normal 14px/1.618em "Hind", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+.navbar{
+    background-image:linear-gradient(90deg, #1B80B2 ,#6606BB);
+}
+.navbar-brand{
+    font-family: gistesy, sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: white;
+    padding-right: 4rem;
+}
+@font-face {
+    font-family: mindsagacustom;
+    src: url(../fonts/Gistesy.ttf);
+}
+.footer-distributed{
+    background-image:linear-gradient(90deg, #280038,#01193d);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+
+    padding: 55px 50px;
+    margin-top: 0;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+.footer-distributed .footer-left{
+    width: 40%;
+}
+.footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+.footer-distributed h3 span{
+    color:  #5383d3;
+}
+.footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+.footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+}
+.footer-distributed .footer-company-name{
+    color:  #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+.footer-distributed .footer-center{
+    width: 35%;
+}
+.footer-distributed .footer-center i{
+    font-size: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 27px;
+    margin: 10px 15px;
+    vertical-align: middle;
+
+
+}
+.fa-map-marker{
+    background-color:  green;
+    color: white;
+
+}
+.fa-phone{
+    background-color:  #55ACEE;
+    color:white;
+
+}
+.fa-envelope{
+    background: #dd4b39;
+    color: white;
+}
+
+
+.footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin:0;
+}
+
+.footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+    color:  #5383d3;
+    text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.social {
+    list-style: none;
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+
+
+.social li {
+    margin-top: 10px
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+.fa-github {
+    background: black;
+    color: white;
+}
+
+
+
+@media (max-width: 1100px) {
+
+    .footer-distributed{
+        font: bold 14px sans-serif;
+
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i{
+        margin-left: 0;
+    }
+    .main {
+        line-height: normal;
+        font-size: initial;
+    }
+}
+
+/*body*/
+html,
+body {
+    height: 100%;
+}
+#container-aboutus{
+width:100%;
+height:100%;
+margin-top: 60px;
+    /* --- FLEX --- */
+display :flex;
+justify-content :center;
+align-items: center;
+}
+.box{
+    width :350px;
+    height :300px;
+    font-size :10px;
+    background :#3F51B5;
+    color :#fff;
+    text-align: center;
+    box-shadow :0px 2px 5px #666;
+    border-radius: 3px;
+    display :inherit;
+    justify-content :inherit;
+    align-items: inherit;
+    transition :all 0.5s ease;
+
+}
+.box:hover {
+    box-shadow: 0px 5px 20px #333;
+    cursor: pointer;
+    transform: scale(1.5);
+}

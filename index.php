@@ -36,16 +36,10 @@
                     <a href="index.php" class="nav-link active" style= "color:white ; font-weight: bolder; ">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link " style= "color:white ; font-weight: bolder; ">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php" class="nav-link " style= "color:white ; font-weight: bolder; ">Blog</a>
+                    <a href="AboutUs.html" class="nav-link " style= "color:white ; font-weight: bolder; ">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a href="Login.php" class="nav-link " style= "color:white ; font-weight: bolder; " >Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" style= "color:white ; font-weight: bolder; ">Features</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -62,8 +56,9 @@
 <!--NAVIGATION BAR ends-->
 
 <!--HEADER STARTS-->
+
 <div class="card" style="margin: 10px 50px 20px 50px;">
-    <div class="card-body col-xs-6 col-sm-4 col-lg-12" style="background-color: #b0ae912b;">
+    <div class="card-body col-xs-6 col-sm-4 col-lg-12" style="    background-color: rgb(250, 250, 250);">
         <?php
         global $ConnectingDB;
         $sql= "SELECT * FROM posts ORDER BY id desc LIMIT 0,8";
@@ -140,20 +135,20 @@
                 $Image = $DataRows["image"];
                 $PostDescription = $DataRows["post"];
                 ?>
-                <div class="media">
-                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 160px; height: 110px;" alt="">
-                        <div class="media-body ml-2 card-body" style="outline:hidden; margin-top: 25px; padding-left: 1px ;">
-                            <h3 class="card-title">
-                                <a href="FullPost.php?id=<?php echo htmlentities($PostId);?>" target="_blank" style="color: #1B0039;">
-                                 <h2><?php echo htmlentities($PostTitle); ?></h2>
+                <div class="media" style='    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;color: rgba(41, 41, 41, 1);font-size:16px;'>
+                    <img src="Uploads/<?php echo htmlentities($Image); ?>" class="d-block img-fluid align-self-start" style="width: 155px; height: 155px; margin-top: 9px;" alt="">
+                        <div class="media-body ml-2 card-body" style="outline:hidden; margin-top: 25px; padding-left: 6px; ">
+                            <h3 class="card-title" >
+                                <a href="FullPost.php?id=<?php echo htmlentities($PostId);?>" target="_blank" style="color: #1B0039;font-weight:bolder;">
+                                 <h3 style="    font-weight: 550;font-size:23.5px;     line-height: normal;"><?php echo htmlentities($PostTitle); ?></h3>
                                 </a>
                             </h3>
-                           <p>
-                               By <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" style="color: #025114">
+                            <p class="card-text" style="color: rgba(117, 117, 117, 1);">
+                               By <a href="Profile.php?username=<?php echo htmlentities($Admin); ?>" style="color: rgba(26, 137, 23, 1); font-weight:400;">
                                   <?php echo htmlentities($Admin); ?>
                                   </a>
-                           </p>
-                           <p class="card-text" style="color: grey;">
+                                  </br>
+                           
                                <?php if (strlen($PostDescription)>150){$PostDescription = substr($PostDescription,0,70).'...';} echo htmlentities($PostDescription) ?>
                                </br>
                                <?php echo htmlentities($DateTime); ?>
@@ -167,7 +162,7 @@
         <!--side area starts-->
         <div class="col-sm-4">
             <div class="card">
-                <div class="card-header text-light" style = "background-color:#e7bf63">
+                <div class="card-header text-light" style = "background-color:#430264!important">
                     <h2 class="lead">Discover More of What Matters to You</h2>
                 </div>
                 <div class="card-body">
@@ -180,7 +175,7 @@
                         $CategoryName=$DataRows["title"];
                         ?>
                         <a href="index.php?category=<?php echo $CategoryName; ?>">
-                            <span class="badge bg-secondary" style="padding: 0.8rem; margin: 1rem 1rem 1rem 1rem;">
+                            <span class="badge bg-secondary" style="padding: 0.8rem; margin: 1rem 1rem 1rem 1rem ;background-color:#6509bb!important; ">
                                 <?php echo $CategoryName; ?>
                             </span></a>
                     <?php }?>
